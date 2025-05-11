@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="am"> <!-- Default language set to Amharic -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title data-translate-key="pageTitle">የወላይታ ማህበረሰብ አቀፍ ፓርቲ - የትምህርት ፖሊሲ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50; /* Dark Blue/Charcoal */
+            --secondary-color: #3498db; /* Bright Blue */
+            --accent-color: #e67e22;   /* Orange */
+            --light-color: #f8fafc;   /* Very Light Gray/Off-White */
+            --dark-color: #1e293b;    /* Very Dark Blue */
+            --text-color: #334155;    /* Slate Gray for text */
+            --success-color: #2ecc71; /* Green */
+            --danger-color: #e74c3c;  /* Red */
+            --gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.07);
+            --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.15);
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Abyssinica SIL', sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background: var(--light-color);
+            font-size: 16px;
+        }
+
+        input,
+        button,
+        select,
+        textarea {
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Logo and Top Bar */
+        .logo-topbar-container {
+            background-color: #E0F2FE;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 1.5rem;
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--secondary-color);
+        }
+
+        .logo-container h2 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+
+        .logo-container img {
+            width: 120px;
+            height: 120px;
+            transition: transform 0.3s ease;
+        }
+        .logo-container img:hover {
+            transform: scale(1.05);
+        }
+
+        .top-bar {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .language-select {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .language-select label i {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+        .language-select select {
+            background: var(--light-color);
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            padding: 0.35rem 1.75rem 0.35rem 0.75rem;
+            border-radius: var(--radius-md);
+        }
+        .search-bar {
+            display: flex;
+        }
+        .search-bar input[type="search"] {
+            background: var(--light-color);
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-md) 0 0 var(--radius-md);
+            width: 220px;
+        }
+         .search-bar input[type="search"]::placeholder {
+            color: var(--text-color);
+            opacity: 0.7;
+        }
+
+        .search-bar button {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--accent-color);
+            border-left: none;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            cursor: pointer;
+        }
+
+        .search-bar button:hover {
+            background: #c56a19;
+            border-color: #c56a19;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: var(--gradient);
+            color: white;
+            padding: 2.5rem 0;
+            text-align: center;
+            margin-bottom: 0;
+            box-shadow: var(--shadow-md);
+        }
+
+        .page-header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            color: white;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        /* Main Layout */
+        .main-layout {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            flex-direction: row-reverse;
+            gap: 2rem;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            padding: 1.5rem;
+            margin-top: 0;
+            width: 30%;
+            max-width: 300px;
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            align-self: flex-start;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 0.75rem;
+            color: var(--light-color);
+            font-size: 1.25rem;
+            border-bottom: 1px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .sidebar h2 a {
+            color: var(--light-color);
+        }
+        .sidebar h2 a:hover {
+            color: var(--secondary-color);
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 1.5rem;
+        }
+        .sidebar ul li {
+            margin-bottom: 0.25rem;
+        }
+        .sidebar ul ul {
+            padding-left: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .sidebar a {
+            color: var(--light-color);
+            display: block;
+            padding: 0.5rem 0.75rem;
+            transition: var(--transition);
+            font-size: 0.95rem;
+            border-radius: var(--radius-sm);
+        }
+
+        .sidebar a:hover, .sidebar a.active-policy-link:hover {
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+        }
+        .sidebar a i {
+            margin-right: 0.75rem;
+            width: 20px;
+        }
+        .sidebar .active-policy-link {
+            font-weight: bold;
+            background-color: var(--accent-color);
+            color: white;
+        }
+        .sidebar h3 {
+            font-size: 1.05rem;
+            color: var(--secondary-color);
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            padding-left: 0.75rem;
+        }
+         .sidebar ul li h3 i {
+            margin-right: 0.75rem;
+            width: 20px;
+        }
+
+        /* Main Content Section */
+        .section {
+            display: block;
+            background: white;
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            width: 70%;
+            flex: 1;
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 0.75rem;
+        }
+        .section h3 {
+            color: var(--dark-color);
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .policy-vision-mission {
+            background-color: var(--light-color);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: var(--radius-md);
+            border-left: 5px solid var(--secondary-color);
+            box-shadow: var(--shadow-sm);
+        }
+        .policy-vision-mission h3 {
+            margin-top: 0;
+            color: var(--secondary-color);
+        }
+        .policy-vision-mission p, .policy-vision-mission ol {
+            font-size: 1.05rem;
+        }
+        .policy-vision-mission ol li {
+            margin-bottom: 0.75rem;
+        }
+        .policy-vision-mission ol li b {
+            color: var(--primary-color);
+        }
+
+        .policy-point-card {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            padding: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 2rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+        }
+        .policy-point-card h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .policy-point-card ol {
+            list-style-type: decimal;
+            padding-left: 1.5rem;
+        }
+        .policy-point-card ol li {
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+        }
+        .policy-point-card ol li::marker {
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        .section > ul#implementation-list {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin-top: 1rem;
+        }
+        .section > ul#implementation-list li {
+            margin-bottom: 0.75rem;
+            font-size: 1.05rem;
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-md);
+            font-weight: bold;
+            text-decoration: none;
+            transition: var(--transition);
+            margin-top: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .read-more-btn:hover {
+            background-color: #c56a19;
+            color: white;
+            text-decoration: none;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        .read-more-btn i {
+            margin-right: 0.5rem;
+        }
+
+        .footer {
+            background-color: #E0F2FE;
+            color: var(--primary-color);
+            padding: 2.5rem 0;
+            text-align: left;
+            font-size: 0.95rem;
+            border-top: 3px solid var(--secondary-color);
+        }
+        .footer h2 {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        .footer p {
+            color: var(--text-color);
+        }
+        .footer .contact-details a {
+            color: var(--secondary-color);
+        }
+        .footer .contact-details a:hover {
+            color: var(--accent-color);
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+
+        .col-md-3,
+        .col-md-4,
+        .col-md-2 {
+            flex-basis: calc(33.333% - 1rem);
+            min-width: 250px;
+            padding: 0;
+            border-right: none;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--primary-color);
+            width: 100%;
+        }
+        .footer-copyright p b {
+            color: var(--primary-color);
+        }
+
+        .social-icons {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 0.75rem;
+        }
+        .social-icons li a {
+            color: var(--primary-color);
+            font-size: 1.75rem;
+            transition: var(--transition);
+            padding: 0.5rem;
+            display: inline-block;
+        }
+        .social-icons li a:hover {
+            color: var(--accent-color);
+            transform: scale(1.1);
+            text-decoration: none;
+        }
+        .footer .simplenews-subscriber-form {
+             display: flex;
+        }
+        .footer .simplenews-subscriber-form input[type="email"] {
+            padding: 0.6rem;
+            border: 1px solid var(--primary-color);
+            border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+            flex-grow: 1;
+            margin-right: -1px;
+        }
+        .footer .simplenews-subscriber-form button {
+            padding: 0.6rem 1rem;
+            background-color: var(--accent-color);
+            color: white;
+            border: 1px solid var(--accent-color);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            cursor: pointer;
+        }
+         .footer .simplenews-subscriber-form button:hover {
+            background-color: #c56a19;
+            border-color: #c56a19;
+        }
+
+        @media (max-width: 992px) {
+            .col-md-3,
+            .col-md-4,
+            .col-md-2 {
+                flex-basis: calc(50% - 0.75rem);
+            }
+            .main-layout {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 15px;
+            }
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            .section h2 {
+                font-size: 1.7rem;
+            }
+            .section h3 {
+                font-size: 1.3rem;
+            }
+            .policy-point-card h3 {
+                font-size: 1.15rem;
+            }
+
+            .main-layout {
+                padding: 1rem;
+                flex-direction: column;
+            }
+            .sidebar, .section {
+                width: 100%;
+                max-width: none;
+            }
+            .sidebar {
+                margin-bottom: 1.5rem;
+            }
+
+            .logo-topbar-container {
+                flex-direction: column;
+                padding: 1rem;
+                 text-align: center;
+            }
+             .logo-container {
+                margin-bottom: 1rem;
+            }
+            .logo-container img {
+                width:100px; height:100px;
+            }
+            .logo-container h2 {
+                font-size: 1.3rem;
+            }
+            .top-bar {
+                flex-direction: column;
+                gap: 1rem;
+                width: 100%;
+            }
+            .search-bar {
+                width: 100%;
+            }
+            .search-bar input[type="search"]{
+                width: 100%;
+                flex-grow: 1;
+            }
+
+            .col-md-3,
+            .col-md-4,
+            .col-md-2 {
+                flex-basis: 100%;
+                margin-bottom: 1.5rem;
+            }
+            .footer .simplenews-subscriber-form input[type="email"]{
+                 margin-bottom: 0.5rem;
+                 margin-right: 0;
+                 width: 100%;
+            }
+             .footer .simplenews-subscriber-form {
+                flex-direction: column;
+            }
+            .footer .simplenews-subscriber-form button{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Logo and Top Bar -->
+    <div class="logo-topbar-container">
+        <div class="logo-container">
+            <img src="580759532717013320__1.png" alt="SPW Logo">
+            <h2 data-translate-key="logoTitle">የወላይታ ማህበረሰብ አቀፍ ፓርቲ</h2>
+        </div>
+
+        <div class="top-bar">
+            <div class="language-select">
+                <label for="language-select" class="sr-only" data-translate-key="langLabel">ቋንቋ ይምረጡ</label>
+                <i class="fas fa-language" aria-hidden="true"></i>
+                <select id="language-select" aria-label="Select Language">
+                    <option value="am" data-translate-key="langAmharic">አማርኛ</option>
+                    <option value="en" data-translate-key="langEnglish">English</option>
+                </select>
+            </div>
+
+            <form class="search-bar" role="search">
+                <label for="site-search" class="sr-only" data-translate-key="searchSrOnly">Search the site</label>
+                <input type="search" id="site-search" data-translate-key="searchPlaceholder" placeholder="Search/ፈልግ" aria-label="Search" />
+                <button type="submit">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                    <span class="sr-only" data-translate-key="searchBtnSr">ፈልግ</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 data-translate-key="headerTitle">የትምህርት ፖሊሲ</h1>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="main-layout">
+            <section id="education" class="section active">
+                <h2 data-translate-key="educationPolicyOverviewTitle">የትምህርት ፖሊሲ አጠቃላይ እይታ</h2>
+
+                <div class="policy-vision-mission">
+                    <h3 data-translate-key="visionTitle">ራዕይ</h3>
+                    <p data-translate-key="visionText">ሁሉም ዜጋ፣ ያለ አድልዎ፣ ተደራሽ፣ ፍትሃዊና ጥራት ያለው ትምህርት የሚያገኝባትን ብሩህ ኢትዮጵያን መፍጠር።</p>
+                </div>
+
+                <div class="policy-vision-mission">
+                    <h3 data-translate-key="missionTitle">ተልዕኮ</h3>
+                    <ol>
+                        <li data-translate-key="missionItem1"><b>ለሁሉም ዜጎች ተደራሽና ጥራት ያለው ትምህርት መስጠት:</b> የትምህርት ዕድል ለሁሉም ዜጎች ክፍት እንዲሆን ማድረግ፣ በተለይም ለሴቶች፣ ለአካል ጉዳተኞችና አቅመ ደካሞች ልዩ ትኩረት መስጠት። የትምህርት ተቋማትን በመስፋፋትና በማሻሻል ተደራሽነትን ማረጋገጥ።</li>
+                        <li data-translate-key="missionItem2"><b>የትምህርት ሥርዓቱን ከዘመኑ ጋር የሚራመድ ማድረግ:</b> የትምህርት ሥርዓቱን ወቅታዊና ተፈላጊ ክህሎቶችን በሚያዳብሩ ዘመናዊ ዘዴዎች ማሻሻልና ማዘመን። የሳይንስ፣ የቴክኖሎጂ፣ የምህንድስናና የሂሳብ (STEM) ትምህርትን አጠናክሮ ማስፋፋት።</li>
+                        <li data-translate-key="missionItem3"><b>ለተማሪዎች ተስማሚ የሆነ የመማሪያ አካባቢ መፍጠር:</b> አስተማሪዎችና ተማሪዎች በአክብሮትና በመተሳሰብ የሚግባቡበት፣ ተማሪዎች የመማር ፍላጎታቸውን እንዲያዳብሩ የሚያግዝና ለተማሪዎች ደህንነት ትኩረት የሚሰጥ የመማሪያ አካባቢ መፍጠር።</li>
+                        <li data-translate-key="missionItem4"><b>ብቁና የሰለጠኑ መምህራንን ማፍራትና ማበረታታት:</b> ብቁና የሰለጠኑ መምህራንን ማፍራት፣ ተከታታይነት ያለው ስልጠና መስጠት፣ በቂ ደመወዝ መክፈልና የሙያ እድገታቸውን ማበረታታት።</li>
+                        <li data-translate-key="missionItem5"><b>የቴክኒክና የሙያ ትምህርትን ማጠናከር:</b> የቴክኒክና የሙያ ትምህርትን ከስራ ገበያ ፍላጎት ጋር በማጣጣም ማጠናከርና ማስፋፋት። ተማሪዎች ከተመረቁ በኋላ የስራ ዕድል እንዲያገኙ የሚያግዙ ስልጠናዎችን መስጠት።</li>
+                        <li data-translate-key="missionItem6"><b>የሳይንስና ቴክኖሎጂ ትምህርትን ማበረታታት:</b> በሳይንስና ቴክኖሎጂ ዘርፍ የተካኑ ባለሙያዎችን ለማፍራት የሳይንስና ቴክኖሎጂ ትምህርትን በሁሉም ደረጃዎች ማጠናከር።</li>
+                        <li data-translate-key="missionItem7"><b>የተማሪዎችን አጠቃላይ እድገት ማረጋገጥ:</b> ተማሪዎች አእምሮአቸውን፣ ማህበራዊ ክህሎታቸውንና ስነልቦናዊ እድገታቸውን በተሟላ መልኩ እንዲያዳብሩ መርዳት። ከትምህርት ገበታ ጎን ለጎን፣ የስነ ጥበብ፣ የስፖርትና ሌሎች የፈጠራ ስራዎችን ማበረታታት።</li>
+                        <li data-translate-key="missionItem8"><b>የተማሪዎችን የፈጠራ ችሎታ ማሳደግ:</b> ተማሪዎች በፈጠራ ስራዎች ላይ እንዲሳተፉ፣ አዳዲስ ሃሳቦችን እንዲያመነጩና ችግሮችን በፈጠራ መንፈስ እንዲፈቱ የሚያበረታቱ መንገዶችን መዘርጋት።</li>
+                        <li data-translate-key="missionItem9"><b>የትምህርት ጥራትን በተከታታይነት ማሻሻል:</b> የትምህርት ጥራትን ለማረጋገጥ የሚያስችሉ አሰራሮችን መዘርጋት፣ የትምህርት ሥርዓቱን በየጊዜው መገምገም、 እንዲሁም መረጃዎችን በመጠቀም ተገቢውን ማሻሻያ ማድረግ።</li>
+                        <li data-translate-key="missionItem10"><b>የተጠያቂነት መርህን ማስፈን:</b> በትምህርት ሥርዓቱ ውስጥ የሚሳተፉ አካላት በሙሉ (አስተማሪዎች፣ ተማሪዎች፣ አመራሮች፣ ወላጆች ወዘተ) ኃላፊነታቸውን በአግባቡ እንዲወጡ የሚያበረታቱና ለስራቸው ተጠያቂ የሚያደርጉ አሰራሮችን መዘርጋት።</li>
+                    </ol>
+                </div>
+
+                <h3 data-translate-key="mainPolicyDirectionsTitle">የፖሊሲው ዋና ዋና አቅጣጫዎች</h3>
+                <div class="policy-point-card">
+                    <h3 data-translate-key="accessTitle">1. ተደራሽነት (Access)</h3>
+                    <ol>
+                        <li data-translate-key="accessItem1">ነጻ ትምህርት: ለመ መሪያ ደረጃ (ከ 1 ኛ እስከ 8 ኛ ክፍል) እና ለሁለተኛ ደረጃ (ከ 9 ኛ እስከ 12 ኛ ክፍል) ትምህርት ነፃ ማድረግ። የትምህርት ዕድሉ ለሁሉም ዜጎች፣ በተለይም ለድሆች፣ ለሴቶች፣ ለአካል ጉዳተኞችና አቅመ ደካሞች ክፍት መሆኑን ማረጋገጥ።</li>
+                        <li data-translate-key="accessItem2">የተመጣጠነ ስርጭት: ትምህርት ቤቶች በሁሉም የ ገሪቱ ክፍሎች በተመጣጣኝ ሁኔታ እንዲሰራጩ ማድረግ። በተለይም በገጠርና ሩቅ አካባቢዎች ለሚኖሩ ዜጎች የትምህርት ዕድል ማረጋገጥ። የርቀት ትምህርት ፕሮግራሞችን በመጠቀም ትምህርት በማይደረስባቸው አካባቢዎች ተደራሽ ማድረግ።</li>
+                        <li data-translate-key="accessItem3">የመማሪያ አካባቢ: ትምህርት ቤቶች ለተማሪዎች ምቹና ደህንነታቸው የተጠበቀ የመማሪያ አካባቢ እንዲኖራቸው ማድረግ። ተማሪዎች በቂ የመማሪያ ክፍሎች፣ ቤተ መጻሕፍት፣ ላቦራቶሪዎችና ሌሎች መገልገያዎች እንዲያገኙ ማድረግ።</li>
+                        <li data-translate-key="accessItem4">የትራንስፖርት አገልግሎት: በተለይም ለገጠር ተማሪዎች ትምህርት ቤቶች ለመድረስ ምቹና ተደራሽ የሆነ የትራንስፖርት አገልግሎት እንዲኖር ማድረግ።</li>
+                    </ol>
+                </div>
+                <div class="policy-point-card">
+                    <h3 data-translate-key="qualityTitle">2. ጥራት (Quality)</h3>
+                    <ol>
+                        <li data-translate-key="qualityItem1">የአስተማሪዎች ስልጠና: መምህራንን ለመመልመል ጥብቅ መስፈርት በመዘርጋት ብቁና የሰለጠኑ መምህራንን ብቻ ማሰልጠን። ለመምህራን በሙያቸው እንዲቀጥሉ ተከታታይነት ያለው ስልጠና፣ የሙያ እድገትና በቂ ደመወዝ ማረጋገጥ።</li>
+                        <li data-translate-key="qualityItem2">የስርዓተ ትምህርት ማሻሻያ: የስርዓተ ትምህርትን ከዘመኑ ጋር በሚሄድ መልኩ ማሻሻልና ማዘመን። የትምህርት ይዘቱ የተማሪዎችን ተፈጥሯዊ ችሎታ የሚቀሰቅስ፣ ተማሪዎች በፈጠራና በምርምር እንዲሳተፉ የሚያነሳሳ፣ እንዲሁም የ ገሪቱን የልማት ፍላጎት የሚያሟላ መሆን አለበት።</li>
+                        <li data-translate-key="qualityItem3">የ ትምህርት ግምገማ: የትምህርት ሥርዓቱን ውጤታማነት በየጊዜው ለመገምገም የሚያስችል አሰራር መዘርጋት። የተማሪዎችን ውጤት፣ የአስተማሪዎችን አፈጻጸም፣ እንዲሁም የትምህርት ተቋማትን አጠቃላይ አፈጻጸም በየጊዜው መገምገም፣ ግብረ መልስ መስጠትና አስፈላጊ ማስተካከያዎችን ማድረግ።</li>
+                        <li data-translate-key="qualityItem4">የቴክኖሎጂ አጠቃቀም: በሁሉም የትምህርት ደረጃዎች ቴክኖሎጂን በትምህርት ውስጥ ማካተት። የኮምፒውተር ላብራቶሪዎች፣ የኢንተርኔት አገልግሎትና ሌሎች የቴክኖሎጂ መገልገያዎችን ማሟላት። መምህራንና ተማሪዎች ቴክኖሎጂን በትምህርት ሂደት ውስጥ በአግባቡ እንዲጠቀሙ ስልጠና መስጠት።</li>
+                    </ol>
+                </div>
+                <div class="policy-point-card">
+                    <h3 data-translate-key="studentCenteredLearningTitle">3. ተማሪ ተኮር ትምህርት (Student-Centered Learning)</h3>
+                    <ol>
+                        <li data-translate-key="studentCenteredLearningItem1">ግለሰባዊ ትምህርት: የእያንዳንዱን ተማሪ ፍላጎት፣ አቅምና የመማር ዘይቤን ከግምት ውስጥ በማስገባት ትምህርትን መስጠት። ተማሪዎች በራሳቸው ፍጥነት እንዲማሩና የሚያስፈልጋቸውን ድጋፍ እንዲያገኙ ማድረግ።</li>
+                        <li data-translate-key="studentCenteredLearningItem2">ተግባራዊ ትምህርት: ተማሪዎች በክፍል ውስጥ የሚማሩትን ንድፈ ሃሳብ በተግባር እንዲያሳዩ፣ የፈጠራ ችሎታቸውን እንዲያዳብሩና በተግባር ላይ የተመሰረተ ትምህርት እንዲያገኙ ማበረታታት።</li>
+                        <li data-translate-key="studentCenteredLearningItem3">የተማሪዎች ተሳትፎ: ተማሪዎች በትምህርት ቤት አስተዳደር፣ በውሳኔ አሰጣጥ ሂደትና በክፍል ውስጥ በሚደረጉ እንቅስቃሴዎች ላይ በንቃት እንዲሳተፉ ማበረታታት።</li>
+                        <li data-translate-key="studentCenteredLearningItem4">የተማሪዎች ምክር አገልግሎት: ተማሪዎች ለሚገጥሟቸው የስነልቦና፣ የማህበራዊና የትምህርት ችግሮች ምላሽ የሚሰጡ፣ እንዲሁም ተማሪዎች የሙያ አቅጣጫቸውን እንዲወስኑ የሚያግዙ የባለሙያ ምክር አገልግሎቶች በሁሉም ትምህርት ቤቶች እንዲኖሩ ማድረግ።</li>
+                    </ol>
+                </div>
+                <div class="policy-point-card">
+                    <h3 data-translate-key="tvetTitle">4. የቴክኒክና የሙያ ትምህርት (TVET)</h3>
+                    <ol>
+                        <li data-translate-key="tvetItem1">ማጠናከር: የቴክኒክና የሙያ ትምህርትን ከስራ ገበያ ፍላጎት ጋር በማጣጣም አጠናክሮ ማስፋፋት። ተማሪዎች በስራ ገበያ ተወዳዳሪ እንዲሆኑ ተገቢውን ክህሎትና ልምድ እንዲያገኙ ማድረግ።</li>
+                        <li data-translate-key="tvetItem2">ማስፋፋት: የቴክኒክና የሙያ ትምህርት ቤቶችን ቁጥር በሁሉም ክልሎችና አካባቢዎች ማስፋፋት። የትምህርት ቤቶቹ ጥራትና ደረጃቸውን የጠበቁ መገልገያዎች እንዲኖራቸው ማድረግ።</li>
+                        <li data-translate-key="tvetItem3">የኢንዱስትሪ ትስስር: የቴክኒክና የሙያ ትምህርት ቤቶችን ከኢንዱስትሪዎች ጋር በማስተሳሰር ተማሪዎች የስራ ልምድ እንዲያገኙና ኢንዱስትሪው የሚያስፈልገውን የሰለጠነ የሰው ኃይል እንዲያገኝ ማድረግ።</li>
+                    </ol>
+                </div>
+                <div class="policy-point-card">
+                    <h3 data-translate-key="scienceTechEducationTitle">5. የሳይንስና ቴክኖሎጂ ትምህርት</h3>
+                    <ol>
+                        <li data-translate-key="scienceTechEducationItem1">ማበረታታት: የሳይንስና ቴክኖሎጂ ትምህርትን ከልጅነት  ምሮ በማስተማር ተማሪዎች ለፈጠራና ለምርምር እንዲነሳሱ ማድረግ።</li>
+                        <li data-translate-key="scienceTechEducationItem2">ላቦራቶሪዎች: በትምህርት ቤቶች ደረጃቸውን የጠበቁና ዘመናዊ ሳይንሳዊ ላቦራቶሪዎችን በማሟላት ተማሪዎች በተግባር እንዲማሩ ማበረታታት። የላቦራቶሪ ቁሳቁሶች አቅርቦት ቀጣይነት እንዲኖረው ማድረግ።</li>
+                    </ol>
+                </div>
+                <div class="policy-point-card">
+                    <h3 data-translate-key="disabilitiesEducationTitle">6. የአካል ጉዳተኞች ትምህርት</h3>
+                    <ol>
+                        <li data-translate-key="disabilitiesEducationItem1">ተደራሽ ትምህርት አካል ጉዳተኞች ሁሉ ያለምንም አድልዎ ተደራሽና ጥራት ያለው ትምህርት እንዲያገኙ ማድረግ። አካል ጉዳተኞች ያሉባቸውን ልዩ ፍላጎቶች በመገንዘብ ትምህርት ቤቶች አካታች እንዲሆኑ መስራት።</li>
+                        <li data-translate-key="disabilitiesEducationItem2">ልዩ ትምህርት ለአካል ጉዳተኞች ልዩ የትምህርት ስልጠና፣ ትምህርትን ለመከታተል የሚያስችሉ መገልገያዎችና ድጋፍ መስጠት። ልዩ ትምህርት የሚሰጡ ትምህርት ቤቶችን ቁጥር ማሳደግና ጥራታቸውን ማረጋገጥ።</li>
+                        <li data-translate-key="disabilitiesEducationItem3">ተደራሽ መሠረተ ልማት ትምህርት ቤቶች ለአካል ጉዳተኞች ተስማሚ የሆኑ መሠረተ ልማቶች (ለምሳሌ፡ መወጣጫዎች፣ መጸዳጃ ቤቶች፣ ወዘተ) እንዲሟሉ ማድረግ። የመማሪያ መጻሕፍትና ሌሎች ትምህርትን የሚረዱ ቁሳቁሶች በአካል ጉዳተኞች በሚጠቀሙባቸው ቅርጸቶች (ለምሳሌ፡ ብሬይል) እንዲቀርቡ ማድረግ።</li>
+                    </ol>
+                </div>
+                <div class="policy-point-card">
+                    <h3 data-translate-key="higherEducationTitle">7. ከፍተኛ ትምህርት (Higher Education)</h3>
+                    <ol>
+                        <li data-translate-key="higherEducationItem1">የዩኒቨርሲቲዎች ነጻነት: ዩኒቨርሲቲዎች ራሳቸውን ችለው እንዲሰሩና የትምህርት ጥራታቸውን እንዲያሻሽሉ የሚያስችላቸውን ነጻነት መስጠት። ዩኒቨርሲቲዎች ምርምር እንዲያደርጉና ለህብረተሰቡ የሚያገለግሉ አዳዲስ ሃሳቦችን እንዲያመነጩ ማበረታታት።</li>
+                        <li data-translate-key="higherEducationItem2">የምርምር ስራዎች: የዩኒቨርሲቲዎችን የምርምር ስራዎች መደገፍና ማበረታታት። ዩኒቨርሲቲዎች ከ ገራዊ ልማት ጋር የተያያዙ ምርምሮችን እንዲያካሂዱ የሚያበረታቱ የገንዘብ ድጋፎችን መስጠት።</li>
+                        <li data-translate-key="higherEducationItem3">የጥራት ማረጋገጫ: ዩኒቨርሲቲዎች ጥራታቸውን በራሳቸው እንዲያረጋግጡና ለዚህም የሚያስችሉ ስርዓቶችን እንዲዘረጉ መደገፍ። የዩኒቨርሲቲ ምሩቃን በስራ ገበያ ተወዳዳሪ እንዲሆኑ ጥራት ያለው ትምህርት እንዲሰጥ ማድረግ።</li>
+                        <li data-translate-key="higherEducationItem4">የህብረተሰብ ተሳትፎ ዩኒቨርሲቲዎች ከህብረተሰቡ ጋር በመተባበር የህብረተሰቡን ችግሮች ለመፍታት የሚያግዙ ምርምሮችንና ፕሮ ክቶችን እንዲያካሂዱ ማበረታታት።</li>
+                    </ol>
+                </div>
+                <div class="policy-point-card">
+                    <h3 data-translate-key="adultEducationTitle">8. የአዋቂዎች ትምህርት</h3>
+                    <ol>
+                        <li data-translate-key="adultEducationItem1">ማስፋፋት: የአዋቂዎች ትምህርትን በመደገፍና በማስፋፋት ሁሉም ዜጎች ዕድሜያቸው ሳይገድባቸው የመማር ዕድል እንዲያገኙ ማድረግ።</li>
+                        <li data-translate-key="adultEducationItem2">የማንበብና መጻፍ ፕሮግራሞች: ማንበብና መጻፍ የማይችሉ ዜጎች ማንበብና መጻፍ እንዲችሉ የሚያስችሉ ፕሮግራሞችን ማዘጋ ትና መተግበር።</li>
+                        <li data-translate-key="adultEducationItem3">የክህሎት ስልጠና: አዋቂዎች አዳዲስ ክህሎቶችን እንዲያገኙና የስራ እድላቸውን እንዲያሳድጉ የሚያስችሉ ስልጠናዎችን ማዘጋ ት።</li>
+                    </ol>
+                </div>
+                <div class="policy-point-card">
+                    <h3 data-translate-key="educationAdminTitle">9. የትምህርት አስተዳደር</h3>
+                    <ol>
+                        <li data-translate-key="educationAdminItem1">የተማከለ አሰራር: በሁሉም እርከኖች የተማከለ፣ ግልጽና ተጠያቂነት ያለው የትምህርት አስተዳደር ስርዓት መዘርጋት።</li>
+                        <li data-translate-key="educationAdminItem2">የአካባቢው ተሳትፎ: በአካባቢው ያሉ ማህበረሰቦች የትምህርት ቤቶችን አስተዳደር፣ ፖሊሲ አወጣጥና ክትትል ላይ እንዲሳተፉ ማበረታታት። ወላጆችና ሌሎች የህብረተሰብ ክፍሎች በፓርቲው ትምህርት ፖሊሲ አፈጻጸም ላይ ንቁ ተሳትፎ እንዲኖራቸው ማበረታታት።</li>
+                    </ol>
+                </div>
+
+                <h3 data-translate-key="policyImplementationTitle">የፖሊሲው ትግበራ</h3>
+                <ul id="implementation-list">
+                    <li data-translate-key="implementationItem1">ይህ ፖሊሲ በተለያዩ የትምህርት ተቋማት፣ በማህበረሰብ አቀፍ የትምህርት ፕሮግራሞች፣ በሲቪል ማህበራት ድርጅቶችና በሌሎች አጋር አካላት አማካኝነት ይተገበራል።</li>
+                    <li data-translate-key="implementationItem2">ለፖሊሲው ውጤታማ ትግበራ በቂ በ ት መመደብ፣ የትምህርት ባለሙያዎችን ማብቃት፣ እንዲሁም የክትትልና የግምገማ ሥርዓትን ማጠናከር።</li>
+                    <li data-translate-key="implementationItem3">የፖሊሲው ትግበራ ሂደት በየጊዜው ተገምግሞ አስፈላጊ ማስተካከያዎች ይደረጉበታል።</li>
+                    <li data-translate-key="implementationItem4">ህብረተሰቡ በፖሊሲው ትግበራ ሂደት ውስጥ በንቃት እንዲሳተፍ ማድረግ።</li>
+                    <li data-translate-key="implementationItem5">የትምህርት ሚኒስቴርን አቅም ማጠናከር፣ እንዲሁም የትምህርት ስርአቱን በዘመናዊ የቴክኖሎጂ መሳሪያዎች ማዘመን።</li>
+                    <li data-translate-key="implementationItem6">በዓለም አቀፍ ደረጃ ያሉ ምርጥ ተሞክሮዎችን በማየት በአገራችን ነባራዊ ሁኔታ ላይ በመመስረት መተግበር።</li>
+                </ul>
+                <a href="የወማአፓ ፖሊሲዎች.pdf" class="read-more-btn"><i class="fas fa-file-pdf"></i><span data-translate-key="downloadFullPolicyBtn">ሙሉውን ፖሊሲ ያውርዱ</span></a>
+            </section>
+            <aside class="sidebar">
+                <h2><a href="index.html"><i class="fas fa-home"></i><span data-translate-key="sidebarHome">ዋና መነሻ</span></a></h2>
+
+                <h2><i class="fas fa-landmark"></i><span data-translate-key="sidebarPartyPolicies">የፓርቲው ፖሊሲዎች</span></h2>
+                <ul>
+                    <li>
+                        <h3 data-translate-key="sidebarEconomicPolicy"><i class="fas fa-chart-line"></i>የኢኮኖሚ ፖሊሲ</h3>
+                        <ul>
+                            <li><a href="policy-job-creation.html"><i class="fas fa-briefcase"></i><span data-translate-key="sidebarJobCreation">የስራ እድል ፈጠራ</span></a></li>
+                            <li><a href="policy-industrial-dev.html"><i class="fas fa-industry"></i><span data-translate-key="sidebarIndustrialDev">የኢንዱስትሪ ልማት</span></a></li>
+                            <li><a href="policy-subsidy.html"><i class="fas fa-coins"></i><span data-translate-key="sidebarSubsidy">ድጎማ</span></a></li>
+                             <li><a href="policy-agricultural-dev.html"><i class="fas fa-tractor"></i><span data-translate-key="sidebarAgriDev">የግብርና ልማት</span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3 data-translate-key="sidebarSocialPolicies"><i class="fas fa-users"></i>ማህበራዊ ፖሊሲዎች</h3>
+                        <ul>
+                            <li><a href="policy 1.html"><i class="fas fa-hospital"></i><span data-translate-key="sidebarHealth">ጤና</span></a></li>
+                            <li><a href="policy 2.html"class="active-policy-link"><i class="fas fa-graduation-cap"></i><span data-translate-key="sidebarEducation">ትምህርት</span></a></li>
+                            <li><a href="policy 3.html"><i class="fas fa-balance-scale"></i><span data-translate-key="sidebarJustice">የፍትህ ስርዓት</span></a></li>
+                             <li><a href="policy-gender-equality.html"><i class="fas fa-venus-mars"></i><span data-translate-key="sidebarGenderEq">የጾታ እኩልነት</span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3 data-translate-key="sidebarEnvProtection"><i class="fas fa-leaf"></i>የአካባቢ ጥበቃ</h3>
+                        <ul>
+                            <li><a href="policy-forest-conservation.html"><i class="fas fa-tree"></i><span data-translate-key="sidebarForest">የደን ጥበቃ</span></a></li>
+                            <li><a href="policy-pollution-control.html"><i class="fas fa-smog"></i><span data-translate-key="sidebarPollution">የብክለት ቁጥጥር</span></a></li>
+                            <li><a href="policy-waste-management.html"><i class="fas fa-recycle"></i><span data-translate-key="sidebarWaste">ቆሻሻ አወጋገድ</span></a></li>
+                            <li><a href="policy-sustainable-agriculture.html"><i class="fas fa-seedling"></i><span data-translate-key="sidebarSustainableAgri">ዘላቂ ግብርና</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="newsletter">
+                        <h2 data-translate-key="footerNewsletterTitle">ዜና መጽሔት ይመዝገቡ</h2>
+                        <p data-translate-key="footerNewsletterPara">የቅርብ ጊዜ መረጃዎችን እና የፓርቲ ዜናዎችን በቀጥታ ወደ ኢሜልዎ ያግኙ።</p>
+                        <form class="simplenews-subscriber-form">
+                            <label for="edit-mail-0-value" class="sr-only" data-translate-key="footerEmailLabelSr">ኢሜል</label>
+                            <input type="email" id="edit-mail-0-value" name="mail" data-translate-key="footerEmailPlaceholder" placeholder="የኢሜል አድራሻዎ"
+                                class="form-email" required>
+                            <button type="submit" class="button" data-translate-key="footerSubscribeBtn">ይመዝገቡ</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="region-footer-31">
+                        <h2 data-translate-key="footerSocialTitle">ማህበራዊ ሚዲያ</h2>
+                        <p data-translate-key="footerSocialPara">በማህበራዊ ገጾቻችን ይከተሉን፤ ይሳተፉ።</p>
+                        <ul class="social-icons">
+                            <li><a href="#" target="_blank" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#" target="_blank" title="Twitter" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#" target="_blank" title="YouTube" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
+                            <li><a href="https://t.me/spw1415" target="_blank" title="Telegram" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="region-footer-41">
+                        <h2 data-translate-key="footerContactTitle">ያግኙን</h2>
+                        <div class="contact-details">
+                            <ul class="contact" style="list-style: none; padding-left: 0;">
+                                <li>
+                                    <p><i class="fas fa-phone-alt"></i> <strong data-translate-key="footerContactPhone">ስልክ:</strong> +251-704-379-452</p>
+                                </li>
+                                <li>
+                                    <p><i class="fas fa-envelope"></i> <strong data-translate-key="footerContactEmail">ኢሜይል:</strong> <a href="mailto:SPW1413@gmail.com">SPW1413@gmail.com</a>
+                                    </p>
+                                </li>
+                                 <li>
+                                    <p><i class="fas fa-map-marker-alt"></i> <strong data-translate-key="footerContactAddress">አድራሻ:</strong> <span data-translate-key="footerContactAddressDetail">ወላይታ ሶዶ</span></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-copyright">
+                <p><b data-translate-key="footerCopyright">© 2017 ዓ.ም የወላይታ ማህበረሰብ አቀፍ ፓርቲ። ሁሉም መብቶች በህግ የተጠበቁ ናቸው።</b></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            am: {
+                pageTitle: "የወላይታ ማህበረሰብ አቀፍ ፓርቲ - የትምህርት ፖሊሲ",
+                logoTitle: "የወላይታ ማህበረሰብ አቀፍ ፓርቲ",
+                langLabel: "ቋንቋ ይምረጡ",
+                langAmharic: "አማርኛ",
+                langEnglish: "English",
+                searchPlaceholder: "Search/ፈልግ",
+                searchSrOnly: "Search the site",
+                searchBtnSr: "ፈልግ",
+                headerTitle: "የትምህርት ፖሊሲ",
+                educationPolicyOverviewTitle: "የትምህርት ፖሊሲ አጠቃላይ እይታ",
+                visionTitle: "ራዕይ",
+                visionText: "ሁሉም ዜጋ፣ ያለ አድልዎ፣ ተደራሽ፣ ፍትሃዊና ጥራት ያለው ትምህርት የሚያገኝባትን ብሩህ ኢትዮጵያን መፍጠር።",
+                missionTitle: "ተልዕኮ",
+                missionItem1: "<b>ለሁሉም ዜጎች ተደራሽና ጥራት ያለው ትምህርት መስጠት:</b> የትምህርት ዕድል ለሁሉም ዜጎች ክፍት እንዲሆን ማድረግ፣ በተለይም ለሴቶች፣ ለአካል ጉዳተኞችና አቅመ ደካሞች ልዩ ትኩረት መስጠት። የትምህርት ተቋማትን በመስፋፋትና በማሻሻል ተደራሽነትን ማረጋገጥ።",
+                missionItem2: "<b>የትምህርት ሥርዓቱን ከዘመኑ ጋር የሚራመድ ማድረግ:</b> የትምህርት ሥርዓቱን ወቅታዊና ተፈላጊ ክህሎቶችን በሚያዳብሩ ዘመናዊ ዘዴዎች ማሻሻልና ማዘመን። የሳይንስ፣ የቴክኖሎጂ፣ የምህንድስናና የሂሳብ (STEM) ትምህርትን አጠናክሮ ማስፋፋት።",
+                missionItem3: "<b>ለተማሪዎች ተስማሚ የሆነ የመማሪያ አካባቢ መፍጠር:</b> አስተማሪዎችና ተማሪዎች በአክብሮትና በመተሳሰብ የሚግባቡበት፣ ተማሪዎች የመማር ፍላጎታቸውን እንዲያዳብሩ የሚያግዝና ለተማሪዎች ደህንነት ትኩረት የሚሰጥ የመማሪያ አካባቢ መፍጠር።",
+                missionItem4: "<b>ብቁና የሰለጠኑ መምህራንን ማፍራትና ማበረታታት:</b> ብቁና የሰለጠኑ መምህራንን ማፍራት፣ ተከታታይነት ያለው ስልጠና መስጠት፣ በቂ ደመወዝ መክፈልና የሙያ እድገታቸውን ማበረታታት።",
+                missionItem5: "<b>የቴክኒክና የሙያ ትምህርትን ማጠናከር:</b> የቴክኒክና የሙያ ትምህርትን ከስራ ገበያ ፍላጎት ጋር በማጣጣም ማጠናከርና ማስፋፋት። ተማሪዎች ከተመረቁ በኋላ የስራ ዕድል እንዲያገኙ የሚያግዙ ስልጠናዎችን መስጠት።",
+                missionItem6: "<b>የሳይንስና ቴክኖሎጂ ትምህርትን ማበረታታት:</b> በሳይንስና ቴክኖሎጂ ዘርፍ የተካኑ ባለሙያዎችን ለማፍራት የሳይንስና ቴክኖሎጂ ትምህርትን በሁሉም ደረጃዎች ማጠናከር።",
+                missionItem7: "<b>የተማሪዎችን አጠቃላይ እድገት ማረጋገጥ:</b> ተማሪዎች አእምሮአቸውን፣ ማህበራዊ ክህሎታቸውንና ስነልቦናዊ እድገታቸውን በተሟላ መልኩ እንዲያዳብሩ መርዳት። ከትምህርት ገበታ ጎን ለጎን፣ የስነ ጥበብ፣ የስፖርትና ሌሎች የፈጠራ ስራዎችን ማበረታታት።",
+                missionItem8: "<b>የተማሪዎችን የፈጠራ ችሎታ ማሳደግ:</b> ተማሪዎች በፈጠራ ስራዎች ላይ እንዲሳተፉ、 አዳዲስ ሃሳቦችን እንዲያመነጩና ችግሮችን በፈጠራ መንፈስ እንዲፈቱ የሚያበረታቱ መንገዶችን መዘርጋት።",
+                missionItem9: "<b>የትምህርት ጥራትን በተከታታይነት ማሻሻል:</b> የትምህርት ጥራትን ለማረጋገጥ የሚያስችሉ አሰራሮችን መዘርጋት፣ የትምህርት ሥርዓቱን በየጊዜው መገምገም、 እንዲሁም መረጃዎችን በመጠቀም ተገቢውን ማሻሻያ ማድረግ።",
+                missionItem10: "<b>የተጠያቂነት መርህን ማስፈን:</b> በትምህርት ሥርዓቱ ውስጥ የሚሳተፉ አካላት በሙሉ (አስተማሪዎች፣ ተማሪዎች፣ አመራሮች፣ ወላጆች ወዘተ) ኃላፊነታቸውን በአግባቡ እንዲወጡ የሚያበረታቱና ለስራቸው ተጠያቂ የሚያደርጉ አሰራሮችን መዘርጋት።",
+                mainPolicyDirectionsTitle: "የፖሊሲው ዋና ዋና አቅጣጫዎች",
+                accessTitle: "1. ተደራሽነት (Access)",
+                accessItem1: "ነጻ ትምህርት: ለመ መሪያ ደረጃ (ከ 1 ኛ እስከ 8 ኛ ክፍል) እና ለሁለተኛ ደረጃ (ከ 9 ኛ እስከ 12 ኛ ክፍል) ትምህርት ነፃ ማድረግ። የትምህርት ዕድሉ ለሁሉም ዜጎች፣ በተለይም ለድሆች፣ ለሴቶች፣ ለአካል ጉዳተኞችና አቅመ ደካሞች ክፍት መሆኑን ማረጋገጥ።",
+                accessItem2: "የተመጣጠነ ስርጭት: ትምህርት ቤቶች በሁሉም የ ገሪቱ ክፍሎች በተመጣጣኝ ሁኔታ እንዲሰራጩ ማድረግ። በተለይም በገጠርና ሩቅ አካባቢዎች ለሚኖሩ ዜጎች የትምህርት ዕድል ማረጋገጥ። የርቀት ትምህርት ፕሮግራሞችን በመጠቀም ትምህርት በማይደረስባቸው አካባቢዎች ተደራሽ ማድረግ።",
+                accessItem3: "የመማሪያ አካባቢ: ትምህርት ቤቶች ለተማሪዎች ምቹና ደህንነታቸው የተጠበቀ የመማሪያ አካባቢ እንዲኖራቸው ማድረግ። ተማሪዎች በቂ የመማሪያ ክፍሎች፣ ቤተ መጻሕፍት፣ ላቦራቶሪዎችና ሌሎች መገልገያዎች እንዲያገኙ ማድረግ።",
+                accessItem4: "የትራንስፖርት አገልግሎት: በተለይም ለገጠር ተማሪዎች ትምህርት ቤቶች ለመድረስ ምቹና ተደራሽ የሆነ የትራንስፖርት አገልግሎት እንዲኖር ማድረግ።",
+                qualityTitle: "2. ጥራት (Quality)",
+                qualityItem1: "የአስተማሪዎች ስልጠና: መምህራንን ለመመልመል ጥብቅ መስፈርት በመዘርጋት ብቁና የሰለጠኑ መምህራንን ብቻ ማሰልጠን። ለመምህራን በሙያቸው እንዲቀጥሉ ተከታታይነት ያለው ስልጠና፣ የሙያ እድገትና በቂ ደመወዝ ማረጋገጥ።",
+                qualityItem2: "የስርዓተ ትምህርት ማሻሻያ: የስርዓተ ትምህርትን ከዘመኑ ጋር በሚሄድ መልኩ ማሻሻልና ማዘመን። የትምህርት ይዘቱ የተማሪዎችን ተፈጥሯዊ ችሎታ የሚቀሰቅስ፣ ተማሪዎች በፈጠራና በምርምር እንዲሳተፉ የሚያነሳሳ、 እንዲሁም የ ገሪቱን የልማት ፍላጎት የሚያሟላ መሆን አለበት።",
+                qualityItem3: "የ ትምህርት ግምገማ: የትምህርት ሥርዓቱን ውጤታማነት በየጊዜው ለመገምገም የሚያስችል አሰራር መዘርጋት። የተማሪዎችን ውጤት፣ የአስተማሪዎችን አፈጻጸም፣ እንዲሁም የትምህርት ተቋማትን አጠቃላይ አፈጻጸም በየጊዜው መገምገም፣ ግብረ መልስ መስጠትና አስፈላጊ ማስተካከያዎችን ማድረግ።",
+                qualityItem4: "የቴክኖሎጂ አጠቃቀም: በሁሉም የትምህርት ደረጃዎች ቴክኖሎጂን በትምህርት ውስጥ ማካተት። የኮምፒውተር ላብራቶሪዎች፣ የኢንተርኔት አገልግሎትና ሌሎች የቴክኖሎጂ መገልገያዎችን ማሟላት። መምህራንና ተማሪዎች ቴክኖሎጂን በትምህርት ሂደት ውስጥ በአግባቡ እንዲጠቀሙ ስልጠና መስጠት።",
+                studentCenteredLearningTitle: "3. ተማሪ ተኮር ትምህርት (Student-Centered Learning)",
+                studentCenteredLearningItem1: "ግለሰባዊ ትምህርት: የእያንዳንዱን ተማሪ ፍላጎት፣ አቅምና የመማር ዘይቤን ከግምት ውስጥ በማስገባት ትምህርትን መስጠት። ተማሪዎች በራሳቸው ፍጥነት እንዲማሩና የሚያስፈልጋቸውን ድጋፍ እንዲያገኙ ማድረግ።",
+                studentCenteredLearningItem2: "ተግባራዊ ትምህርት: ተማሪዎች በክፍል ውስጥ የሚማሩትን ንድፈ ሃሳብ በተግባር እንዲያሳዩ፣ የፈጠራ ችሎታቸውን እንዲያዳብሩና በተግባር ላይ የተመሰረተ ትምህርት እንዲያገኙ ማበረታታት።",
+                studentCenteredLearningItem3: "የተማሪዎች ተሳትፎ: ተማሪዎች በትምህርት ቤት አስተዳደር፣ በውሳኔ አሰጣጥ ሂደትና በክፍል ውስጥ በሚደረጉ እንቅስቃሴዎች ላይ በንቃት እንዲሳተፉ ማበረታታት።",
+                studentCenteredLearningItem4: "የተማሪዎች ምክር አገልግሎት: ተማሪዎች ለሚገጥሟቸው የስነልቦና፣ የማህበራዊና የትምህርት ችግሮች ምላሽ የሚሰጡ、 እንዲሁም ተማሪዎች የሙያ አቅጣጫቸውን እንዲወስኑ የሚያግዙ የባለሙያ ምክር አገልግሎቶች በሁሉም ትምህርት ቤቶች እንዲኖሩ ማድረግ።",
+                tvetTitle: "4. የቴክኒክና የሙያ ትምህርት (TVET)",
+                tvetItem1: "ማጠናከር: የቴክኒክና የሙያ ትምህርትን ከስራ ገበያ ፍላጎት ጋር በማጣጣም አጠናክሮ ማስፋፋት። ተማሪዎች በስራ ገበያ ተወዳዳሪ እንዲሆኑ ተገቢውን ክህሎትና ልምድ እንዲያገኙ ማድረግ።",
+                tvetItem2: "ማስፋፋት: የቴክኒክና የሙያ ትምህርት ቤቶችን ቁጥር በሁሉም ክልሎችና አካባቢዎች ማስፋፋት። የትምህርት ቤቶቹ ጥራትና ደረጃቸውን የጠበቁ መገልገያዎች እንዲኖራቸው ማድረግ።",
+                tvetItem3: "የኢንዱስትሪ ትስስር: የቴክኒክና የሙያ ትምህርት ቤቶችን ከኢንዱስትሪዎች ጋር በማስተሳሰር ተማሪዎች የስራ ልምድ እንዲያገኙና ኢንዱስትሪው የሚያስፈልገውን የሰለጠነ የሰው ኃይል እንዲያገኝ ማድረግ።",
+                scienceTechEducationTitle: "5. የሳይንስና ቴክኖሎጂ ትምህርት",
+                scienceTechEducationItem1: "ማበረታታት: የሳይንስና ቴክኖሎጂ ትምህርትን ከልጅነት  ምሮ በማስተማር ተማሪዎች ለፈጠራና ለምርምር እንዲነሳሱ ማድረግ።",
+                scienceTechEducationItem2: "ላቦራቶሪዎች: በትምህርት ቤቶች ደረጃቸውን የጠበቁና ዘመናዊ ሳይንሳዊ ላቦራቶሪዎችን በማሟላት ተማሪዎች በተግባር እንዲማሩ ማበረታታት። የላቦራቶሪ ቁሳቁሶች አቅርቦት ቀጣይነት እንዲኖረው ማድረግ።",
+                disabilitiesEducationTitle: "6. የአካል ጉዳተኞች ትምህርት",
+                disabilitiesEducationItem1: "ተደራሽ ትምህርት አካል ጉዳተኞች ሁሉ ያለምንም አድልዎ ተደራሽና ጥራት ያለው ትምህርት እንዲያገኙ ማድረግ። አካል ጉዳተኞች ያሉባቸውን ልዩ ፍላጎቶች በመገንዘብ ትምህርት ቤቶች አካታች እንዲሆኑ መስራት።",
+                disabilitiesEducationItem2: "ልዩ ትምህርት ለአካል ጉዳተኞች ልዩ የትምህርት ስልጠና፣ ትምህርትን ለመከታተል የሚያስችሉ መገልገያዎችና ድጋፍ መስጠት። ልዩ ትምህርት የሚሰጡ ትምህርት ቤቶችን ቁጥር ማሳደግና ጥራታቸውን ማረጋገጥ።",
+                disabilitiesEducationItem3: "ተደራሽ መሠረተ ልማት ትምህርት ቤቶች ለአካል ጉዳተኞች ተስማሚ የሆኑ መሠረተ ልማቶች (ለምሳሌ፡ መወጣጫዎች፣ መጸዳጃ ቤቶች፣ ወዘተ) እንዲሟሉ ማድረግ። የመማሪያ መጻሕፍትና ሌሎች ትምህርትን የሚረዱ ቁሳቁሶች በአካል ጉዳተኞች በሚጠቀሙባቸው ቅርጸቶች (ለምሳሌ፡ ብሬይል) እንዲቀርቡ ማድረግ።",
+                higherEducationTitle: "7. ከፍተኛ ትምህርት (Higher Education)",
+                higherEducationItem1: "የዩኒቨርሲቲዎች ነጻነት: ዩኒቨርሲቲዎች ራሳቸውን ችለው እንዲሰሩና የትምህርት ጥራታቸውን እንዲያሻሽሉ የሚያስችላቸውን ነጻነት መስጠት። ዩኒቨርሲቲዎች ምርምር እንዲያደርጉና ለህብረተሰቡ የሚያገለግሉ አዳዲስ ሃሳቦችን እንዲያመነጩ ማበረታታት።",
+                higherEducationItem2: "የምርምር ስራዎች: የዩኒቨርሲቲዎችን የምርምር ስራዎች መደገፍና ማበረታታት። ዩኒቨርሲቲዎች ከ ገራዊ ልማት ጋር የተያያዙ ምርምሮችን እንዲያካሂዱ የሚያበረታቱ የገንዘብ ድጋፎችን መስጠት።",
+                higherEducationItem3: "የጥራት ማረጋገጫ: ዩኒቨርሲቲዎች ጥራታቸውን በራሳቸው እንዲያረጋግጡና ለዚህም የሚያስችሉ ስርዓቶችን እንዲዘረጉ መደገፍ። የዩኒቨርሲቲ ምሩቃን በስራ ገበያ ተወዳዳሪ እንዲሆኑ ጥራት ያለው ትምህርት እንዲሰጥ ማድረግ።",
+                higherEducationItem4: "የህብረተሰብ ተሳትፎ ዩኒቨርሲቲዎች ከህብረተሰቡ ጋር በመተባበር የህብረተሰቡን ችግሮች ለመፍታት የሚያግዙ ምርምሮችንና ፕሮ ክቶችን እንዲያካሂዱ ማበረታታት።",
+                adultEducationTitle: "8. የአዋቂዎች ትምህርት",
+                adultEducationItem1: "ማስፋፋት: የአዋቂዎች ትምህርትን በመደገፍና በማስፋፋት ሁሉም ዜጎች ዕድሜያቸው ሳይገድባቸው የመማር ዕድል እንዲያገኙ ማድረግ።",
+                adultEducationItem2: "የማንበብና መጻፍ ፕሮግራሞች: ማንበብና መጻፍ የማይችሉ ዜጎች ማንበብና መጻፍ እንዲችሉ የሚያስችሉ ፕሮግራሞችን ማዘጋ ትና መተግበር።",
+                adultEducationItem3: "የክህሎት ስልጠና: አዋቂዎች አዳዲስ ክህሎቶችን እንዲያገኙና የስራ እድላቸውን እንዲያሳድጉ የሚያስችሉ ስልጠናዎችን ማዘጋ ት።",
+                educationAdminTitle: "9. የትምህርት አስተዳደር",
+                educationAdminItem1: "የተማከለ አሰራር: በሁሉም እርከኖች የተማከለ፣ ግልጽና ተጠያቂነት ያለው የትምህርት አስተዳደር ስርዓት መዘርጋት።",
+                educationAdminItem2: "የአካባቢው ተሳትፎ: በአካባቢው ያሉ ማህበረሰቦች የትምህርት ቤቶችን አስተዳደር፣ ፖሊሲ አወጣጥና ክትትል ላይ እንዲሳተፉ ማበረታታት። ወላጆችና ሌሎች የህብረተሰብ ክፍሎች በፓርቲው ትምህርት ፖሊሲ አፈጻጸም ላይ ንቁ ተሳትፎ እንዲኖራቸው ማበረታታት።",
+                policyImplementationTitle: "የፖሊሲው ትግበራ",
+                implementationItem1: "ይህ ፖሊሲ በተለያዩ የትምህርት ተቋማት፣ በማህበረሰብ አቀፍ የትምህርት ፕሮግራሞች፣ በሲቪል ማህበራት ድርጅቶችና በሌሎች አጋር አካላት አማካኝነት ይተገበራል።",
+                implementationItem2: "ለፖሊሲው ውጤታማ ትግበራ በቂ በ ት መመደብ፣ የትምህርት ባለሙያዎችን ማብቃት፣ እንዲሁም የክትትልና የግምገማ ሥርዓትን ማጠናከር።",
+                implementationItem3: "የፖሊሲው ትግበራ ሂደት በየጊዜው ተገምግሞ አስፈላጊ ማስተካከያዎች ይደረጉበታል።",
+                implementationItem4: "ህብረተሰቡ በፖሊሲው ትግበራ ሂደት ውስጥ በንቃት እንዲሳተፍ ማድረግ።",
+                implementationItem5: "የትምህርት ሚኒስቴርን አቅም ማጠናከር፣ እንዲሁም የትምህርት ስርአቱን በዘመናዊ የቴክኖሎጂ መሳሪያዎች ማዘመን።",
+                implementationItem6: "በዓለም አቀፍ ደረጃ ያሉ ምርጥ ተሞክሮዎችን በማየት በአገራችን ነባራዊ ሁኔታ ላይ በመመስረት መተግበር።",
+                downloadFullPolicyBtn: "ሙሉውን ፖሊሲ ያውርዱ",
+                sidebarHome: "ዋና መነሻ",
+                sidebarPartyPolicies: "የፓርቲው ፖሊሲዎች",
+                sidebarEconomicPolicy: "የኢኮኖሚ ፖሊሲ",
+                sidebarJobCreation: "የስራ እድል ፈጠራ",
+                sidebarIndustrialDev: "የኢንዱስትሪ ልማት",
+                sidebarSubsidy: "ድጎማ",
+                sidebarAgriDev: "የግብርና ልማት",
+                sidebarSocialPolicies: "ማህበራዊ ፖሊሲዎች",
+                sidebarHealth: "ጤና",
+                sidebarEducation: "ትምህርት",
+                sidebarJustice: "የፍትህ ስርዓት",
+                sidebarGenderEq: "የጾታ እኩልነት",
+                sidebarEnvProtection: "የአካባቢ ጥበቃ",
+                sidebarForest: "የደን ጥበቃ",
+                sidebarPollution: "የብክለት ቁጥጥር",
+                sidebarWaste: "ቆሻሻ አወጋገድ",
+                sidebarSustainableAgri: "ዘላቂ ግብርና",
+                footerNewsletterTitle: "ዜና መጽሔት ይመዝገቡ",
+                footerNewsletterPara: "የቅርብ ጊዜ መረጃዎችን እና የፓርቲ ዜናዎችን በቀጥታ ወደ ኢሜልዎ ያግኙ።",
+                footerEmailLabelSr: "ኢሜል",
+                footerEmailPlaceholder: "የኢሜል አድራሻዎ",
+                footerSubscribeBtn: "ይመዝገቡ",
+                footerSocialTitle: "ማህበራዊ ሚዲያ",
+                footerSocialPara: "በማህበራዊ ገጾቻችን ይከተሉን፤ ይሳተፉ።",
+                footerContactTitle: "ያግኙን",
+                footerContactPhone: "ስልክ:",
+                footerContactEmail: "ኢሜይል:",
+                footerContactAddress: "አድራሻ:",
+                footerContactAddressDetail: "ወላይታ ሶዶ",
+                footerCopyright: "© 2017 ዓ.ም የወላይታ ማህበረሰብ አቀፍ ፓርቲ። ሁሉም መብቶች በህግ የተጠበቁ ናቸው።"
+            },
+            en: {
+                pageTitle: "Wolaita Community-Based Party - Education Policy",
+                logoTitle: "Wolaita Community-Based Party",
+                langLabel: "Select Language",
+                langAmharic: "Amharic",
+                langEnglish: "English",
+                searchPlaceholder: "Search",
+                searchSrOnly: "Search the site",
+                searchBtnSr: "Search",
+                headerTitle: "Education Policy",
+                educationPolicyOverviewTitle: "Education Policy Overview",
+                visionTitle: "Vision",
+                visionText: "To create an enlightened Ethiopia where every citizen, without discrimination, has access to equitable and quality education.",
+                missionTitle: "Mission",
+                missionItem1: "<b>Provide accessible and quality education for all citizens:</b> Ensure educational opportunities are open to all citizens, with special attention to girls, persons with disabilities, and the vulnerable. Ensure accessibility by expanding and improving educational institutions.",
+                missionItem2: "<b>Modernize the education system:</b> Improve and update the education system with modern methods that develop current and relevant skills. Strengthen and expand Science, Technology, Engineering, and Mathematics (STEM) education.",
+                missionItem3: "<b>Create a conducive learning environment for students:</b> Foster a learning environment where teachers and students interact with respect and empathy, which encourages students to develop their interest in learning and prioritizes student safety.",
+                missionItem4: "<b>Produce and motivate qualified and trained teachers:</b> Produce qualified and trained teachers, provide continuous training, pay adequate salaries, and encourage their professional development.",
+                missionItem5: "<b>Strengthen technical and vocational education:</b> Strengthen and expand technical and vocational education by aligning it with labor market demands. Provide training that helps students find employment after graduation.",
+                missionItem6: "<b>Promote science and technology education:</b> Strengthen science and technology education at all levels to produce experts in these fields.",
+                missionItem7: "<b>Ensure holistic student development:</b> Help students fully develop their intellectual, social, and psychological skills. Alongside academics, encourage arts, sports, and other creative activities.",
+                missionItem8: "<b>Enhance students' creative abilities:</b> Establish ways to encourage students to participate in creative activities, generate new ideas, and solve problems creatively.",
+                missionItem9: "<b>Continuously improve education quality:</b> Establish procedures to ensure education quality, regularly evaluate the education system, and make appropriate improvements using data.",
+                missionItem10: "<b>Implement the principle of accountability:</b> Establish procedures that encourage all stakeholders in the education system (teachers, students, leaders, parents, etc.) to fulfill their responsibilities properly and hold them accountable for their work.",
+                mainPolicyDirectionsTitle: "Main Policy Directions",
+                accessTitle: "1. Access",
+                accessItem1: "Free education: Make primary (grades 1-8) and secondary (grades 9-12) education free. Ensure educational opportunities are open to all citizens, especially the poor, girls, persons with disabilities, and the vulnerable.",
+                accessItem2: "Equitable distribution: Ensure schools are distributed equitably across all parts of the country. Particularly ensure educational opportunities for citizens in rural and remote areas. Make education accessible in unreached areas using distance learning programs.",
+                accessItem3: "Learning environment: Ensure schools have a conducive and safe learning environment for students. Ensure students have adequate classrooms, libraries, laboratories, and other facilities.",
+                accessItem4: "Transportation services: Ensure convenient and accessible transportation services, especially for rural students, to reach schools.",
+                qualityTitle: "2. Quality",
+                qualityItem1: "Teacher training: Train only qualified and skilled teachers by establishing strict recruitment criteria. Ensure continuous training, professional development, and adequate salaries for teachers to retain them in the profession.",
+                qualityItem2: "Curriculum reform: Improve and update the curriculum in line with modern standards. The content should stimulate students' natural abilities, inspire creativity and research, and meet the country's development needs.",
+                qualityItem3: "Education assessment: Establish a system for regularly evaluating the effectiveness of the education system. Regularly assess student performance, teacher effectiveness, and the overall performance of educational institutions, provide feedback, and make necessary adjustments.",
+                qualityItem4: "Use of technology: Integrate technology into education at all levels. Equip schools with computer labs, internet access, and other technological facilities. Train teachers and students to use technology effectively in the learning process.",
+                studentCenteredLearningTitle: "3. Student-Centered Learning",
+                studentCenteredLearningItem1: "Individualized learning: Provide education considering each student's interests, abilities, and learning style. Enable students to learn at their own pace and receive the support they need.",
+                studentCenteredLearningItem2: "Practical education: Encourage students to apply theories learned in class, develop their creative skills, and receive practice-based education.",
+                studentCenteredLearningItem3: "Student participation: Encourage students to actively participate in school administration, decision-making processes, and classroom activities.",
+                studentCenteredLearningItem4: "Student counseling services: Ensure professional counseling services are available in all schools to address students' psychological, social, and academic challenges, and to help them choose career paths.",
+                tvetTitle: "4. Technical and Vocational Education and Training (TVET)",
+                tvetItem1: "Strengthening: Strengthen and expand TVET by aligning it with labor market demands. Ensure students acquire appropriate skills and experience to be competitive in the job market.",
+                tvetItem2: "Expansion: Expand the number of TVET schools in all regions and areas. Ensure schools have quality and standard facilities.",
+                tvetItem3: "Industry linkage: Link TVET schools with industries to enable students to gain work experience and for industries to get the skilled workforce they need.",
+                scienceTechEducationTitle: "5. Science and Technology Education",
+                scienceTechEducationItem1: "Promotion: Encourage students' interest in innovation and research by teaching science and technology from an early age.",
+                scienceTechEducationItem2: "Laboratories: Equip schools with standard and modern science laboratories to encourage practical learning. Ensure a continuous supply of laboratory materials.",
+                disabilitiesEducationTitle: "6. Education for Persons with Disabilities",
+                disabilitiesEducationItem1: "Accessible education: Ensure all persons with disabilities have access to quality education without discrimination. Work to make schools inclusive by understanding the special needs of persons with disabilities.",
+                disabilitiesEducationItem2: "Special education: Provide special education training, facilities, and support for persons with disabilities to pursue education. Increase the number and ensure the quality of special education schools.",
+                disabilitiesEducationItem3: "Accessible infrastructure: Ensure schools are equipped with accessible infrastructure for persons with disabilities (e.g., ramps, toilets, etc.). Ensure learning materials are available in accessible formats (e.g., Braille).",
+                higherEducationTitle: "7. Higher Education",
+                higherEducationItem1: "University autonomy: Grant universities the autonomy to operate independently and improve their educational quality. Encourage universities to conduct research and generate new ideas that serve society.",
+                higherEducationItem2: "Research activities: Support and encourage university research activities. Provide financial support to encourage universities to conduct research related to national development.",
+                higherEducationItem3: "Quality assurance: Support universities in establishing their own quality assurance systems. Ensure quality education so that university graduates are competitive in the job market.",
+                higherEducationItem4: "Community engagement: Encourage universities to collaborate with the community to conduct research and projects that help solve community problems.",
+                adultEducationTitle: "8. Adult Education",
+                adultEducationItem1: "Expansion: Support and expand adult education to ensure all citizens have learning opportunities regardless of age.",
+                adultEducationItem2: "Literacy programs: Develop and implement programs to enable illiterate citizens to read and write.",
+                adultEducationItem3: "Skills training: Organize training for adults to acquire new skills and improve their employment opportunities.",
+                educationAdminTitle: "9. Education Administration",
+                educationAdminItem1: "Decentralized system: Establish a decentralized, transparent, and accountable education administration system at all levels.",
+                educationAdminItem2: "Local participation: Encourage local communities to participate in school administration, policy-making, and monitoring. Encourage parents and other community members to actively participate in the implementation of the party's education policy.",
+                policyImplementationTitle: "Policy Implementation",
+                implementationItem1: "This policy will be implemented through various educational institutions, community-based education programs, civil society organizations, and other partner entities.",
+                implementationItem2: "Allocate sufficient budget, empower education professionals, and strengthen monitoring and evaluation systems for effective policy implementation.",
+                implementationItem3: "The policy implementation process will be regularly reviewed, and necessary adjustments will be made.",
+                implementationItem4: "Ensure active community participation in the policy implementation process.",
+                implementationItem5: "Strengthen the capacity of the Ministry of Education and modernize the education system with modern technological tools.",
+                implementationItem6: "Adopt international best practices and implement them based on our country's context.",
+                 downloadFullPolicyBtn: "Download Full Policy",
+                sidebarHome: "Main Home",
+                sidebarPartyPolicies: "Party Policies",
+                sidebarEconomicPolicy: "Economic Policy",
+                sidebarJobCreation: "Job Creation",
+                sidebarIndustrialDev: "Industrial Development",
+                sidebarSubsidy: "Subsidy",
+                sidebarAgriDev: "Agricultural Development",
+                sidebarSocialPolicies: "Social Policies",
+                sidebarHealth: "Health",
+                sidebarEducation: "Education",
+                sidebarJustice: "Justice System",
+                sidebarGenderEq: "Gender Equality",
+                sidebarEnvProtection: "Environmental Protection",
+                sidebarForest: "Forest Conservation",
+                sidebarPollution: "Pollution Control",
+                sidebarWaste: "Waste Management",
+                sidebarSustainableAgri: "Sustainable Agriculture",
+                footerNewsletterTitle: "Subscribe to Newsletter",
+                footerNewsletterPara: "Get the latest updates and party news directly to your email.",
+                footerEmailLabelSr: "Email",
+                footerEmailPlaceholder: "Your Email Address",
+                footerSubscribeBtn: "Subscribe",
+                footerSocialTitle: "Social Media",
+                footerSocialPara: "Follow us and engage on our social media pages.",
+                footerContactTitle: "Contact Us",
+                footerContactPhone: "Phone:",
+                footerContactEmail: "Email:",
+                footerContactAddress: "Address:",
+                footerContactAddressDetail: "Wolaita Sodo",
+                footerCopyright: "© 2024 Wolaita Community-Based Party. All rights reserved."
+            }
+        };
+        document.addEventListener('DOMContentLoaded', () => {
+            const languageSelector = document.getElementById('language-select');
+
+            function applyTranslations(lang) {
+                document.documentElement.lang = lang;
+                document.querySelector('title').textContent = translations[lang].pageTitle;
+
+                document.querySelectorAll('[data-translate-key]').forEach(el => {
+                    const key = el.dataset.translateKey;
+                    const translation = translations[lang][key];
+                    if (translation !== undefined) {
+                        if (el.tagName === 'INPUT' && (el.type === 'search' || el.type === 'email')) {
+                             el.placeholder = translation;
+                        } else if (el.tagName === 'INPUT' && (el.type === 'submit' || el.type === 'button')) {
+                             el.value = translation;
+                        } else if (el.dataset.translateAttribute) {
+                            el.setAttribute(el.dataset.translateAttribute, translation);
+                        } else {
+                            if (typeof translation === 'string' && (translation.includes('<') || translation.includes('&'))) {
+                                el.innerHTML = translation;
+                            } else {
+                                el.textContent = translation;
+                            }
+                        }
+                    }
+                });
+            }
+
+            if (languageSelector) {
+                languageSelector.addEventListener('change', (e) => {
+                    const selectedLang = e.target.value;
+                    applyTranslations(selectedLang);
+                    localStorage.setItem('preferredLanguage', selectedLang);
+                });
+
+                const preferredLang = localStorage.getItem('preferredLanguage') || 'am';
+                languageSelector.value = preferredLang;
+                applyTranslations(preferredLang);
+            } else {
+                applyTranslations('am');
+            }
+
+            // Mega-menu touch handling
+            const navMenuItems = document.querySelectorAll('.nav-menu > li');
+            navMenuItems.forEach(item => {
+                const megaMenu = item.querySelector('.mega-menu');
+                if (megaMenu) {
+                    item.addEventListener('touchstart', (e) => {
+                        if (e.target.closest('.mega-menu')) {
+                            return;
+                        }
+                        const isTouched = item.classList.contains('touched');
+                        navMenuItems.forEach(otherItem => {
+                            if (otherItem !== item) {
+                                otherItem.classList.remove('touched');
+                                const otherMegaMenu = otherItem.querySelector('.mega-menu');
+                                if (otherMegaMenu) otherMegaMenu.style.display = 'none';
+                            }
+                        });
+
+                        if (!isTouched) {
+                            e.preventDefault();
+                            item.classList.add('touched');
+                            megaMenu.style.display = 'block';
+                        }
+                    });
+                }
+            });
+
+            document.addEventListener('click', (e) => {
+                let isClickInsideNav = false;
+                navMenuItems.forEach(item => {
+                    if (item.contains(e.target)) {
+                        isClickInsideNav = true;
+                    }
+                });
+
+                if (!isClickInsideNav) {
+                    navMenuItems.forEach(item => {
+                        item.classList.remove('touched');
+                        const megaMenu = item.querySelector('.mega-menu');
+                        if (megaMenu) {
+                            megaMenu.style.display = 'none';
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

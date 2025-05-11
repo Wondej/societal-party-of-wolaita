@@ -1,0 +1,1923 @@
+<!DOCTYPE html>
+<html lang="am"> <!-- Default language set to Amharic -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title data-translate-key="pageTitle">የወላይታ ማህበረሰብ አቀፍ ፓርቲ - መነሻ</title>
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50; /* Dark Blue/Charcoal */
+            --secondary-color: #3498db; /* Bright Blue */
+            --accent-color: #e67e22;   /* Orange */
+            --light-color: #f8fafc;   /* Very Light Gray/Off-White */
+            --dark-color: #1e293b;    /* Very Dark Blue */
+            --text-color: #334155;    /* Slate Gray for text */
+            --success-color: #2ecc71; /* Green */
+            --danger-color: #e74c3c;  /* Red */
+            --gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.07);
+            --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.15);
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Abyssinica SIL', sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background: var(--light-color);
+            font-size: 16px;
+        }
+
+        input,
+        button,
+        select,
+        textarea {
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--accent-color);
+            text-decoration: none; /* Keep no underline on hover for most links */
+        }
+        .read-more-btn:hover, .section a:not(.button):not(.nav-link):hover {
+            text-decoration: underline; /* Add underline for specific "read more" type links */
+        }
+
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Combined Logo and Top Bar */
+        .logo-topbar-container {
+            background-color: #E0F2FE; /* Lighter, softer blue */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 1.5rem;
+            color: var(--primary-color); /* Darker text for contrast */
+            border-bottom: 3px solid var(--secondary-color);
+        }
+
+        .logo-container h2 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-top: 0.25rem;
+        }
+
+        .logo-container img {
+            width: 120px;
+            height: 120px;
+            transition: transform 0.3s ease;
+            border-radius: 50%; /* Make logo image round */
+            box-shadow: var(--shadow-sm);
+        }
+        .logo-container img:hover {
+            transform: scale(1.05);
+        }
+
+        .top-bar {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .language-select {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .language-select label i {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .language-select select {
+            background: var(--light-color);
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            padding: 0.35rem 1.75rem 0.35rem 0.75rem;
+            border-radius: var(--radius-md);
+        }
+
+        .search-bar {
+            display: flex;
+        }
+        .search-bar input[type="search"] {
+            background: var(--light-color);
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-md) 0 0 var(--radius-md);
+            width: 220px;
+        }
+         .search-bar input[type="search"]::placeholder {
+            color: var(--text-color);
+            opacity: 0.7;
+        }
+
+        .search-bar button {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--accent-color); /* Add border for consistency */
+            border-left: none;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            cursor: pointer;
+        }
+        .search-bar button:hover {
+            background: #c56a19; /* Darker accent */
+            border-color: #c56a19;
+        }
+
+        /* Main Header and Navigation */
+          .header {
+            background: var(--primary-color);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 1rem;
+        }
+        @media (min-width: 993px) {
+            .nav {
+                justify-content: center;
+            }
+        }
+
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-left: 0;
+            position: relative;
+        }
+
+        .nav-menu a {
+            color: white;
+            padding: 0.85rem 1.5rem;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            display: block;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border-radius: var(--radius-sm);
+        }
+        .nav-menu a i {
+            margin-right: 0.6em;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+ 
+        /* Horizontal Mega Menu Styles */
+        .mega-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #fff;
+            padding: 1.5rem; /* Increased padding */
+            width: auto;
+            min-width: 600px; /* Give mega menu a decent min-width */
+            box-shadow: var(--shadow-lg); /* More prominent shadow */
+            z-index: 101;
+            border-radius: 0 0 var(--radius-lg) var(--radius-lg); /* Round bottom corners */
+            border-top: 3px solid var(--accent-color);
+        }
+
+        .mega-menu-content {
+            display: flex;
+            gap: 1.5rem; /* Spacing between columns */
+        }
+
+        .mega-menu-column {
+            flex: 1;
+            min-width: 180px; /* Ensure columns have some width */
+        }
+
+        .mega-menu-column h3 {
+            margin-bottom: 1rem; /* More space below title */
+            color: var(--primary-color);
+            font-size: 1.1rem; /* Slightly larger */
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-color);
+        }
+        .mega-menu-column h3 i {
+            margin-right: 0.5em;
+        }
+
+        .mega-menu-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .mega-menu-column li {
+            margin-bottom: 0.5rem; /* More space between links */
+        }
+
+        .mega-menu-column a {
+            color: var(--text-color); /* Use standard text color */
+            text-decoration: none;
+            display: block;
+            padding: 0.5rem 0.75rem; /* Padding for clickable area */
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+        }
+        .mega-menu-column a i {
+            margin-right: 0.5em;
+            color: var(--secondary-color); /* Icon color */
+        }
+
+        .mega-menu-column a:hover {
+            background-color: var(--light-color);
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        .mega-menu-column a:hover i {
+            color: var(--accent-color);
+        }
+
+
+        .nav-menu li:hover .mega-menu {
+            display: block;
+            animation: fadeInMegaMenu 0.3s ease-out;
+        }
+        @keyframes fadeInMegaMenu {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+
+        /* Main Content Area */
+        .main-content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .section {
+            display: none; /* Initially hide all sections */
+            background: white;
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            margin-bottom: 2.5rem;
+            box-shadow: var(--shadow-md);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .section > h2 { /* For main titles within sections */
+            color: var(--primary-color);
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--accent-color);
+            text-align: center; /* Center section titles */
+        }
+
+        /* Home Section Specifics */
+        #home > h2:first-of-type { /* "እንኳን ደህና መጣችው" */
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+            border-bottom: none;
+        }
+        #home p:first-of-type { /* Welcome paragraph */
+            font-size: 1.15rem;
+            line-height: 1.8;
+            text-align: Justify;
+            margin-bottom: 3rem;
+            color: var(--text-color);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* News Grid on Home Page */
+        .news-grid-home {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        .news-card-home {
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+        .news-card-home:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        .news-card-home-image-placeholder {
+            height: 200px;
+            background-color: var(--secondary-color); /* Placeholder color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+        .news-card-home-image-placeholder img { /* If you use actual images */
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .news-card-home-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .news-card-home .news-date {
+            color: var(--accent-color);
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        .news-card-home h2 { /* This is for the news card title, not section title */
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            margin-bottom: 0.75rem;
+            border-bottom: none; /* Reset for card titles */
+            padding-bottom: 0;
+            text-align: left;
+        }
+        .news-card-home p {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+            color: var(--text-color);
+        }
+        .news-card-home .read-more-btn {
+            align-self: flex-start; /* Align button to the left */
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+        .news-card-home .read-more-btn:hover {
+            background-color: var(--primary-color);
+            text-decoration: none;
+        }
+
+
+        /* News Section (#news) */
+        .news-article {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border: 1px solid #e0e0e0;
+            border-left: 5px solid var(--secondary-color);
+            border-radius: var(--radius-md);
+            background: var(--light-color);
+        }
+        .news-article .news-date {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+        .news-article h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .news-article video {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-md);
+            margin-bottom: 1rem;
+        }
+
+        /* Magazine Section */
+        .magazine-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .magazine-card {
+            border: 1px solid #e0e0e0;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+        .magazine-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        .magazine-image {
+            height: 200px;
+            background: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--secondary-color);
+        }
+        .magazine-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .magazine-content {
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .magazine-content h3 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .magazine-content a { /* Download button */
+            display: inline-block;
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .magazine-content a:hover {
+            background: var(--primary-color);
+            text-decoration: none;
+        }
+
+        /* Accordion (Membership Section) */
+        .accordion {
+            margin: 1.5rem 0;
+        }
+        .accordion-btn {
+            width: 100%;
+            padding: 1.25rem 1.5rem; /* More padding */
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: var(--radius-md);
+            font-size: 1.1rem; /* Larger font */
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+        .accordion-btn:hover {
+            background: var(--secondary-color);
+        }
+        .accordion-btn.active {
+            background: var(--secondary-color);
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        .accordion-btn i {
+            transition: transform 0.3s ease;
+        }
+        .accordion-btn.active i {
+            transform: rotate(180deg);
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease-out; /* Smoother transition */
+            padding: 0 1.5rem;
+            background: var(--light-color);
+            border: 1px solid #e0e0e0;
+            border-top: none;
+            border-radius: 0 0 var(--radius-md) var(--radius-md);
+        }
+        .accordion-content p, .accordion-content ul {
+            padding: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+         .accordion-content ul {
+            list-style-position: inside;
+            padding-left: 0.5rem;
+        }
+        .accordion-content ul li {
+            margin-bottom: 0.5rem;
+        }
+
+
+        /* Document List */
+        .document-list {
+            list-style: none;
+            margin: 1.5rem 0;
+            padding: 0;
+        }
+        .document-list li {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.3s ease;
+        }
+        .document-list li:last-child {
+            border-bottom: none;
+        }
+        .document-list li:hover {
+            background-color: #e9ecef;
+        }
+        .document-list a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.05rem;
+        }
+        .document-list a i {
+            margin-right: 0.75rem;
+            color: var(--accent-color);
+        }
+        .document-list a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        /* Registration Form */
+        .registration-form {
+            max-width: 700px;
+            margin: 2rem auto; /* More margin around form */
+            padding: 2rem;
+            background-color: #fff; /* Form on white background */
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.6rem; /* More space after label */
+            font-weight: 600; /* Bolder labels */
+            color: var(--primary-color);
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem 1rem; /* Adjusted padding */
+            border: 1px solid #ced4da; /* Softer border */
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--secondary-color);
+            outline: none;
+            box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25); /* Focus shadow */
+        }
+        .address-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+        .submit-btn {
+            background: var(--accent-color);
+            color: white;
+            padding: 1rem 1.5rem; /* More padding */
+            border: none;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            font-size: 1.1rem; /* Larger font */
+            font-weight: bold;
+            transition: var(--transition);
+            width: 100%;
+            margin-top: 1rem; /* Space before button */
+        }
+        .submit-btn:hover {
+            background: #c56a19; /* Darker accent */
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #E0F2FE; /* Match top bar */
+            color: var(--primary-color);
+            padding: 2.5rem 0;
+            text-align: left;
+            font-size: 0.95rem;
+            border-top: 3px solid var(--secondary-color);
+        }
+        .footer h2 {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        .footer p {
+            color: var(--text-color);
+            font-size: 0.9rem; /* Consistent small text in footer */
+        }
+        .footer .contact-details a {
+            color: var(--secondary-color);
+        }
+        .footer .contact-details a:hover {
+            color: var(--accent-color);
+        }
+        .footer .contact-details strong {
+            color: var(--primary-color);
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+        .footer .col-md-3, .footer .col-md-4, .footer .col-md-2 {
+            flex-basis: calc(33.333% - 1rem);
+            min-width: 250px;
+            padding: 0;
+            border-right: none;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--primary-color);
+            width: 100%;
+        }
+        .footer-copyright p b {
+            color: var(--primary-color);
+        }
+
+        .social-icons {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 0.5rem; /* Space above icons */
+        }
+        .social-icons li a {
+            color: var(--primary-color);
+            font-size: 1.75rem;
+            transition: var(--transition);
+            padding: 0.5rem;
+            display: inline-block;
+        }
+        .social-icons li a:hover {
+            color: var(--accent-color);
+            transform: scale(1.1);
+        }
+        .footer .simplenews-subscriber-form {
+            display: flex;
+            margin-top: 0.5rem;
+        }
+        .footer .simplenews-subscriber-form input[type="email"] {
+            padding: 0.6rem;
+            border: 1px solid var(--primary-color);
+            border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+            flex-grow: 1; /* Allow input to take space */
+            margin-right: -1px; /* Overlap borders slightly */
+        }
+        .footer .simplenews-subscriber-form button {
+            padding: 0.6rem 1rem;
+            background-color: var(--accent-color);
+            color: white;
+            border: 1px solid var(--accent-color);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            cursor: pointer;
+            font-weight: 500;
+        }
+         .footer .simplenews-subscriber-form button:hover {
+            background-color: #c56a19;
+            border-color: #c56a19;
+        }
+
+
+        /* Media Queries */
+        @media (max-width: 992px) { /* Tablet */
+            .nav {
+                justify-content: space-between; /* Allow mobile menu button to be on one side */
+            }
+            .mobile-menu-btn { /* Show mobile menu button */
+                display: block !important; /* Override inline style if any */
+                font-size: 1.8rem;
+                background: none;
+                border: none;
+                color: white;
+                cursor: pointer;
+                padding: 0.5rem;
+            }
+            .nav-menu {
+                display: none; /* Hide desktop menu */
+                flex-direction: column;
+                position: absolute;
+                top: 100%; /* Position below header */
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-color);
+                box-shadow: var(--shadow-md);
+                z-index: 999; /* Ensure it's above other content but below sticky header if needed */
+            }
+            .nav-menu.active { /* Class toggled by JS */
+                display: flex;
+            }
+            .nav-menu li {
+                width: 100%;
+                margin-left: 0;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+            .nav-menu li:last-child {
+                border-bottom: none;
+            }
+            .nav-menu a {
+                padding: 1rem 1.5rem;
+                width: 100%;
+                text-align: left;
+            }
+            .nav-menu a:hover, .nav-menu a.active {
+                 background-color: var(--accent-color);
+            }
+
+            .mega-menu { /* Adjust mega menu for mobile */
+                position: static;
+                width: 100%;
+                box-shadow: none;
+                border-top: none;
+                padding: 1rem;
+                background-color: var(--dark-color); /* Darker bg for dropdown */
+                min-width: unset;
+            }
+            .mega-menu-content {
+                flex-direction: column;
+            }
+            .nav-menu li:hover .mega-menu { /* No hover on mobile, click/touch instead */
+                display: none;
+            }
+            .nav-menu li.mega-menu-open .mega-menu { /* JS Toggled class */
+                display: block;
+            }
+
+
+            .footer .col-md-3, .footer .col-md-4, .footer .col-md-2 {
+                flex-basis: calc(50% - 0.75rem);
+            }
+             .main-content {
+                padding: 0 1rem;
+            }
+        }
+
+
+        @media (max-width: 768px) { /* Mobile */
+            body {
+                font-size: 15px;
+            }
+            .logo-topbar-container {
+                flex-direction: column;
+                padding: 1rem;
+                text-align: center;
+            }
+            .logo-container {
+                margin-bottom: 1rem;
+            }
+            .logo-container img {
+                width:100px; height:100px;
+            }
+            .logo-container h2 {
+                font-size: 1.3rem;
+            }
+            .top-bar {
+                flex-direction: column;
+                gap: 1rem;
+                width: 100%;
+            }
+            .search-bar {
+                width: 100%;
+            }
+            .search-bar input[type="search"]{
+                width: 100%; /* Take full width within its container */
+                flex-grow: 1;
+            }
+            .section > h2 {
+                font-size: 1.8rem;
+            }
+             #home > h2:first-of-type {
+                font-size: 2rem;
+            }
+            #home p:first-of-type {
+                font-size: 1rem;
+            }
+            .news-grid-home {
+                grid-template-columns: 1fr; /* Stack news cards */
+            }
+
+
+            .main-layout { /* For policy pages */
+                padding: 1rem;
+                flex-direction: column;
+            }
+            .sidebar, .policy-page-section { /* Assuming policy pages might use .policy-page-section */
+                width: 100%;
+                max-width: none;
+            }
+            .sidebar { /* For policy pages */
+                margin-bottom: 1.5rem;
+            }
+
+            .footer .col-md-3, .footer .col-md-4, .footer .col-md-2 {
+                flex-basis: 100%;
+                margin-bottom: 1.5rem;
+            }
+            .footer .simplenews-subscriber-form input[type="email"]{
+                margin-bottom: 0.5rem;
+                margin-right: 0;
+                width: 100%;
+            }
+             .footer .simplenews-subscriber-form {
+                flex-direction: column;
+            }
+            .footer .simplenews-subscriber-form button{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="logo-topbar-container">
+        <div class="logo-container">
+            <img src="580759532717013320__1.png" alt="SPW Logo">
+            <h2 data-translate-key="logoTitle">የወላይታ ማህበረሰብ አቀፍ ፓርቲ</h2>
+        </div>
+
+        <div class="top-bar">
+            <div class="language-select">
+                <label for="language-select" class="sr-only" data-translate-key="langLabel">ቋንቋ ይምረጡ</label>
+                <i class="fas fa-language" aria-hidden="true"></i>
+                <select id="language-select" aria-label="Select Language">
+                    <option value="am" data-translate-key="langAmharic">አማርኛ</option>
+                    <option value="en" data-translate-key="langEnglish">English</option>
+                </select>
+            </div>
+
+            <form class="search-bar" role="search">
+                <label for="site-search" class="sr-only" data-translate-key="searchSrOnly">Search the site</label>
+                <input type="search" id="site-search" data-translate-key="searchPlaceholder" placeholder="Search/ፈልግ" aria-label="Search" />
+                <button type="submit">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                    <span class="sr-only" data-translate-key="searchBtnSr">ፈልግ</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <header class="header">
+        <nav class="nav container">            <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">☰</button>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active" data-target="home"><i class="fas fa-home"></i><span data-translate-key="navHome">መነሻ</span></a></li>
+                <li>
+                    <a href="#" class="nav-link has-megamenu" data-target="about"><i class="fas fa-landmark"></i><span data-translate-key="navPolicy">የፓርቲው ፖሊሲዎች</span></a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="mega-menu-column">
+                                <h3><i class="fas fa-chart-line"></i><span data-translate-key="policyEconomic">የኢኮኖሚ ፖሊሲ</span></h3>
+                                <ul>
+                                    <li><a href="policy-job-creation.html"><i class="fas fa-briefcase"></i><span data-translate-key="econJobCreation">የስራ እድል ፈጠራ</span></a></li>
+                            <li><a href="policy-subsidy.html"><i class="fas fa-coins"></i><span data-translate-key="econSubsidy">ድጎማ</span></a></li>
+                           <li><a href="policy-industrial-dev.html"><i class="fas fa-industry"></i><span data-translate-key="econIndustrialDev">የኢንዱስትሪ ልማት</span></a></li>
+                                    <li><a href="policy-agricultural-dev.html"><i class="fas fa-tractor"></i><span data-translate-key="econAgriDev">የግብርና ልማት</span></a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h3><i class="fas fa-users"></i><span data-translate-key="policySocial">ማህበራዊ ፖሊሲዎች</span></h3>
+                                <ul>
+                                    <li><a href="policy 1.html"><i class="fas fa-hospital"></i><span data-translate-key="socialHealth">ጤና</span></a></li>
+                                    <li><a href="policy 2.html"><i class="fas fa-graduation-cap"></i><span data-translate-key="socialEducation">ትምህርት</span></a></li>
+                                    <li><a href="policy 3.html"><i class="fas fa-balance-scale"></i><span data-translate-key="socialJustice">የፍትህ ስርዓት</span></a></li>
+                                    <li><a href="policy-gender-equality.html"><i class="fas fa-venus-mars"></i><span data-translate-key="socialGenderEq">የጾታ እኩልነት</span></a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h3><i class="fas fa-leaf"></i><span data-translate-key="policyEnvironment">የአካባቢ ጥበቃ</span></h3>
+                                <ul>
+                                    <li><a href="policy-forest-conservation.html"><i class="fas fa-tree"></i><span data-translate-key="envForestCons">የደን ጥበቃ</span></a></li>
+                                    <li><a href="policy-pollution-control.html"><i class="fas fa-smog"></i><span data-translate-key="envPollutionCtrl">የብክለት ቁጥጥር</span></a></li>
+                                    <li><a href="policy-waste-management.html"><i class="fas fa-recycle"></i><span data-translate-key="envWasteMgmt">ቆሻሻ አወጋገድ</span></a></li>
+                                    <li><a href="policy-sustainable-agriculture.html"><i class="fas fa-seedling"></i><span data-translate-key="envSustainableAgri">ዘላቂ ግብርና</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#news" class="nav-link" data-target="news"><i class="fas fa-newspaper"></i><span data-translate-key="navNews">ዜና</span></a></li>
+                <li><a href="#magazine" class="nav-link" data-target="magazine"><i class="fas fa-book-open"></i><span data-translate-key="navMagazine">መፅሔት</span></a></li>
+                <li><a href="#membership" class="nav-link" data-target="membership"><i class="fas fa-user-friends"></i><span data-translate-key="navMembership">አባልነት</span></a></li>
+                <li><a href="#documents" class="nav-link" data-target="documents"><i class="fas fa-file-alt"></i><span data-translate-key="navDocuments">ሰነዶች</span></a></li>
+                <li><a href="#register" class="nav-link" data-target="register"><i class="fas fa-edit"></i><span data-translate-key="navRegister">አባል ለመሆን</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <h2 data-translate-key="homeWelcomeTitle">እንኳን ደህና መጣችው</h2>
+            <p data-translate-key="homeWelcomePara1">እንኳን ወደ ወላይታ ማህበረሰብ አቀፍ ፓርቲ በደህና መጡ። ተልዕኳችን ግልፅነትን፣ መልካም አስተዳደርን እና ዘላቂ ልማትን በማስፈን ዜጎችን በእኩልነት መብት፣ በማህበራዊ ፍትህ እና በኢኮኖሚያዊ እድሎች ማብቃት ነው። በወላይታ ውስጥ ያለ እያንዳንዱ ግለሰብ የመልማት እድል ሊሰጠው ይገባል ብለን እናምናለን፤ ይህንን ራዕይ እውን ለማድረግ የድህነትን፣ የእኩልነት መጓደልን እና አስፈላጊ አገልግሎቶችን የማግኘት ቁልፍ ተግዳሮቶችን ለመቅረፍ ቁርጠኞች ነን። 
+<br><br>የፓርቲው ሰነዶች፣መተዳደሪያ ደንባችን፣ፕሮግራማችን እና ፖሊሲዎቻችን የጥረታችን አስኳል ናቸው። እነዚህ ሰነዶች የፓርቲያችንን ተግባር መሰረት ያደረጉ እና ለዴሞክራሲ፣ ለፍትሃዊነት እና ለተጠያቂነት እሴቶቻችን ታማኝ መሆናችንን ያረጋግጣሉ። መተዳደሪያ ደንባችን የፓርቲውን የውስጥ መዋቅር እና አሠራር የሚመራ ሲሆን ፕሮግራሞቻችን እና ፖሊሲዎቻችን የኢትዮጵያ ዜጎችን ህይወት ለማሻሻል ያለንን ስትራቴጂያዊ ግቦቻችንን እና ተግባሮችን ይዘረዝራሉ። የምንመራው በኢኮኖሚ ማጎልበት፣ የትምህርት ተደራሽነት፣ ለሁሉም የጤና አገልግሎት እና ህዝብን የሚያስቀድም ፍትሃዊ የፖለቲካ ምህዳር ነው።
+            </p>
+            <h2 data-translate-key="homeCurrentNewsTitle">ወቅታዊ ዜናዎች</h2>
+            <div class="news-grid-home">
+                <article class="news-card-home">
+                    <div class="news-card-home-image-placeholder"><i class="fas fa-newspaper"></i></div>
+                    <div class="news-card-home-content">
+                        <div class="news-date" data-translate-key="newsCard1Date">የካቲት 27/2017 ዓ.ም</div>
+                        <h2 data-translate-key="newsCard1Title">የወላይታ ማህበረሰብ አቀፍ ፓርቲ ታላቅ ጉባኤ ሊያካሂድ ነው።</h2>
+                        <p data-translate-key="newsCard1Para">የወላይታ ማህበረሰብ አቀፍ ፓርቲ (ወማአፓ) መላ አባላቱንና ደጋፊዎቹን ያሳተፈ ታላቅ ጉባኤ በቅርቡ ሊያካሂድ መሆኑን አስታወቀ።</p>
+                        <a href="#news" class="nav-link read-more-btn" data-target="news"><span data-translate-key="readMore">ተጨማሪ ያንብቡ</span> <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="news-card-home">
+                     <div class="news-card-home-image-placeholder"><i class="fas fa-flag"></i></div>
+                    <div class="news-card-home-content">
+                        <div class="news-date" data-translate-key="newsCard2Date">የካቲት 26/2017 ዓ.ም</div>
+                        <h2 data-translate-key="newsCard2Title">የካራማራ ድል 47ኛ ዓመት!</h2>
+                        <p data-translate-key="newsCard2Para">ዛሬ 47ኛው የካራማራ ድል በዓል ቀን ነው። ከወራሪዋ ሶማሊያና ግብረ አበሮቿ ጋር የተደረገው አልህ አስጨራሹ ጦርነት በኢትዮጵያ አሸናፊነት ተደምድሟል።</p>
+                        <a href="#news" class="nav-link read-more-btn" data-target="news"><span data-translate-key="readMore">ተጨማሪ ያንብቡ</span> <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="news-card-home">
+                    <div class="news-card-home-image-placeholder"><i class="fas fa-users-cog"></i></div>
+                    <div class="news-card-home-content">
+                        <div class="news-date" data-translate-key="newsCard3Date">ጥር 24/2017 ዓ.ም</div>
+                        <h2 data-translate-key="newsCard3Title">አዲስ አባላት ስልጠና ተጠናቀቀ</h2>
+                        <p data-translate-key="newsCard3Para">የወላይታ ማህበረሰብ አቀፍ ፓርቲ (ወማአፓ) ለፓርቲው አባላት ያዘጋጀው የአቅም ግንባታ ስልጠና በወላይታ ሶዶ በስኬት ተጠናቋል።</p>
+                        <a href="#news" class="nav-link read-more-btn" data-target="news"><span data-translate-key="readMore">ተጨማሪ ያንብቡ</span> <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section id="news" class="section">
+            <h2 data-translate-key="newsSectionTitle">የቅርብ ጊዜ ዜናዎች</h2>
+            <article class="news-article">
+                <div class="news-date" data-translate-key="newsArticle1Date">ጥር 24/2017 ዓ.ም</div>
+                <h3 data-translate-key="newsArticle1Title">አዲስ አባላት ስልጠና</h3>
+                <p data-translate-key="newsArticle1Intro1">የወላይታ ማህበረሰብ አቀፍ ፓርቲ (ወማአፓ) ለፓርቲው አባላት ያዘጋጀው የአቅም ግንባታ ስልጠና በስኬት ተጠናቋል። ስልጠናው የተካሄደው በ ወላይታ ሶዶ ሲሆን፣ የተለያዩ የፓርቲው አባላት ተሳታፊ ሆነዋል።</p>
+                <p data-translate-key="newsArticle1Intro2">ስልጠናው በተለይ በፖለቲካ ትንተና፣ በውይይት ክህሎት፣ በአመራር ስልቶችና በማህበረሰብ ተሳትፎ ላይ ያተኮረ ነበር። የፓርቲው አመራሮችና የዘርፉ ባለሙያዎች ለተሳታፊዎች ስልጠና በመስጠት አባላቱ ለፓርቲው እድገት የሚያበረክቱትን አስተዋጽኦ እንዲያሳድጉ አድርገዋል።</p>
+                <p data-translate-key="newsArticle1Quote1">የፓርቲው ቃል አቀባይ ለጋዜጠኞች በሰጡት መግለጫ፥ “ስልጠናው አባላቱ የፓርቲውን ዓላማዎች በግልጽ እንዲረዱና ለውጥ ለማምጣት እንዲነሳሱ ያግዛቸዋል።” ብለዋል።</p>
+                <p data-translate-key="newsArticle1Quote2">ተሳታፊዎች በስልጠናው ላይ ያገኙትን እውቀትና ክህሎት በመጠቀም ፓርቲው የሚከተለውን መርሆችና ዓላማዎች ለማሳካት በንቃት እንደሚሳተፉ ገልጸዋል። “ስልጠናው እጅግ ጠቃሚ ነበር። በዚህ ያገኘነውን ዕውቀትና ክህሎት በመጠቀም ለፓርቲው እድገት የበኩላችንን እንወጣለን” ሲሉ አስተያየታቸውን ከሰጡት ተሳታፊዎች መካከል ወጣት ዋለልኝ አላሮ ተናግረዋል።</p>
+                <p data-translate-key="newsArticle1InfoIntro">ስልጠናውን በተመለከተ የተለያዩ መረጃዎች ከዚህ በታች ቀርበዋል፦</p>
+                
+                <span data-translate-key="newsArticle1List1Title" style="font-weight:bold;">የስልጠናው አላማዎች</span>
+                <ul data-translate-key="newsArticle1List1">
+                    <li data-translate-key="newsArticle1List1Item1">የፓርቲውን ራዕይና ተልዕኮ ለአባላት በግልጽ ማስረዳት</li>
+                    <li data-translate-key="newsArticle1List1Item2">በፓርቲው አወቃቀር ላይ ግንዛቤ መፍጠር</li>
+                    <li data-translate-key="newsArticle1List1Item3">በአመራር ክህሎት ላይ ማሰልጠን</li>
+                    <li data-translate-key="newsArticle1List1Item4">ለማህበረሰቡና ለፓርቲው እድገት አባላቱ ያላቸውን ድርሻ ማሳወቅ</li>
+                </ul>
+                <br>
+                <span data-translate-key="newsArticle1List2Title" style="font-weight:bold;">የስልጠናው ይዘት</span>
+                <ul data-translate-key="newsArticle1List2">
+                    <li data-translate-key="newsArticle1List2Item1">የፓርቲው መርሆዎችና ዓላማዎች</li>
+                    <li data-translate-key="newsArticle1List2Item2">የፖለቲካ ትንተናና የውይይት ክህሎት</li>
+                    <li data-translate-key="newsArticle1List2Item3">ውጤታማ የአመራር ስልቶች</li>
+                    <li data-translate-key="newsArticle1List2Item4">ከማህበረሰቡ ጋር መስራት</li>
+                </ul>
+                <br>
+                <p data-translate-key="newsArticle1ParaPostList">በስልጠናው ላይ የተሳተፉ አባላት ብዛት 60 ሲሆን፣ ፓርቲው ለወደፊቱም የአባላቱን አቅም ለማሳደግ የተለያዩ ስልጠናዎችን ለመስጠት ዝግጁ መሆኑን አስታውቋል። ወማአፓ የአባላትን ተሳትፎ ለማሳደግና ዴሞክራሲያዊ ስርዓትን ለመገንባት ያለውን ቁርጠኝነት በስልጠናው በግልጽ አሳይቷል።</p>
+            </article>
+            <article class="news-article">
+                <div class="news-date" data-translate-key="newsArticle2Date">የካቲት 27/2017 ዓ.ም</div>
+                <h3 data-translate-key="newsArticle2Title">የወላይታ ማህበረሰብ አቀፍ ፓርቲ ታላቅ ጉባኤ ሊያካሂድ ነው።</h3>
+                <p data-translate-key="newsArticle2Intro1">የወላይታ ማህበረሰብ አቀፍ ፓርቲ (ወማአፓ) መላ አባላቱንና ደጋፊዎቹን ያሳተፈ ታላቅ ጉባኤ በቅርቡ ሊያካሂድ መሆኑን አስታወቀ። ጉባኤው በ____ቦታ(ለጊዜው ስላልተወሰነ) እና በ____ቀን(ለጊዜው ስላልተወሰነ) እንደሚካሄድ የፓርቲው ጽህፈት ቤት አስታውቋል።</p>
+                <p data-translate-key="newsArticle2Intro2">ይህ ጉባኤ ፓርቲው በቀጣይነት ሊከተላቸው በሚችላቸው አቅጣጫዎች ላይ በስፋት የሚመክርበትና አባላቱ በነጻነት ሃሳባቸውን የሚገልጹበት እንደሚሆን ተገልጿል። ጉባኤው የፓርቲውን ወቅታዊ ሁኔታ፣ የፖሊሲ አቅጣጫዎች، የአባላት ተሳትፎ እና ሌሎች ወቅታዊ ጉዳዮች ላይ ትኩረት ያደርጋል።</p>
+                <p data-translate-key="newsArticle2Quote1">የፓርቲው ሊቀመንበር በጉባኤው ዙሪያ በሰጡት መግለጫ፣ “ይህ ጉባኤ ፓርቲያችንን ወደ ላቀ ደረጃ ለማሸጋገርና የህዝቡን ተሳትፎ ለማረጋገጥ ትልቅ ሚና ይኖረዋል። አባላትና ደጋፊዎቻችን በጉባኤው በንቃት እንዲሳተፉ ጥሪያችንን እናቀርባለን” ብለዋል።</p>
+                
+                <span data-translate-key="newsArticle2List1Title" style="font-weight:bold;">በጉባኤው የሚጠበቁ ዋና ዋና አጀንዳዎች የሚከተሉት ናቸው፦</span>
+                <ul data-translate-key="newsArticle2List1">
+                    <li data-translate-key="newsArticle2List1Item1">የፓርቲው ዓመታዊ ሪፖርት: የፓርቲው የ2016 ዓ.ም. የአፈጻጸም ሪፖርት ቀርቦ ውይይት ይደረጋል።</li>
+                    <li data-translate-key="newsArticle2List1Item2">የፖሊሲ ክለሳ: ፓርቲው ያሉትን ፖሊሲዎች በመገምገምና በማሻሻል ላይ ይወያያል።</li>
+                    <li data-translate-key="newsArticle2List1Item3">የአመራር ምርጫ: አስፈላጊ ከሆነ የአመራር አካላትን የመምረጥ ሂደት ይካሄዳል።</li>
+                    <li data-translate-key="newsArticle2List1Item4">የፓርቲው የወደፊት አቅጣጫ: ፓርቲው ወደፊት ሊከተላቸው በሚገቡ አቅጣጫዎች ላይ አባላት ሃሳባቸውን ይሰጣሉ።</li>
+                    <li data-translate-key="newsArticle2List1Item5">የአባላት ተሳትፎ: የአባላትን ተሳትፎ ለማሳደግ የሚረዱ መንገዶች ይመከራሉ።</li>
+                </ul>
+                <br>
+                <p data-translate-key="newsArticle2ParaPostList1">በጉባኤው ላይ የተለያዩ ፓናል ውይይቶች፣ ስልጠናዎችና ሌሎች ዝግጅቶች እንደሚኖሩ የተገለጸ ሲሆን፣ አባላትና ደጋፊዎችም በጉባኤው ላይ እንዲሳተፉ ጥሪ ቀርቧል።</p>
+                <p data-translate-key="newsArticle2ParaPostList2">“ጉባኤው ፓርቲያችንን የበለጠ የሚያጠናክርና ለህብረተሰቡ ለውጥ የሚያመጣ ይሆናል። አባላት በጉባኤው ላይ በመገኘት ሃሳባቸውን እንዲያካፍሉና ለፓርቲው እድገት እንዲሳተፉ እጠይቃለሁ” ሲሉ አባላቱ አስተያየታቸውን ሰጥተዋል።</p>
+                <p data-translate-key="newsArticle2ParaPostList3">ወማአፓ ይህን ታላቅ ጉባኤ በማካሄድ ለወደፊቱ የፖለቲካ እንቅስቃሴው አቅጣጫ በማስቀመጥና አባላትን በማነቃቃት ለውጥ ያለውን ቁርጠኝነት ያሳያል ተብሎ ይጠበቃል።</p>
+            </article>
+            <article class="news-article">
+                 <div class="news-date" data-translate-key="newsArticle3Date">የካቲት 26/2017 ዓ.ም</div>
+                    <h3 data-translate-key="newsArticle3Title">የኢትዮጵያ ጦር የሶማሊያን ጦር በማሸነፍ ካራማራ ተራራ ላይ ደማቅ ታሪክ የፃፈበት 47ኛ ዓመት!</h3>
+                    <p data-translate-key="newsArticle3ParaFull">ዛሬ 47ኛው የካራማራ ድል በዓል ቀን ነው። እንኳን አደረሰን! ከወራሪዋ ሶማሊያና ግብረ አበሮቿ ጋር የተደረገው አልህ አስጨራሹ ጦርነት እልፍ አዕላፍ ሕይወት ተገብሮበት በኢትዮጵያ አሸናፊነት ተደምድሟል።
+                        <br><br>
+                        በዚህ ጦርነት ወደ 15 ሺህ የሚጠጉ የኩባ ሰራዊቶች እንዲሁም የየመን ወታደሮች ስለኛ መስዕዋትነት መክፈላቸው በታሪክ ተዘግቧል።
+                        <br><br>
+                        እንኳን ለድሉ መታሰቢያ በዓል አደረሰን!
+                    </p>
+            </article>
+            <article class="news-article">
+                <div class="news-date" data-translate-key="newsArticle4Date">ጥር 24/2017 ዓ.ም</div>
+                <h3 data-translate-key="newsArticle4Title">ሉሲ ከተዋወቀችን ከ50 ዓመታት በኋላም ለሳይንቲስቶች የቤት ሥራቸው ሆናለች።</h3>
+                <video width="640" height="360" controls poster="lucy_poster.jpg">
+                    <source src="video5829915868024280953.mp4" type="video/mp4">
+                    <span data-translate-key="videoNotSupported">Your browser does not support the video tag.</span>
+                </video>
+                <br>
+                <p data-translate-key="newsArticle4Para1">ስለ ሉሲ ወይም የአስትሮፒቲከስ አፋረንሲስ ዝርያ የመንቀሳቀስ ችሎታ አዳዲስ ግንዛቤዎችን ይሰጣል የተባለ ጥናት ይፋ ሆኗል። የሉሲ አጽም ከተገኘ ከ50 ዓመታት በኋላም ምርምሩ ቀጥሏል።</p>
+                <p data-translate-key="newsArticle4Para2">በተመሳሳይ ከ8 ዓመታት በፊትም እንዲሁ የሉሲን አሟሟት በመለከት በተካሄደ ጥናት ሉሲ ከትልቅ ዛፍ ላይ ወድቃ የመሞቷ ዜና ከተነገረ በኋላ በርካቶችን አስገርሞ ነበር። አሁን ላይ በከረንት ባዮሎጂ (Current Biology ) የታተመው የምርምር ሥራ እንደሚያመለክተው ደግሞ ስለ ሉሲ ወይም ዝርያዎቿ የመንቀሳቀስ ችሎታዎች አዳዲስ ግንዛቤዎችን የሰጠ ነው ተብሏል።</p>
+                <p data-translate-key="newsArticle4Para3">በዚህም ተመራማሪዎች የቅሪተ አካል አሻራዎችን እና የአፅም ቅሪቶችን በመመርመር የሉሲ ዝርያዎች እንደ ዘመናዊው ሰው በብቃትና በፍጥነት ባይሆንም የመሮጥ አቅም ሊኖራቸው ይችላል የሚል መደምደሚያ ላይ ደርሰዋል። ሳይንቲስቶቹ የሉሲ ዳሌ እና የእግር አጥንቶችን አወቃቀር በመመርመር ዝርያዎቿ አኗኗራቸው መሬት ላይ የተመሰረተ፤ በሁለት እግር መራመድ የሚችሉ እና አልፎ አልፎ ለመጠለያ፣ ለምግብ ወይም ደኅንነታቸውን ለመጠበቅ በዛፎች ላይ እንደሚወጡ ያትታል። በተጨማሪም የተለያዩ ግብአቶችን በመጠቀም የ3D ተንቀሳቃሽ ምስል (Simulation) የሰሩ ሲሆን ይህም ሉሲ ምናልባትም እስከ 5-6 ማይል በሰዓት ለአጭር ርቀት ልትሮጥ እንደምትችል ይጠቁማል።</p>
+                <p>
+                    <span data-translate-key="newsArticle4LinkText">የምርምር ጥናቱን ለማግኘት</span> 👉 <a href="https://www.cell.com/current-biology/fulltext/S0960-9822(24)01566-5" target="_blank" rel="noopener noreferrer">https://www.cell.com/current-biology/fulltext/S0960-9822(24)01566-5</a>
+                </p>
+            </article>
+        </section>
+
+        <!-- Magazine Section -->
+        <section id="magazine" class="section">
+            <h2 data-translate-key="magazineSectionTitle">የፓርቲ መጽሔቶች</h2>
+            <div class="magazine-grid">
+                 <div class="magazine-card">
+                    <div class="magazine-image"><img src ="5818985958396249183.jpg" alt="Magazine Cover 1"></div>
+                    <div class="magazine-content">
+                        <h3 data-translate-key="magazine1Title">መስከረም-ጥቅምት 2017</h3>
+                        <a href="magazine-1.pdf" download><i class="fas fa-download"></i> <span data-translate-key="downloadBtn">ያውርዱ</span></a>
+                    </div>
+                </div>
+                <div class="magazine-card">
+                    <div class="magazine-image"><i class="fas fa-book-reader"></i></div>
+                    <div class="magazine-content">
+                        <h3 data-translate-key="magazine2Title">ህዳር-ታህሳስ 2017</h3>
+                        <a href="#" download><i class="fas fa-download"></i> <span data-translate-key="downloadBtn">ያውርዱ</span></a>
+                    </div>
+                </div>
+                <div class="magazine-card">
+                    <div class="magazine-image"><i class="fas fa-book-reader"></i></div>
+                    <div class="magazine-content">
+                        <h3 data-translate-key="magazine3Title">ጥር-የካቲት 2017</h3>
+                        <a href="#" download><i class="fas fa-download"></i> <span data-translate-key="downloadBtn">ያውርዱ</span></a>
+                    </div>
+                </div>
+                <div class="magazine-card">
+                    <div class="magazine-image"><i class="fas fa-book-reader"></i></div>
+                    <div class="magazine-content">
+                        <h3 data-translate-key="magazine4Title">መጋቢት-ሚያዚያ 2017</h3>
+                        <a href="#" download><i class="fas fa-download"></i> <span data-translate-key="downloadBtn">ያውርዱ</span></a>
+                    </div>
+                </div>
+                <div class="magazine-card">
+                    <div class="magazine-image"><i class="fas fa-book-reader"></i></div>
+                    <div class="magazine-content">
+                        <h3 data-translate-key="magazine5Title">ግንቦት-ሰኔ 2017</h3>
+                        <a href="#" download><i class="fas fa-download"></i> <span data-translate-key="downloadBtn">ያውርዱ</span></a>
+                    </div>
+                </div>
+                <div class="magazine-card">
+                    <div class="magazine-image"><i class="fas fa-book-reader"></i></div>
+                    <div class="magazine-content">
+                        <h3 data-translate-key="magazine6Title">ሐምሌ-ነሐሴ 2017</h3>
+                        <a href="#" download><i class="fas fa-download"></i> <span data-translate-key="downloadBtn">ያውርዱ</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!-- Membership Section -->
+         <section id="membership" class="section">
+            <h2 data-translate-key="membershipSectionTitle">አባልነት</h2>
+            <div class="accordion">
+                <button class="accordion-btn"><span data-translate-key="accordionReqTitle">የአባልነት መስፈርቶች</span> <i class="fas fa-chevron-down"></i></button>
+                <div class="accordion-content">
+                    <p data-translate-key="accordionReqPara1">ከዚህ በታች የተዘረዘሩትን መመዘኛዎች የሚያሟላ ማንኛውም ሰው የፓርቲው አባል መሆን ይችላል፡፡</p>
+                    <ul data-translate-key="accordionReqList">
+                        <li data-translate-key="accordionReqListItem1">ኢትዮጵያዊ የሆነ፤</li>
+                        <li data-translate-key="accordionReqListItem2">የፓርቲውን ፕሮግራም ና መተዳደሪያ ደንብ ተቀብሎ ተግባራዊ ለማድረግ ፍቃደኛ የሆነ፣</li>
+                        <li data-translate-key="accordionReqListItem3">መልካም ሥነ-ምግባር ያለውና በኅብረተሰቡ ውስጥ ተቀባይነት ያለው፣</li>
+                        <li data-translate-key="accordionReqListItem4">ዜጎችንና ሕዝቦችን በእኩልነት የሚያገለግል፣ የሕዝብ ጥቅምን የሚያስቀድም፣ከሙስናና ብልሹ አሠራሮች ራሱን ያራቀና ሌሎችንም የሚታገል፣</li>
+                        <li data-translate-key="accordionReqListItem5">የፓርቲውን ዓላማዎችን ተቀብሎ የተሰጠውን ኃላፊነት ለመወጣት ቁርጠኛ የሆነ፣</li>
+                        <li data-translate-key="accordionReqListItem6">እድሜ 18 ዓመት እና ከዚያ በላይ የሆነ፣</li>
+                        <li data-translate-key="accordionReqListItem7">የሌላ ፖለቲካ ፓርቲ አባል ያልሆነ፣</li>
+                        <li data-translate-key="accordionReqListItem8">የፖለቲካ ፓርቲ አባል የመሆን መብቱ በሕግ ያልተገደበ ወይም በፍርድ ቤት ውሳኔ ያልተገፈፈ።</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="accordion">
+                <button class="accordion-btn"><span data-translate-key="accordionAboutTitle">ስለ ፓርቲው አባልነት</span> <i class="fas fa-chevron-down"></i></button>
+                <div class="accordion-content">
+                    <p data-translate-key="accordionAboutPara1">የወላይታ ማህበረሰብ አቀፍ ፓርቲ (ወማአፓ)፣ ለፍትህ፣ ለእኩልነትና ለዘላቂ ልማት የሚሰራ የፖለቲካ ፓርቲ ነው። ፓርቲው በዴሞክራሲያዊ መርሆች ላይ የተመሠረተ፣ ለህዝብና ለአገር ጥቅም ቅድሚያ የሚሰጥ ነው።</p>
+                    <h3 data-translate-key="accordionAboutSubTitle1">የአባልነት ጠቀሜታዎች</h3>
+                    <ul data-translate-key="accordionAboutBenList">
+                        <li data-translate-key="accordionAboutBenListItem1"><b>የለውጥ አካል መሆን:</b> በፓርቲው ውስጥ በመሳተፍ ለህብረተሰቡ አዎንታዊ ለውጥ ለማምጣት የበኩሎን አስተዋጽኦ ያደርጋሉ።</li>
+                        <li data-translate-key="accordionAboutBenListItem2"><b>የሃሳብ ነፃነት:</b> ፓርቲው አባላቱ በነጻነት ሃሳባቸውን እንዲገልጹና በውሳኔ አሰጣጥ ሂደት ውስጥ እንዲሳተፉ ያበረታታል።</li>
+                        <li data-translate-key="accordionAboutBenListItem3"><b>የፖለቲካ ተሳትፎ:</b> በአገርና በማህበረሰብ ጉዳዮች ላይ በንቃት በመሳተፍ የፖለቲካ መብቶችዎን ይጠቀማሉ።</li>
+                        <li data-translate-key="accordionAboutBenListItem4"><b>የአመራር እድል:</b> በአመራርነት በመሳተፍ ለፓርቲውና ለህብረተሰቡ ለውጥ መሪነት ሚና ይወስዳሉ።</li>
+                        <li data-translate-key="accordionAboutBenListItem5"><b>የአቅም ግንባታ:</b> ፓርቲው ለአባላቱ የተለያዩ ስልጠናዎችንና የአቅም ግንባታ መርሀግብሮችን ያዘጋጃል።</li>
+                        <li data-translate-key="accordionAboutBenListItem6"><b>ማህበራዊ ትስስር:</b> ከተለያዩ የህብረተሰብ ክፍሎች ከመጡ አባላት ጋር በመገናኘት ጠንካራ ማህበራዊ ትስስር ይፈጥራሉ።</li>
+                        <li data-translate-key="accordionAboutBenListItem7"><b>መብቶችዎን ማስከበር:</b> በፓርቲው ውስጥ በመሳተፍ የራስዎንና የሌሎችንም መብቶች ለማስከበር ይሰራሉ።</li>
+                    </ul>
+                    <h3 data-translate-key="accordionAboutSubTitle2">የአባልነት ምዝገባ ሂደት</h3>
+                    <ul data-translate-key="accordionAboutProcList">
+                        <li data-translate-key="accordionAboutProcListItem1"><b>ማመልከቻ:</b> በአካል በመቅረብ ወይም በፓርቲው ድረ-ገጽ ላይ በሚገኝ የአባልነት ማመልከቻ ፎርም በመሙላት ማመልከት ይችላሉ።</li>
+                        <li data-translate-key="accordionAboutProcListItem2"><b>የማመልከቻ ቅጽ:</b> የማመልከቻ ቅጹን በአግባቡ ይሙሉ።</li>
+                        <li data-translate-key="accordionAboutProcListItem3"><b>ምዝገባ:</b> ፓርቲው ማመልከቻዎን ካረጋገጠ በኋላ ጊዜያዊ አባል ሆነው ይመዘገባሉ።</li>
+                        <li data-translate-key="accordionAboutProcListItem4"><b>የአባልነት መታወቂያ:</b> የአባልነት መታወቂያ ይሰጥዎታል።</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Documents Section -->
+        <section id="documents" class="section">
+            <h2 data-translate-key="documentsSectionTitle">የፓርቲው ሰነዶች</h2>
+            <ul class="document-list">
+                 <li><a href="constitution.pdf" download><i class="fas fa-file-contract"></i> <span data-translate-key="docConstitution">መተዳደሪያ ደንብ</span></a></li>
+                <li><a href="program.pdf" download><i class="fas fa-tasks"></i> <span data-translate-key="docProgram">ፕሮግራም</span></a></li>
+                <li><a href="founding.pdf" download><i class="fas fa-landmark"></i> <span data-translate-key="docFounding">መመስረቻ ፅሁፍ</span></a></li>
+                <li><a href="reports.pdf" download><i class="fas fa-chart-bar"></i> <span data-translate-key="docReports">ዓመታዊ ሪፖርቶች</span></a></li>
+                <li><a href="kits.pdf" download><i class="fas fa-id-card"></i> <span data-translate-key="docMembershipForm">የአባልነት ፎርም</span></a></li>
+            </ul>
+        </section>
+
+        <!-- Registration Section -->
+        <section id="register" class="section">
+            <h2 data-translate-key="registerSectionTitle">አባል ለመሆን ይመዝገቡ</h2>
+            <form class="registration-form" id="registrationForm">
+                <div class="form-group">
+                    <label for="fullName" data-translate-key="formFullNameLabel">ሙሉ ስም</label>
+                    <input type="text" id="fullName" name="fullName" required data-translate-key="formFullNamePlaceholder" placeholder="ሙሉ ስምዎን ያስገቡ">
+                </div>
+                <div class="form-group">
+                  <label for="age" data-translate-key="formAgeLabel">እድሜ</label>
+                  <input type="number" id="age" name="age" min="18" required data-translate-key="formAgePlaceholder" placeholder="እድሜዎ (ከ18 ዓመት በላይ)">
+                </div>
+                <div class="form-group">
+                    <label for="gender" data-translate-key="formGenderLabel">ፆታ</label>
+                    <select id="gender" name="gender" required>
+                        <option value="" disabled selected data-translate-key="formGenderOptionDefault">ፆታ ይምረጡ</option>
+                        <option value="male" data-translate-key="formGenderMale">ወንድ</option>
+                        <option value="female" data-translate-key="formGenderFemale">ሴት</option>
+                     </select>
+                </div>
+                <div class="form-group">
+                    <label for="phone" data-translate-key="formPhoneLabel">ስልክ ቁጥር</label>
+                    <input type="tel" id="phone" name="phone" required data-translate-key="formPhonePlaceholder" placeholder="ለምሳሌ 0912345678">
+                </div>
+                <div class="form-group">
+                    <label for="email" data-translate-key="formEmailLabel">ኢሜይል</label>
+                    <input type="email" id="email" name="email" required data-translate-key="formEmailPlaceholder" placeholder="example@domain.com">
+                </div>
+                <div class="form-group">
+                    <label for="education" data-translate-key="formEducationLabel">የትምህርት ደረጃ</label>
+                    <select id="education" name="education" required>
+                        <option value="" disabled selected data-translate-key="formEduOptionDefault">የትምህርት ደረጃ ይምረጡ</option>
+                        <option value="primary" data-translate-key="formEduPrimary">መሠረታዊ ትምህርት</option>
+                        <option value="secondary" data-translate-key="formEduSecondary">ሁለተኛ ደረጃ</option>
+                        <option value="diploma" data-translate-key="formEduDiploma">ዲፕሎማ</option>
+                        <option value="degree" data-translate-key="formEduDegree">የዩኒቨርስቲ ዲግሪ</option>
+                        <option value="masters" data-translate-key="formEduMasters">ማስተርስ ዲግሪ</option>
+                        <option value="phd" data-translate-key="formEduPhd">ዶክትሬት ዲግሪ</option>
+                        <option value="other" data-translate-key="formEduOther">ሌላ</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                  <label data-translate-key="formAddressLabel">አድራሻ</label>
+                  <div class="address-grid">
+                    <input type="text" name="region" data-translate-key="formAddrRegionPlaceholder" placeholder="ክልል" required>
+                    <input type="text" name="zone" data-translate-key="formAddrZonePlaceholder" placeholder="ዞን" required>
+                    <input type="text" name="city" data-translate-key="formAddrCityPlaceholder" placeholder="ከተማ" required>
+                    <input type="text" name="woreda" data-translate-key="formAddrWoredaPlaceholder" placeholder="ወረዳ" required>
+                    <input type="text" name="kebele" data-translate-key="formAddrKebelePlaceholder" placeholder="ቀበሌ" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                    <label for="reason" data-translate-key="formReasonLabel">ለምን አባል መሆን ፈለጉ? (አጭር ማብራሪያ)</label>
+                    <textarea id="reason" name="reason" rows="4" data-translate-key="formReasonPlaceholder" placeholder="የእርስዎን ሃሳብ በአጭሩ ይግለጹ..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> <span data-translate-key="formSubmitBtn">ቅጽ ላክ</span></button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4"> 
+                    <div class="newsletter">
+                        <h2 data-translate-key="footerNewsletterTitle">ዜና መጽሔት ይመዝገቡ</h2>
+                        <p data-translate-key="footerNewsletterPara">የቅርብ ጊዜ መረጃዎችን እና የፓርቲ ዜናዎችን በቀጥታ ወደ ኢሜልዎ ያግኙ።</p>
+                        <form class="simplenews-subscriber-form">
+                            <label for="edit-mail-0-value" class="sr-only" data-translate-key="footerEmailLabelSr">ኢሜል</label>
+                            <input type="email" id="edit-mail-0-value" name="mail" data-translate-key="footerEmailPlaceholder" placeholder="የኢሜል አድራሻዎ"
+                                class="form-email" required>
+                            <button type="submit" class="button" data-translate-key="footerSubscribeBtn">ይመዝገቡ</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-4"> 
+                    <div class="region-footer-31">
+                        <h2 data-translate-key="footerSocialTitle">ማህበራዊ ሚዲያ</h2>
+                        <p data-translate-key="footerSocialPara">በማህበራዊ ገጾቻችን ይከተሉን፤ ይሳተፉ።</p>
+                        <ul class="social-icons">
+                            <li><a href="#" target="_blank" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#" target="_blank" title="Twitter" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#" target="_blank" title="YouTube" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
+                            <li><a href="https://t.me/spw1415" target="_blank" title="Telegram" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-3"> 
+                    <div class="region-footer-41">
+                        <h2 data-translate-key="footerContactTitle">ያግኙን</h2>
+                        <div class="contact-details">
+                            <ul class="contact" style="list-style: none; padding-left: 0;">
+                                <li>
+                                    <p><i class="fas fa-phone-alt"></i> <strong data-translate-key="footerContactPhone">ስልክ:</strong> +251-704-379-452</p>
+                                </li>
+                                <li>
+                                    <p><i class="fas fa-envelope"></i> <strong data-translate-key="footerContactEmail">ኢሜይል:</strong> <a href="mailto:SPW1413@gmail.com">SPW1413@gmail.com</a>
+                                    </p>
+                                </li>
+                                 <li>
+                                    <p><i class="fas fa-map-marker-alt"></i> <strong data-translate-key="footerContactAddress">አድራሻ:</strong> <span data-translate-key="footerContactAddressDetail">ወላይታ ሶዶ</span></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-copyright">
+                <p><b data-translate-key="footerCopyright">© 2017 ዓ.ም የወላይታ ማህበረሰብ አቀፍ ፓርቲ።</b></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            am: {
+                pageTitle: "የወላይታ ማህበረሰብ አቀፍ ፓርቲ - መነሻ",
+                logoTitle: "የወላይታ ማህበረሰብ አቀፍ ፓርቲ",
+                langLabel: "ቋንቋ ይምረጡ",
+                langAmharic: "አማርኛ",
+                langEnglish: "English",
+                searchPlaceholder: "Search/ፈልግ",
+                searchSrOnly: "Search the site",
+                searchBtnSr: "ፈልግ",
+                navHome: "መነሻ",
+                navPolicy: "የፓርቲው ፖሊሲዎች",
+                policyEconomic: "የኢኮኖሚ ፖሊሲ",
+                econJobCreation: "የስራ እድል ፈጠራ",
+                econSubsidy: "ድጎማ",
+                econIndustrialDev: "የኢንዱስትሪ ልማት",
+                econAgriDev: "የግብርና ልማት",
+                policySocial: "ማህበራዊ ፖሊሲዎች",
+                socialHealth: "ጤና",
+                socialEducation: "ትምህርት",
+                socialJustice: "የፍትህ ስርዓት",
+                socialGenderEq: "የጾታ እኩልነት",
+                policyEnvironment: "የአካባቢ ጥበቃ",
+                envForestCons: "የደን ጥበቃ",
+                envPollutionCtrl: "የብክለት ቁጥጥር",
+                envWasteMgmt: "ቆሻሻ አወጋገድ",
+                envSustainableAgri: "ዘላቂ ግብርና",
+                navNews: "ዜና",
+                navMagazine: "መፅሔት",
+                navMembership: "አባልነት",
+                navDocuments: "ሰነዶች",
+                navRegister: "አባል ለመሆን",
+                homeWelcomeTitle: "እንኳን ደህና መጣችው",
+                homeWelcomePara1: "እንኳን ወደ ወላይታ ማህበረሰብ አቀፍ ፓርቲ በደህና መጡ። ተልዕኳችን ግልፅነትን፣ መልካም አስተዳደርን እና ዘላቂ ልማትን በማስፈን ዜጎችን በእኩልነት መብት፣ በማህበራዊ ፍትህ እና በኢኮኖሚያዊ እድሎች ማብቃት ነው። በወላይታ ውስጥ ያለ እያንዳንዱ ግለሰብ የመልማት እድል ሊሰጠው ይገባል ብለን እናምናለን፤ ይህንን ራዕይ እውን ለማድረግ የድህነትን፣ የእኩልነት መጓደልን እና አስፈላጊ አገልግሎቶችን የማግኘት ቁልፍ ተግዳሮቶችን ለመቅረፍ ቁርጠኞች ነን።<br><br>የፓርቲው ሰነዶች፣መተዳደሪያ ደንባችን፣ፕሮግራማችን እና ፖሊሲዎቻችን የጥረታችን አስኳል ናቸው። እነዚህ ሰነዶች የፓርቲያችንን ተግባር መሰረት ያደረጉ እና ለዴሞክራሲ፣ ለፍትሃዊነት እና ለተጠያቂነት እሴቶቻችን ታማኝ መሆናችንን ያረጋግጣሉ። መተዳደሪያ ደንባችን የፓርቲውን የውስጥ መዋቅር እና አሠራር የሚመራ ሲሆን ፕሮግራሞቻችን እና ፖሊሲዎቻችን የኢትዮጵያ ዜጎችን ህይወት ለማሻሻል ያለንን ስትራቴጂያዊ ግቦቻችንን እና ተግባሮችን ይዘረዝራሉ። የምንመራው በኢኮኖሚ ማጎልበት፣ የትምህርት ተደራሽነት፣ ለሁሉም የጤና አገልግሎት እና ህዝብን የሚያስቀድም ፍትሃዊ የፖለቲካ ምህዳር ነው።",
+                homeCurrentNewsTitle: "ወቅታዊ ዜናዎች",
+                newsCard1Date: "የካቲት 27/2017 ዓ.ም",
+                newsCard1Title: "የወላይታ ማህበረሰብ አቀፍ ፓርቲ ታላቅ ጉባኤ ሊያካሂድ ነው።",
+                newsCard1Para: "የወላይታ ማህበረሰብ አቀፍ ፓርቲ (ወማአፓ) መላ አባላቱንና ደጋፊዎቹን ያሳተፈ ታላቅ ጉባኤ በቅርቡ ሊያካሂድ መሆኑን አስታወቀ።",
+                readMore: "ተጨማሪ ያንብቡ",
+                newsCard2Date: "የካቲት 26/2017 ዓ.ም",
+                newsCard2Title: "የካራማራ ድል 47ኛ ዓመት!",
+                newsCard2Para: "ዛሬ 47ኛው የካራማራ ድል በዓል ቀን ነው። ከወራሪዋ ሶማሊያና ግብረ አበሮቿ ጋር የተደረገው አልህ አስጨራሹ ጦርነት በኢትዮጵያ አሸናፊነት ተደምድሟል።",
+                newsCard3Date: "ጥር 24/2017 ዓ.ም",
+                newsCard3Title: "አዲስ አባላት ስልጠና ተጠናቀቀ",
+                newsCard3Para: "የወላይታ ማህበረሰብ አቀፍ ፓርቲ (ወማአፓ) ለፓርቲው አባላት ያዘጋጀው የአቅም ግንባታ ስልጠና በወላይታ ሶዶ በስኬት ተጠናቋል።",
+                newsSectionTitle: "የቅርብ ጊዜ ዜናዎች",
+                newsArticle1Date: "ጥር 24/2017 ዓ.ም",
+                newsArticle1Title: "አዲስ አባላት ስልጠና",
+                newsArticle1Intro1: "የወላይታ ማህበረሰብ አቀፍ ፓርቲ (ወማአፓ) ለፓርቲው አባላት ያዘጋጀው የአቅም ግንባታ ስልጠና በስኬት ተጠናቋል። ስልጠናው የተካሄደው በ ወላይታ ሶዶ ሲሆን፣ የተለያዩ የፓርቲው አባላት ተሳታፊ ሆነዋል።",
+                newsArticle1Intro2: "ስልጠናው በተለይ በፖለቲካ ትንተና፣ በውይይት ክህሎት፣ በአመራር ስልቶችና በማህበረሰብ ተሳትፎ ላይ ያተኮረ ነበር። የፓርቲው አመራሮችና የዘርፉ ባለሙያዎች ለተሳታፊዎች ስልጠና በመስጠት አባላቱ ለፓርቲው እድገት የሚያበረክቱትን አስተዋጽኦ እንዲያሳድጉ አድርገዋል።",
+                newsArticle1Quote1: "የፓርቲው ቃል አቀባይ ለጋዜጠኞች በሰጡት መግለጫ፥ “ስልጠናው አባላቱ የፓርቲውን ዓላማዎች በግልጽ እንዲረዱና ለውጥ ለማምጣት እንዲነሳሱ ያግዛቸዋል።” ብለዋል።",
+                newsArticle1Quote2: "ተሳታፊዎች በስልጠናው ላይ ያገኙትን እውቀትና ክህሎት በመጠቀም ፓርቲው የሚከተለውን መርሆችና ዓላማዎች ለማሳካት በንቃት እንደሚሳተፉ ገልጸዋል። “ስልጠናው እጅግ ጠቃሚ ነበር። በዚህ ያገኘነውን ዕውቀትና ክህሎት በመጠቀም ለፓርቲው እድገት የበኩላችንን እንወጣለን” ሲሉ አስተያየታቸውን ከሰጡት ተሳታፊዎች መካከል ወጣት ዋለልኝ አላሮ ተናግረዋል።",
+                newsArticle1InfoIntro: "ስልጠናውን በተመለከተ የተለያዩ መረጃዎች ከዚህ በታች ቀርበዋል፦",
+                newsArticle1List1Title: "የስልጠናው አላማዎች",
+                newsArticle1List1Item1: "የፓርቲውን ራዕይና ተልዕኮ ለአባላት በግልጽ ማስረዳት",
+                newsArticle1List1Item2: "በፓርቲው አወቃቀር ላይ ግንዛቤ መፍጠር",
+                newsArticle1List1Item3: "በአመራር ክህሎት ላይ ማሰልጠን",
+                newsArticle1List1Item4: "ለማህበረሰቡና ለፓርቲው እድገት አባላቱ ያላቸውን ድርሻ ማሳወቅ",
+                newsArticle1List2Title: "የስልጠናው ይዘት",
+                newsArticle1List2Item1: "የፓርቲው መርሆዎችና ዓላማዎች",
+                newsArticle1List2Item2: "የፖለቲካ ትንተናና የውይይት ክህሎት",
+                newsArticle1List2Item3: "ውጤታማ የአመራር ስልቶች",
+                newsArticle1List2Item4: "ከማህበረሰቡ ጋር መስራት",
+                newsArticle1ParaPostList: "በስልጠናው ላይ የተሳተፉ አባላት ብዛት 60 ሲሆን፣ ፓርቲው ለወደፊቱም የአባላቱን አቅም ለማሳደግ የተለያዩ ስልጠናዎችን ለመስጠት ዝግጁ መሆኑን አስታውቋል። ወማአፓ የአባላትን ተሳትፎ ለማሳደግና ዴሞክራሲያዊ ስርዓትን ለመገንባት ያለውን ቁርጠኝነት በስልጠናው በግልጽ አሳይቷል።",
+                newsArticle2Date: "የካቲት 27/2017 ዓ.ም",
+                newsArticle2Title: "የወላይታ ማህበረሰብ አቀፍ ፓርቲ ታላቅ ጉባኤ ሊያካሂድ ነው።",
+                newsArticle2Intro1: "የወላይታ ማህበረሰብ አቀፍ ፓርቲ (ወማአፓ) መላ አባላቱንና ደጋፊዎቹን ያሳተፈ ታላቅ ጉባኤ በቅርቡ ሊያካሂድ መሆኑን አስታወቀ። ጉባኤው በ____ቦታ(ለጊዜው ስላልተወሰነ) እና በ____ቀን(ለጊዜው ስላልተወሰነ) እንደሚካሄድ የፓርቲው ጽህፈት ቤት አስታውቋል።",
+                newsArticle2Intro2: "ይህ ጉባኤ ፓርቲው በቀጣይነት ሊከተላቸው በሚችላቸው አቅጣጫዎች ላይ በስፋት የሚመክርበትና አባላቱ በነጻነት ሃሳባቸውን የሚገልጹበት እንደሚሆን ተገልጿል። ጉባኤው የፓርቲውን ወቅታዊ ሁኔታ፣ የፖሊሲ አቅጣጫዎች، የአባላት ተሳትፎ እና ሌሎች ወቅታዊ ጉዳዮች ላይ ትኩረት ያደርጋል።",
+                newsArticle2Quote1: "የፓርቲው ሊቀመንበር በጉባኤው ዙሪያ በሰጡት መግለጫ፣ “ይህ ጉባኤ ፓርቲያችንን ወደ ላቀ ደረጃ ለማሸጋገርና የህዝቡን ተሳትፎ ለማረጋገጥ ትልቅ ሚና ይኖረዋል። አባላትና ደጋፊዎቻችን በጉባኤው በንቃት እንዲሳተፉ ጥሪያችንን እናቀርባለን” ብለዋል።",
+                newsArticle2List1Title: "በጉባኤው የሚጠበቁ ዋና ዋና አጀንዳዎች የሚከተሉት ናቸው፦",
+                newsArticle2List1Item1: "የፓርቲው ዓመታዊ ሪፖርት: የፓርቲው የ2016 ዓ.ም. የአፈጻጸም ሪፖርት ቀርቦ ውይይት ይደረጋል።",
+                newsArticle2List1Item2: "የፖሊሲ ክለሳ: ፓርቲው ያሉትን ፖሊሲዎች በመገምገምና በማሻሻል ላይ ይወያያል።",
+                newsArticle2List1Item3: "የአመራር ምርጫ: አስፈላጊ ከሆነ የአመራር አካላትን የመምረጥ ሂደት ይካሄዳል።",
+                newsArticle2List1Item4: "የፓርቲው የወደፊት አቅጣጫ: ፓርቲው ወደፊት ሊከተላቸው በሚገቡ አቅጣጫዎች ላይ አባላት ሃሳባቸውን ይሰጣሉ።",
+                newsArticle2List1Item5: "የአባላት ተሳትፎ: የአባላትን ተሳትፎ ለማሳደግ የሚረዱ መንገዶች ይመከራሉ።",
+                newsArticle2ParaPostList1: "በጉባኤው ላይ የተለያዩ ፓናል ውይይቶች፣ ስልጠናዎችና ሌሎች ዝግጅቶች እንደሚኖሩ የተገለጸ ሲሆን፣ አባላትና ደጋፊዎችም በጉባኤው ላይ እንዲሳተፉ ጥሪ ቀርቧል።",
+                newsArticle2ParaPostList2: "“ጉባኤው ፓርቲያችንን የበለጠ የሚያጠናክርና ለህብረተሰቡ ለውጥ የሚያመጣ ይሆናል። አባላት በጉባኤው ላይ በመገኘት ሃሳባቸውን እንዲያካፍሉና ለፓርቲው እድገት እንዲሳተፉ እጠይቃለሁ” ሲሉ አባላቱ አስተያየታቸውን ሰጥተዋል።",
+                newsArticle2ParaPostList3: "ወማአፓ ይህን ታላቅ ጉባኤ በማካሄድ ለወደፊቱ የፖለቲካ እንቅስቃሴው አቅጣጫ በማስቀመጥና አባላትን በማነቃቃት ለውጥ ያለውን ቁርጠኝነት ያሳያል ተብሎ ይጠበቃል።",
+                newsArticle3Date: "የካቲት 26/2017 ዓ.ም",
+                newsArticle3Title: "የኢትዮጵያ ጦር የሶማሊያን ጦር በማሸነፍ ካራማራ ተራራ ላይ ደማቅ ታሪክ የፃፈበት 47ኛ ዓመት!",
+                newsArticle3ParaFull: "ዛሬ 47ኛው የካራማራ ድል በዓል ቀን ነው። እንኳን አደረሰን! ከወራሪዋ ሶማሊያና ግብረ አበሮቿ ጋር የተደረገው አልህ አስጨራሹ ጦርነት እልፍ አዕላፍ ሕይወት ተገብሮበት በኢትዮጵያ አሸናፊነት ተደምድሟል።<br><br>በዚህ ጦርነት ወደ 15 ሺህ የሚጠጉ የኩባ ሰራዊቶች እንዲሁም የየመን ወታደሮች ስለኛ መስዕዋትነት መክፈላቸው በታሪክ ተዘግቧል።<br><br>እንኳን ለድሉ መታሰቢያ በዓል አደረሰን!",
+                newsArticle4Date: "ጥር 24/2017 ዓ.ም",
+                newsArticle4Title: "ሉሲ ከተዋወቀችን ከ50 ዓመታት በኋላም ለሳይንቲስቶች የቤት ሥራቸው ሆናለች።",
+                newsArticle4Para1: "ስለ ሉሲ ወይም የአስትሮፒቲከስ አፋረንሲስ ዝርያ የመንቀሳቀስ ችሎታ አዳዲስ ግንዛቤዎችን ይሰጣል የተባለ ጥናት ይፋ ሆኗል። የሉሲ አጽም ከተገኘ ከ50 ዓመታት በኋላም ምርምሩ ቀጥሏል።",
+                newsArticle4Para2: "በተመሳሳይ ከ8 ዓመታት በፊትም እንዲሁ የሉሲን አሟሟት በመለከት በተካሄደ ጥናት ሉሲ ከትልቅ ዛፍ ላይ ወድቃ የመሞቷ ዜና ከተነገረ በኋላ በርካቶችን አስገርሞ ነበር። አሁን ላይ በከረንት ባዮሎጂ (Current Biology ) የታተመው የምርምር ሥራ እንደሚያመለክተው ደግሞ ስለ ሉሲ ወይም ዝርያዎቿ የመንቀሳቀስ ችሎታዎች አዳዲስ ግንዛቤዎችን የሰጠ ነው ተብሏል።",
+                newsArticle4Para3: "በዚህም ተመራማሪዎች የቅሪተ አካል አሻራዎችን እና የአፅም ቅሪቶችን በመመርመር የሉሲ ዝርያዎች እንደ ዘመናዊው ሰው በብቃትና በፍጥነት ባይሆንም የመሮጥ አቅም ሊኖራቸው ይችላል የሚል መደምደሚያ ላይ ደርሰዋል። ሳይንቲስቶቹ የሉሲ ዳሌ እና የእግር አጥንቶችን አወቃቀር በመመርመር ዝርያዎቿ አኗኗራቸው መሬት ላይ የተመሰረተ፤ በሁለት እግር መራመድ የሚችሉ እና አልፎ አልፎ ለመጠለያ፣ ለምግብ ወይም ደኅንነታቸውን ለመጠበቅ በዛፎች ላይ እንደሚወጡ ያትታል። በተጨማሪም የተለያዩ ግብአቶችን በመጠቀም የ3D ተንቀሳቃሽ ምስል (Simulation) የሰሩ ሲሆን ይህም ሉሲ ምናልባትም እስከ 5-6 ማይል በሰዓት ለአጭር ርቀት ልትሮጥ እንደምትችል ይጠቁማል።",
+                newsArticle4LinkText: "የምርምር ጥናቱን ለማግኘት",
+                videoNotSupported: "Your browser does not support the video tag.",
+                magazineSectionTitle: "የፓርቲ መጽሔቶች",
+                magazine1Title: "መስከረም-ጥቅምት 2017",
+                downloadBtn: "ያውርዱ",
+                magazine2Title: "ህዳር-ታህሳስ 2017",
+                magazine3Title: "ጥር-የካቲት 2017",
+                magazine4Title: "መጋቢት-ሚያዚያ 2017",
+                magazine5Title: "ግንቦት-ሰኔ 2017",
+                magazine6Title: "ሐምሌ-ነሐሴ 2017",
+                membershipSectionTitle: "አባልነት",
+                accordionReqTitle: "የአባልነት መስፈርቶች",
+                accordionReqPara1: "ከዚህ በታች የተዘረዘሩትን መመዘኛዎች የሚያሟላ ማንኛውም ሰው የፓርቲው አባል መሆን ይችላል፡፡",
+                accordionReqListItem1: "ኢትዮጵያዊ የሆነ፤",
+                accordionReqListItem2: "የፓርቲውን ፕሮግራም ና መተዳደሪያ ደንብ ተቀብሎ ተግባራዊ ለማድረግ ፍቃደኛ የሆነ፣",
+                accordionReqListItem3: "መልካም ሥነ-ምግባር ያለውና በኅብረተሰቡ ውስጥ ተቀባይነት ያለው፣",
+                accordionReqListItem4: "ዜጎችንና ሕዝቦችን በእኩልነት የሚያገለግል፣ የሕዝብ ጥቅምን የሚያስቀድም፣ከሙስናና ብልሹ አሠራሮች ራሱን ያራቀና ሌሎችንም የሚታገል፣",
+                accordionReqListItem5: "የፓርቲውን ዓላማዎችን ተቀብሎ የተሰጠውን ኃላፊነት ለመወጣት ቁርጠኛ የሆነ፣",
+                accordionReqListItem6: "እድሜ 18 ዓመት እና ከዚያ በላይ የሆነ፣",
+                accordionReqListItem7: "የሌላ ፖለቲካ ፓርቲ አባል ያልሆነ፣",
+                accordionReqListItem8: "የፖለቲካ ፓርቲ አባል የመሆን መብቱ በሕግ ያልተገደበ ወይም በፍርድ ቤት ውሳኔ ያልተገፈፈ።",
+                accordionAboutTitle: "ስለ ፓርቲው አባልነት",
+                accordionAboutPara1: "የወላይታ ማህበረሰብ አቀፍ ፓርቲ (ወማአፓ)፣ ለፍትህ፣ ለእኩልነትና ለዘላቂ ልማት የሚሰራ የፖለቲካ ፓርቲ ነው። ፓርቲው በዴሞክራሲያዊ መርሆች ላይ የተመሠረተ፣ ለህዝብና ለአገር ጥቅም ቅድሚያ የሚሰጥ ነው።",
+                accordionAboutSubTitle1: "የአባልነት ጠቀሜታዎች",
+                accordionAboutBenListItem1: "<b>የለውጥ አካል መሆን:</b> በፓርቲው ውስጥ በመሳተፍ ለህብረተሰቡ አዎንታዊ ለውጥ ለማምጣት የበኩሎን አስተዋጽኦ ያደርጋሉ።",
+                accordionAboutBenListItem2: "<b>የሃሳብ ነፃነት:</b> ፓርቲው አባላቱ በነጻነት ሃሳባቸውን እንዲገልጹና በውሳኔ አሰጣጥ ሂደት ውስጥ እንዲሳተፉ ያበረታታል።",
+                accordionAboutBenListItem3: "<b>የፖለቲካ ተሳትፎ:</b> በአገርና በማህበረሰብ ጉዳዮች ላይ በንቃት በመሳተፍ የፖለቲካ መብቶችዎን ይጠቀማሉ።",
+                accordionAboutBenListItem4: "<b>የአመራር እድል:</b> በአመራርነት በመሳተፍ ለፓርቲውና ለህብረተሰቡ ለውጥ መሪነት ሚና ይወስዳሉ።",
+                accordionAboutBenListItem5: "<b>የአቅም ግንባታ:</b> ፓርቲው ለአባላቱ የተለያዩ ስልጠናዎችንና የአቅም ግንባታ መርሀግብሮችን ያዘጋጃል።",
+                accordionAboutBenListItem6: "<b>ማህበራዊ ትስስር:</b> ከተለያዩ የህብረተሰብ ክፍሎች ከመጡ አባላት ጋር በመገናኘት ጠንካራ ማህበራዊ ትስስር ይፈጥራሉ።",
+                accordionAboutBenListItem7: "<b>መብቶችዎን ማስከበር:</b> በፓርቲው ውስጥ በመሳተፍ የራስዎንና የሌሎችንም መብቶች ለማስከበር ይሰራሉ።",
+                accordionAboutSubTitle2: "የአባልነት ምዝገባ ሂደት",
+                accordionAboutProcListItem1: "<b>ማመልከቻ:</b> በአካል በመቅረብ ወይም በፓርቲው ድረ-ገጽ ላይ በሚገኝ የአባልነት ማመልከቻ ፎርም በመሙላት ማመልከት ይችላሉ።",
+                accordionAboutProcListItem2: "<b>የማመልከቻ ቅጽ:</b> የማመልከቻ ቅጹን በአግባቡ ይሙሉ።",
+                accordionAboutProcListItem3: "<b>ምዝገባ:</b> ፓርቲው ማመልከቻዎን ካረጋገጠ በኋላ ጊዜያዊ አባል ሆነው ይመዘገባሉ።",
+                accordionAboutProcListItem4: "<b>የአባልነት መታወቂያ:</b> የአባልነት መታወቂያ ይሰጥዎታል።",
+                documentsSectionTitle: "የፓርቲው ሰነዶች",
+                docConstitution: "መተዳደሪያ ደንብ",
+                docProgram: "ፕሮግራም",
+                docFounding: "መመስረቻ ፅሁፍ",
+                docReports: "ዓመታዊ ሪፖርቶች",
+                docMembershipForm: "የአባልነት ፎርም",
+                registerSectionTitle: "አባል ለመሆን ይመዝገቡ",
+                formFullNameLabel: "ሙሉ ስም",
+                formFullNamePlaceholder: "ሙሉ ስምዎን ያስገቡ",
+                formAgeLabel: "እድሜ",
+                formAgePlaceholder: "እድሜዎ (ከ18 ዓመት በላይ)",
+                formGenderLabel: "ፆታ",
+                formGenderOptionDefault: "ፆታ ይምረጡ",
+                formGenderMale: "ወንድ",
+                formGenderFemale: "ሴት",
+                formPhoneLabel: "ስልክ ቁጥር",
+                formPhonePlaceholder: "ለምሳሌ 0912345678",
+                formEmailLabel: "ኢሜይል",
+                formEmailPlaceholder: "example@domain.com",
+                formEducationLabel: "የትምህርት ደረጃ",
+                formEduOptionDefault: "የትምህርት ደረጃ ይምረጡ",
+                formEduPrimary: "መሠረታዊ ትምህርት",
+                formEduSecondary: "ሁለተኛ ደረጃ",
+                formEduDiploma: "ዲፕሎማ",
+                formEduDegree: "የዩኒቨርስቲ ዲግሪ",
+                formEduMasters: "ማስተርስ ዲግሪ",
+                formEduPhd: "ዶክትሬት ዲግሪ",
+                formEduOther: "ሌላ",
+                formAddressLabel: "አድራሻ",
+                formAddrRegionPlaceholder: "ክልል",
+                formAddrZonePlaceholder: "ዞን",
+                formAddrCityPlaceholder: "ከተማ",
+                formAddrWoredaPlaceholder: "ወረዳ",
+                formAddrKebelePlaceholder: "ቀበሌ",
+                formReasonLabel: "ለምን አባል መሆን ፈለጉ? (አጭር ማብራሪያ)",
+                formReasonPlaceholder: "የእርስዎን ሃሳብ በአጭሩ ይግለጹ...",
+                formSubmitBtn: "ቅጽ ላክ",
+                footerNewsletterTitle: "ዜና መጽሔት ይመዝገቡ",
+                footerNewsletterPara: "የቅርብ ጊዜ መረጃዎችን እና የፓርቲ ዜናዎችን በቀጥታ ወደ ኢሜልዎ ያግኙ።",
+                footerEmailLabelSr: "ኢሜል",
+                footerEmailPlaceholder: "የኢሜል አድራሻዎ",
+                footerSubscribeBtn: "ይመዝገቡ",
+                footerSocialTitle: "ማህበራዊ ሚዲያ",
+                footerSocialPara: "በማህበራዊ ገጾቻችን ይከተሉን፤ ይሳተፉ።",
+                footerContactTitle: "ያግኙን",
+                footerContactPhone: "ስልክ:",
+                footerContactEmail: "ኢሜይል:",
+                footerContactAddress: "አድራሻ:",
+                footerContactAddressDetail: "ወላይታ ሶዶ",
+                footerCopyright: "© 2017 ዓ.ም የወላይታ ማህበረሰብ አቀፍ ፓርቲ።",
+                alertSuccessMsg1: "ሰላም ",
+                alertSuccessMsg2: "፣ ቅጽዎ በተሳካ ሁኔታ ቀርቧል! በቅርቡ ምላሽ እንሰጥዎታለን። እናመሰግናለን።"
+            },
+            en: {
+                pageTitle: "Wolaita Community-Based Party - Home",
+                logoTitle: "Wolaita Community-Based Party",
+                langLabel: "Select Language",
+                langAmharic: "Amharic",
+                langEnglish: "English",
+                searchPlaceholder: "Search",
+                searchSrOnly: "Search the site",
+                searchBtnSr: "Search",
+                navHome: "Home",
+                navPolicy: "Party Policies",
+                policyEconomic: "Economic Policy",
+                econJobCreation: "Job Creation",
+                econSubsidy: "Subsidy",
+                econIndustrialDev: "Industrial Development",
+                econAgriDev: "Agricultural Development",
+                policySocial: "Social Policies",
+                socialHealth: "Health",
+                socialEducation: "Education",
+                socialJustice: "Justice System",
+                socialGenderEq: "Gender Equality",
+                policyEnvironment: "Environmental Protection",
+                envForestCons: "Forest Conservation",
+                envPollutionCtrl: "Pollution Control",
+                envWasteMgmt: "Waste Management",
+                envSustainableAgri: "Sustainable Agriculture",
+                navNews: "News",
+                navMagazine: "Magazine",
+                navMembership: "Membership",
+                navDocuments: "Documents",
+                navRegister: "Register",
+                homeWelcomeTitle: "Welcome",
+                homeWelcomePara1: "Welcome to the Wolaita Community-Based Party. Our mission is to empower citizens with equal rights, social justice, and economic opportunities by promoting transparency, good governance, and sustainable development. We believe every individual in Wolaita deserves the chance to thrive, and we are committed to addressing key challenges of poverty, inequality, and access to essential services to make this vision a reality.<br><br>The party's documents, our bylaws, program, and policies are the core of our efforts. These documents underpin the party's actions and ensure we remain true to our values of democracy, fairness, and accountability. Our bylaws guide the party's internal structure and operations, while our programs and policies outline our strategic goals and actions to improve the lives of Ethiopian citizens. We are driven by economic empowerment, access to education, healthcare for all, and a just political environment that prioritizes the people.",
+                homeCurrentNewsTitle: "Current News",
+                newsCard1Date: "March 6, 2025 G.C.",
+                newsCard1Title: "Wolaita Community-Based Party to Hold Grand Assembly.",
+                newsCard1Para: "The Wolaita Community-Based Party (WCBP) announced it will soon hold a grand assembly involving all its members and supporters.",
+                readMore: "Read More",
+                newsCard2Date: "March 5, 2025 G.C.",
+                newsCard2Title: "47th Anniversary of the Karamara Victory!",
+                newsCard2Para: "Today is the 47th Karamara Victory anniversary. The decisive war against the invading Somalia and its allies concluded with Ethiopia's victory.",
+                newsCard3Date: "February 1, 2025 G.C.",
+                newsCard3Title: "New Members Training Completed",
+                newsCard3Para: "The capacity-building training organized by the Wolaita Community-Based Party (WCBP) for its members has been successfully completed in Wolaita Sodo.",
+                newsSectionTitle: "Recent News",
+                newsArticle1Date: "February 1, 2025 G.C.",
+                newsArticle1Title: "New Members Training",
+                newsArticle1Intro1: "The Wolaita Community-Based Party (WCBP) has successfully completed a capacity-building training for its members. The training took place in Wolaita Sodo, with various party members participating.",
+                newsArticle1Intro2: "The training focused particularly on political analysis, discussion skills, leadership strategies, and community engagement. Party leaders and experts in the field provided training to participants, enabling members to enhance their contributions to the party's growth.",
+                newsArticle1Quote1: "In a statement to journalists, the party spokesperson said, “This training will help members clearly understand the party's objectives and motivate them to bring about change.”",
+                newsArticle1Quote2: "Participants expressed that they would actively use the knowledge and skills gained from the training to achieve the party's principles and goals. “The training was extremely beneficial. We will use the knowledge and skills we gained here to contribute our part to the party's development,” said Walelign Alaro, a young participant.",
+                newsArticle1InfoIntro: "Further information regarding the training is provided below:",
+                newsArticle1List1Title: "Training Objectives:",
+                newsArticle1List1Item1: "Clearly explain the party's vision and mission to members.",
+                newsArticle1List1Item2: "Create awareness about the party's structure.",
+                newsArticle1List1Item3: "Train in leadership skills.",
+                newsArticle1List1Item4: "Inform members of their role in community and party development.",
+                newsArticle1List2Title: "Training Content:",
+                newsArticle1List2Item1: "Party principles and objectives.",
+                newsArticle1List2Item2: "Political analysis and discussion skills.",
+                newsArticle1List2Item3: "Effective leadership strategies.",
+                newsArticle1List2Item4: "Working with the community.",
+                newsArticle1ParaPostList: "A total of 60 members participated in the training. The party announced its readiness to provide various future trainings to enhance its members' capacities. WCBP clearly demonstrated its commitment to increasing member participation and building a democratic system through this training.",
+                newsArticle2Date: "March 6, 2025 G.C.",
+                newsArticle2Title: "Wolaita Community-Based Party to Hold Grand Assembly.",
+                newsArticle2Intro1: "The Wolaita Community-Based Party (WCBP) announced it will soon hold a grand assembly involving all its members and supporters. The party's office stated that the assembly will take place at ____ (location not yet determined) on ____ (date not yet determined).",
+                newsArticle2Intro2: "It was stated that this assembly will be a platform for extensive deliberation on the future directions the party may follow and for members to freely express their ideas. The assembly will focus on the party's current status, policy directions, member participation, and other current issues.",
+                newsArticle2Quote1: "The party chairman, in a statement regarding the assembly, said, “This assembly will play a significant role in advancing our party to a higher level and ensuring public participation. We call on our members and supporters to actively participate in the assembly.”",
+                newsArticle2List1Title: "The main agendas expected at the assembly are:",
+                newsArticle2List1Item1: "Party's Annual Report: The 2016 E.C. performance report will be presented and discussed.",
+                newsArticle2List1Item2: "Policy Review: The party will discuss reviewing and amending existing policies.",
+                newsArticle2List1Item3: "Leadership Election: If necessary, the process of electing leadership bodies will take place.",
+                newsArticle2List1Item4: "Party's Future Direction: Members will provide their ideas on the future directions the party should follow.",
+                newsArticle2List1Item5: "Member Participation: Ways to enhance member participation will be recommended.",
+                newsArticle2ParaPostList1: "It was announced that various panel discussions, trainings, and other events will be held during the assembly, and a call has been made for members and supporters to participate.",
+                newsArticle2ParaPostList2: "“The assembly will further strengthen our party and bring about change for the community. I urge members to attend the assembly, share their ideas, and participate in the party's growth,” said one of the members.",
+                newsArticle2ParaPostList3: "WCBP is expected to demonstrate its commitment to change by holding this grand assembly, setting the direction for its future political activities, and energizing its members.",
+                newsArticle3Date: "March 5, 2025 G.C.",
+                newsArticle3Title: "47th Anniversary of the Ethiopian Army's Historic Victory over the Somali Army on Karamara Mountain!",
+                newsArticle3ParaFull: "Today is the 47th anniversary of the Karamara Victory. Congratulations! The arduous war against the invading Somalia and its allies, which cost countless lives, concluded with Ethiopia's triumph.<br><br>It is historically recorded that in this war, about 15,000 Cuban soldiers and Yemeni soldiers sacrificed their lives for us.<br><br>Congratulations on the anniversary of the victory!",
+                newsArticle4Date: "February 1, 2025 G.C.",
+                newsArticle4Title: "Lucy, 50 years after her introduction, remains homework for scientists.",
+                newsArticle4Para1: "A study said to provide new insights into the locomotion of Lucy, or Australopithecus afarensis, has been released. Research continues 50 years after Lucy's skeleton was discovered.",
+                newsArticle4Para2: "Similarly, 8 years ago, a study on Lucy's death, which suggested she died from falling from a tall tree, surprised many. Now, research published in Current Biology is said to offer new insights into the locomotion capabilities of Lucy or her species.",
+                newsArticle4Para3: "In this, researchers, by examining fossil footprints and skeletal remains, have concluded that Lucy's species, though not as efficiently or quickly as modern humans, may have had the capacity to run. Scientists, by examining the structure of Lucy's pelvis and leg bones, suggest that her species was terrestrial, bipedal, and occasionally climbed trees for shelter, food, or safety. Additionally, using various inputs, they created a 3D simulation which indicates Lucy could possibly run for short distances at speeds of up to 5-6 miles per hour.",
+                newsArticle4LinkText: "To access the research study",
+                videoNotSupported: "Your browser does not support the video tag.",
+                magazineSectionTitle: "Party Magazines",
+                magazine1Title: "September-October 2024",
+                downloadBtn: "Download",
+                magazine2Title: "November-December 2024",
+                magazine3Title: "January-February 2025",
+                magazine4Title: "March-April 2025",
+                magazine5Title: "May-June 2025",
+                magazine6Title: "July-August 2025",
+                membershipSectionTitle: "Membership",
+                accordionReqTitle: "Membership Requirements",
+                accordionReqPara1: "Anyone who meets the criteria listed below can become a member of the party.",
+                accordionReqListItem1: "Must be Ethiopian;",
+                accordionReqListItem2: "Willing to accept and implement the party's program and bylaws,",
+                accordionReqListItem3: "Possess good ethics and be accepted within the community,",
+                accordionReqListItem4: "Serves citizens and peoples equally, prioritizes public interest, is free from corruption and malpractice, and fights against them,",
+                accordionReqListItem5: "Accepts the party's objectives and is committed to fulfilling assigned responsibilities,",
+                accordionReqListItem6: "Age 18 years and above,",
+                accordionReqListItem7: "Not a member of another political party,",
+                accordionReqListItem8: "Right to be a member of a political party not restricted by law or divested by court decision.",
+                accordionAboutTitle: "About Party Membership",
+                accordionAboutPara1: "The Wolaita Community-Based Party (WCBP) is a political party working for justice, equality, and sustainable development. The party is founded on democratic principles and prioritizes the interests of the people and the country.",
+                accordionAboutSubTitle1: "Benefits of Membership",
+                accordionAboutBenListItem1: "<b>Be Part of Change:</b> By participating in the party, you contribute to bringing positive change to society.",
+                accordionAboutBenListItem2: "<b>Freedom of Expression:</b> The party encourages its members to express their ideas freely and participate in the decision-making process.",
+                accordionAboutBenListItem3: "<b>Political Participation:</b> Actively participate in national and community affairs and exercise your political rights.",
+                accordionAboutBenListItem4: "<b>Leadership Opportunity:</b> Take on leadership roles to drive change for the party and society.",
+                accordionAboutBenListItem5: "<b>Capacity Building:</b> The party organizes various trainings and capacity-building programs for its members.",
+                accordionAboutBenListItem6: "<b>Social Networking:</b> Connect with members from diverse segments of society and build strong social ties.",
+                accordionAboutBenListItem7: "<b>Protect Your Rights:</b> By participating in the party, you work to protect your own rights and the rights of others.",
+                accordionAboutSubTitle2: "Membership Registration Process",
+                accordionAboutProcListItem1: "<b>Application:</b> You can apply by appearing in person or by filling out the membership application form available on the party's website.",
+                accordionAboutProcListItem2: "<b>Application Form:</b> Fill out the application form properly.",
+                accordionAboutProcListItem3: "<b>Registration:</b> After the party verifies your application, you will be registered as a provisional member.",
+                accordionAboutProcListItem4: "<b>Membership ID:</b> You will be issued a membership ID card.",
+                documentsSectionTitle: "Party Documents",
+                docConstitution: "Bylaws / Constitution",
+                docProgram: "Program",
+                docFounding: "Founding Document",
+                docReports: "Annual Reports",
+                docMembershipForm: "Membership Form",
+                registerSectionTitle: "Register to Become a Member",
+                formFullNameLabel: "Full Name",
+                formFullNamePlaceholder: "Enter your full name",
+                formAgeLabel: "Age",
+                formAgePlaceholder: "Your age (18 years or older)",
+                formGenderLabel: "Gender",
+                formGenderOptionDefault: "Select Gender",
+                formGenderMale: "Male",
+                formGenderFemale: "Female",
+                formPhoneLabel: "Phone Number",
+                formPhonePlaceholder: "e.g., 0912345678",
+                formEmailLabel: "Email",
+                formEmailPlaceholder: "example@domain.com",
+                formEducationLabel: "Education Level",
+                formEduOptionDefault: "Select Education Level",
+                formEduPrimary: "Primary Education",
+                formEduSecondary: "Secondary Education",
+                formEduDiploma: "Diploma",
+                formEduDegree: "University Degree",
+                formEduMasters: "Master's Degree",
+                formEduPhd: "PhD Degree",
+                formEduOther: "Other",
+                formAddressLabel: "Address",
+                formAddrRegionPlaceholder: "Region",
+                formAddrZonePlaceholder: "Zone",
+                formAddrCityPlaceholder: "City",
+                formAddrWoredaPlaceholder: "Woreda",
+                formAddrKebelePlaceholder: "Kebele",
+                formReasonLabel: "Why do you want to become a member? (Brief explanation)",
+                formReasonPlaceholder: "Briefly state your reason...",
+                formSubmitBtn: "Submit Form",
+                footerNewsletterTitle: "Subscribe to Newsletter",
+                footerNewsletterPara: "Get the latest updates and party news directly to your email.",
+                footerEmailLabelSr: "Email",
+                footerEmailPlaceholder: "Your Email Address",
+                footerSubscribeBtn: "Subscribe",
+                footerSocialTitle: "Social Media",
+                footerSocialPara: "Follow us and engage on our social media pages.",
+                footerContactTitle: "Contact Us",
+                footerContactPhone: "Phone:",
+                footerContactEmail: "Email:",
+                footerContactAddress: "Address:",
+                footerContactAddressDetail: "Wolaita Sodo",
+                footerCopyright: "© 2024-2025 Wolaita Community-Based Party.",
+                alertSuccessMsg1: "Hello ",
+                alertSuccessMsg2: ", your form has been submitted successfully! We will get back to you soon. Thank you."
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navMenu = document.querySelector('.nav-menu');
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const languageSelector = document.getElementById('language-select');
+
+            function applyTranslations(lang) {
+                document.documentElement.lang = lang;
+                document.querySelector('title').textContent = translations[lang].pageTitle;
+
+                document.querySelectorAll('[data-translate-key]').forEach(el => {
+                    const key = el.dataset.translateKey;
+                    const translation = translations[lang][key];
+                    if (translation !== undefined) {
+                        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                            if (el.type === 'submit' || el.type === 'button') {
+                                el.value = translation;
+                            } else {
+                                el.placeholder = translation;
+                            }
+                        } else if (el.dataset.translateAttribute) { 
+                            el.setAttribute(el.dataset.translateAttribute, translation);
+                        } else {
+                            // Use innerHTML if translation contains HTML tags (e.g., <b>, <br>)
+                            if (typeof translation === 'string' && (translation.includes('<') || translation.includes('&'))) {
+                                el.innerHTML = translation;
+                            } else {
+                                el.textContent = translation;
+                            }
+
+                            // Specific handling for lists that are already structured in HTML
+                            // and only their items/titles need translation.
+                            if (key.startsWith("accordionReqList") && el.tagName === 'UL') {
+                                el.querySelectorAll('li[data-translate-key]').forEach((li) => {
+                                    const itemKey = li.dataset.translateKey;
+                                    if(translations[lang][itemKey]) li.innerHTML = translations[lang][itemKey];
+                                });
+                            } else if (key.startsWith("accordionAboutBenList") && el.tagName === 'UL') {
+                                el.querySelectorAll('li[data-translate-key]').forEach((li) => {
+                                    const itemKey = li.dataset.translateKey;
+                                    if(translations[lang][itemKey]) li.innerHTML = translations[lang][itemKey];
+                                });
+                            } else if (key.startsWith("accordionAboutProcList") && el.tagName === 'UL') {
+                                el.querySelectorAll('li[data-translate-key]').forEach((li) => {
+                                    const itemKey = li.dataset.translateKey;
+                                    if(translations[lang][itemKey]) li.innerHTML = translations[lang][itemKey];
+                                });
+                            } else if (key.startsWith("newsArticle1List1") && el.tagName === 'UL') {
+                                el.querySelectorAll('li[data-translate-key]').forEach((li) => {
+                                    const itemKey = li.dataset.translateKey;
+                                    if(translations[lang][itemKey]) li.innerHTML = translations[lang][itemKey];
+                                });
+                            } else if (key.startsWith("newsArticle1List2") && el.tagName === 'UL') {
+                                 el.querySelectorAll('li[data-translate-key]').forEach((li) => {
+                                    const itemKey = li.dataset.translateKey;
+                                    if(translations[lang][itemKey]) li.innerHTML = translations[lang][itemKey];
+                                });
+                            } else if (key.startsWith("newsArticle2List1") && el.tagName === 'UL') {
+                                 el.querySelectorAll('li[data-translate-key]').forEach((li) => {
+                                    const itemKey = li.dataset.translateKey;
+                                    if(translations[lang][itemKey]) li.innerHTML = translations[lang][itemKey];
+                                });
+                            }
+                        }
+                    }
+                });
+            }
+
+
+            if (languageSelector) {
+                languageSelector.addEventListener('change', (e) => {
+                    const selectedLang = e.target.value;
+                    applyTranslations(selectedLang);
+                    localStorage.setItem('preferredLanguage', selectedLang);
+                });
+            }
+
+            const preferredLang = localStorage.getItem('preferredLanguage') || 'am';
+            if (languageSelector) {
+                 languageSelector.value = preferredLang;
+            }
+            applyTranslations(preferredLang);
+
+
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    const isExpanded = navMenu.classList.toggle('active');
+                    mobileMenuBtn.setAttribute('aria-expanded', isExpanded);
+                    if (isExpanded) {
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-times"></i>';
+                    } else {
+                        mobileMenuBtn.innerHTML = '☰';
+                        navMenu.querySelectorAll('li.has-megamenu.mega-menu-open').forEach(openMega => {
+                            openMega.classList.remove('mega-menu-open');
+                            const mega = openMega.querySelector('.mega-menu');
+                            if (mega) mega.style.display = 'none';
+                        });
+                    }
+                });
+            }
+
+            function activateSection(targetId) {
+                if (!targetId || !document.getElementById(targetId)) { 
+                     console.warn(`Section with id "${targetId}" not found. Defaulting to home.`);
+                     targetId = 'home'; 
+                     if (!document.getElementById('home')) return; 
+                }
+
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                const activeSection = document.getElementById(targetId);
+                if (activeSection) {
+                    activeSection.classList.add('active');
+                    const mainContent = document.querySelector('.main-content'); 
+                    if (mainContent) {
+                        const headerHeight = document.querySelector('.header') ? document.querySelector('.header').offsetHeight : 0;
+                        const offsetTop = activeSection.offsetTop - headerHeight - 20; 
+                        window.scrollTo({ top: offsetTop , behavior: 'smooth' });
+                    }
+                }
+
+                navLinks.forEach(l => l.classList.remove('active'));
+                const activeLink = document.querySelector(`.nav-link[data-target="${targetId}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const targetId = this.dataset.target;
+                    const isMegaMenuParentOnMobile = this.classList.contains('has-megamenu') && window.innerWidth <= 992;
+
+                    if (isMegaMenuParentOnMobile) { 
+                        e.preventDefault();
+                        const parentLi = this.parentElement;
+                        parentLi.classList.toggle('mega-menu-open');
+                        const megaMenu = parentLi.querySelector('.mega-menu');
+                        if (megaMenu) {
+                           megaMenu.style.display = parentLi.classList.contains('mega-menu-open') ? 'block' : 'none';
+                        }
+                        // Close other open mega menus on mobile
+                        if(parentLi.classList.contains('mega-menu-open')){
+                            navMenu.querySelectorAll('li.has-megamenu.mega-menu-open').forEach(openMega => {
+                                if(openMega !== parentLi){
+                                    openMega.classList.remove('mega-menu-open');
+                                    const mega = openMega.querySelector('.mega-menu');
+                                    if (mega) mega.style.display = 'none';
+                                }
+                            });
+                        }
+                        return; 
+                    }
+
+                    if (targetId) {
+                        if (this.getAttribute('href') && !this.getAttribute('href').startsWith('#') && this.getAttribute('href').includes('policy')) { 
+                            if (navMenu.classList.contains('active')) { 
+                                navMenu.classList.remove('active');
+                                if(mobileMenuBtn) {
+                                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                                    mobileMenuBtn.innerHTML = '☰';
+                                }
+                            }
+                            return; 
+                        }
+                        
+                        e.preventDefault();
+                        activateSection(targetId);
+                        window.location.hash = targetId; 
+
+                        if (navMenu.classList.contains('active')) { 
+                            navMenu.classList.remove('active');
+                            if(mobileMenuBtn) {
+                                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                                mobileMenuBtn.innerHTML = '☰';
+                            }
+                            navMenu.querySelectorAll('li.has-megamenu.mega-menu-open').forEach(openMega => {
+                                openMega.classList.remove('mega-menu-open');
+                                const mega = openMega.querySelector('.mega-menu');
+                                if (mega) mega.style.display = 'none';
+                            });
+                        }
+                    }
+                });
+            });
+
+            document.querySelectorAll('.accordion-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.nextElementSibling;
+                    const isActive = button.classList.toggle('active');
+                    button.querySelector('i').style.transform = isActive ? 'rotate(180deg)' : 'rotate(0deg)';
+                    
+                    if (isActive) {
+                        content.style.maxHeight = `${content.scrollHeight}px`;
+                        content.style.paddingTop = '1.5rem';
+                        content.style.paddingBottom = '1.5rem';
+                    } else {
+                        content.style.maxHeight = '0';
+                        content.style.paddingTop = '0';
+                        content.style.paddingBottom = '0';
+                    }
+                });
+            });
+
+            const registrationForm = document.getElementById('registrationForm');
+            if (registrationForm) {
+                registrationForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const nameInput = document.getElementById('fullName');
+                    const name = nameInput && nameInput.value ? nameInput.value : "Member"; 
+                    const currentLang = localStorage.getItem('preferredLanguage') || 'am';
+                    
+                    const alertMsg1 = translations[currentLang].alertSuccessMsg1 || "Hello ";
+                    const alertMsg2 = translations[currentLang].alertSuccessMsg2 || ", your form has been submitted successfully! We will get back to you soon. Thank you.";
+                    
+                    alert(alertMsg1 + name + alertMsg2);
+                    e.target.reset();
+                });
+            }
+
+            if (document.querySelector('#home')) { 
+                const hash = window.location.hash;
+                if (hash && hash.length > 1) { 
+                    const targetIdFromHash = hash.substring(1); 
+                    const targetLink = document.querySelector(`.nav-link[data-target="${targetIdFromHash}"]`);
+                    if (targetLink) {
+                        activateSection(targetIdFromHash);
+                    } else {
+                        activateSection('home'); 
+                    }
+                } else {
+                    activateSection('home'); 
+                }
+            }
+        });
+    </script>
+</body>
+</html>

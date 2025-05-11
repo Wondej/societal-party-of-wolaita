@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="am"> <!-- Default language set to Amharic -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title data-translate-key="pageTitle">የወላይታ ማህበረሰብ አቀፍ ፓርቲ - የደን ጥበቃ ፖሊሲ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50; /* Dark Blue/Charcoal */
+            --secondary-color: #3498db; /* Bright Blue */
+            --accent-color: #e67e22;   /* Orange */
+            --light-color: #f8fafc;   /* Very Light Gray/Off-White */
+            --dark-color: #1e293b;    /* Very Dark Blue */
+            --text-color: #334155;    /* Slate Gray for text */
+            --success-color: #2ecc71; /* Green */
+            --danger-color: #e74c3c;  /* Red */
+            --gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.07);
+            --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.15);
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Abyssinica SIL', sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background: var(--light-color);
+            font-size: 16px;
+        }
+
+        input,
+        button,
+        select,
+        textarea {
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Logo and Top Bar */
+        .logo-topbar-container {
+            background-color: #E0F2FE;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 1.5rem;
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--secondary-color);
+        }
+
+        .logo-container h2 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+
+        .logo-container img {
+            width: 120px;
+            height: 120px;
+            transition: transform 0.3s ease;
+        }
+        .logo-container img:hover {
+            transform: scale(1.05);
+        }
+
+        .top-bar {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .language-select {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .language-select label i {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+        .language-select select {
+            background: var(--light-color);
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            padding: 0.35rem 1.75rem 0.35rem 0.75rem;
+            border-radius: var(--radius-md);
+        }
+        .search-bar {
+            display: flex;
+        }
+        .search-bar input[type="search"] {
+            background: var(--light-color);
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-md) 0 0 var(--radius-md);
+            width: 220px;
+        }
+         .search-bar input[type="search"]::placeholder {
+            color: var(--text-color);
+            opacity: 0.7;
+        }
+
+        .search-bar button {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--accent-color);
+            border-left: none;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            cursor: pointer;
+        }
+
+        .search-bar button:hover {
+            background: #c56a19;
+            border-color: #c56a19;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: var(--gradient);
+            color: white;
+            padding: 2.5rem 0;
+            text-align: center;
+            margin-bottom: 0;
+            box-shadow: var(--shadow-md);
+        }
+
+        .page-header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            color: white;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        /* Main Layout */
+        .main-layout {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            flex-direction: row-reverse;
+            gap: 2rem;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            padding: 1.5rem;
+            margin-top: 0;
+            width: 30%;
+            max-width: 300px;
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            align-self: flex-start;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 0.75rem;
+            color: var(--light-color);
+            font-size: 1.25rem;
+            border-bottom: 1px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .sidebar h2 a {
+            color: var(--light-color);
+        }
+        .sidebar h2 a:hover {
+            color: var(--secondary-color);
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 1.5rem;
+        }
+        .sidebar ul li {
+            margin-bottom: 0.25rem;
+        }
+        .sidebar ul ul {
+            padding-left: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .sidebar a {
+            color: var(--light-color);
+            display: block;
+            padding: 0.5rem 0.75rem;
+            transition: var(--transition);
+            font-size: 0.95rem;
+            border-radius: var(--radius-sm);
+        }
+
+        .sidebar a:hover, .sidebar a.active-policy-link:hover {
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+        }
+        .sidebar a i {
+            margin-right: 0.75rem;
+            width: 20px;
+        }
+        .sidebar .active-policy-link {
+            font-weight: bold;
+            background-color: var(--accent-color);
+            color: white;
+        }
+        .sidebar h3 {
+            font-size: 1.05rem;
+            color: var(--secondary-color);
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            padding-left: 0.75rem;
+        }
+         .sidebar ul li h3 i {
+            margin-right: 0.75rem;
+            width: 20px;
+        }
+
+        /* Main Content Section */
+        .section {
+            display: block;
+            background: white;
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            width: 70%;
+            flex: 1;
+        }
+
+        .section > h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 0.75rem;
+        }
+        .section > h3 {
+            color: var(--dark-color);
+            font-size: 1.6rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
+        }
+        .section > h3:first-of-type {
+            margin-top: 0.5rem;
+        }
+
+        .policy-vision-mission {
+            background-color: var(--light-color);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: var(--radius-md);
+            border-left: 5px solid var(--secondary-color);
+            box-shadow: var(--shadow-sm);
+        }
+        .policy-vision-mission h3 {
+            margin-top: 0;
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .policy-vision-mission p, .policy-vision-mission ul, .policy-vision-mission ol {
+            font-size: 1.05rem;
+        }
+        .policy-vision-mission ul li, .policy-vision-mission ol li {
+            margin-bottom: 0.75rem;
+        }
+
+        .policy-point-card {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+        }
+        .policy-point-card h4 {
+            margin-top: 0;
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .policy-point-card ol, .policy-point-card ul {
+            list-style-type: decimal; /* Or disc for ul */
+            padding-left: 1.5rem;
+        }
+        .policy-point-card ol li, .policy-point-card ul li {
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+        }
+        .policy-point-card ol li::marker {
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+         .section > h4 { 
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Policy Implementation List */
+        .section > ul#implementation-list {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin-top: 1rem;
+        }
+        .section > ul#implementation-list li {
+            margin-bottom: 0.75rem;
+            font-size: 1.05rem;
+        }
+
+
+        .read-more-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-md);
+            font-weight: bold;
+            text-decoration: none;
+            transition: var(--transition);
+            margin-top: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .read-more-btn:hover {
+            background-color: #c56a19;
+            color: white;
+            text-decoration: none;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        .read-more-btn i {
+            margin-right: 0.5rem;
+        }
+
+        .footer {
+            background-color: #E0F2FE;
+            color: var(--primary-color);
+            padding: 2.5rem 0;
+            text-align: left;
+            font-size: 0.95rem;
+            border-top: 3px solid var(--secondary-color);
+        }
+        .footer h2 {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        .footer p {
+            color: var(--text-color);
+        }
+        .footer .contact-details a {
+            color: var(--secondary-color);
+        }
+        .footer .contact-details a:hover {
+            color: var(--accent-color);
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+
+        .col-md-3,
+        .col-md-4,
+        .col-md-2 {
+            flex-basis: calc(33.333% - 1rem);
+            min-width: 250px;
+            padding: 0;
+            border-right: none;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--primary-color);
+            width: 100%;
+        }
+        .footer-copyright p b {
+            color: var(--primary-color);
+        }
+
+        .social-icons {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 0.75rem;
+        }
+        .social-icons li a {
+            color: var(--primary-color);
+            font-size: 1.75rem;
+            transition: var(--transition);
+            padding: 0.5rem;
+            display: inline-block;
+        }
+        .social-icons li a:hover {
+            color: var(--accent-color);
+            transform: scale(1.1);
+            text-decoration: none;
+        }
+        .footer .simplenews-subscriber-form {
+             display: flex;
+        }
+        .footer .simplenews-subscriber-form input[type="email"] {
+            padding: 0.6rem;
+            border: 1px solid var(--primary-color);
+            border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+            flex-grow: 1;
+            margin-right: -1px;
+        }
+        .footer .simplenews-subscriber-form button {
+            padding: 0.6rem 1rem;
+            background-color: var(--accent-color);
+            color: white;
+            border: 1px solid var(--accent-color);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            cursor: pointer;
+        }
+         .footer .simplenews-subscriber-form button:hover {
+            background-color: #c56a19;
+            border-color: #c56a19;
+        }
+
+        @media (max-width: 992px) {
+            .col-md-3,
+            .col-md-4,
+            .col-md-2 {
+                flex-basis: calc(50% - 0.75rem);
+            }
+            .main-layout {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 15px;
+            }
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            .section > h2 {
+                font-size: 1.7rem;
+            }
+            .section > h3 {
+                font-size: 1.4rem;
+            }
+            .policy-point-card h4 {
+                font-size: 1.15rem;
+            }
+            .section > h4 {
+                font-size: 1.25rem;
+            }
+
+            .main-layout {
+                padding: 1rem;
+                flex-direction: column;
+            }
+            .sidebar, .section {
+                width: 100%;
+                max-width: none;
+            }
+            .sidebar {
+                margin-bottom: 1.5rem;
+            }
+
+            .logo-topbar-container {
+                flex-direction: column;
+                padding: 1rem;
+                 text-align: center;
+            }
+             .logo-container {
+                margin-bottom: 1rem;
+            }
+            .logo-container img {
+                width:100px; height:100px;
+            }
+            .logo-container h2 {
+                font-size: 1.3rem;
+            }
+            .top-bar {
+                flex-direction: column;
+                gap: 1rem;
+                width: 100%;
+            }
+            .search-bar {
+                width: 100%;
+            }
+            .search-bar input[type="search"]{
+                width: 100%;
+                flex-grow: 1;
+            }
+
+            .col-md-3,
+            .col-md-4,
+            .col-md-2 {
+                flex-basis: 100%;
+                margin-bottom: 1.5rem;
+            }
+            .footer .simplenews-subscriber-form input[type="email"]{
+                 margin-bottom: 0.5rem;
+                 margin-right: 0;
+                 width: 100%;
+            }
+             .footer .simplenews-subscriber-form {
+                flex-direction: column;
+            }
+            .footer .simplenews-subscriber-form button{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Logo and Top Bar -->
+    <div class="logo-topbar-container">
+        <div class="logo-container">
+            <img src="580759532717013320__1.png" alt="SPW Logo">
+            <h2 data-translate-key="logoTitle">የወላይታ ማህበረሰብ አቀፍ ፓርቲ</h2>
+        </div>
+
+        <div class="top-bar">
+            <div class="language-select">
+                <label for="language-select" class="sr-only" data-translate-key="langLabel">ቋንቋ ይምረጡ</label>
+                <i class="fas fa-language" aria-hidden="true"></i>
+                <select id="language-select" aria-label="Select Language">
+                    <option value="am" data-translate-key="langAmharic">አማርኛ</option>
+                    <option value="en" data-translate-key="langEnglish">English</option>
+                </select>
+            </div>
+
+            <form class="search-bar" role="search">
+                <label for="site-search" class="sr-only" data-translate-key="searchSrOnly">Search the site</label>
+                <input type="search" id="site-search" data-translate-key="searchPlaceholder" placeholder="Search/ፈልግ" aria-label="Search" />
+                <button type="submit">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                    <span class="sr-only" data-translate-key="searchBtnSr">ፈልግ</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 data-translate-key="headerTitle">የደን ጥበቃ ፖሊሲ</h1>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="main-layout">
+            <section id="forest-conservation" class="section active">
+                <h2 data-translate-key="forestPolicyOverviewTitle">የደን ጥበቃ ፖሊሲ አጠቃላይ እይታ</h2>
+
+                <div class="policy-vision-mission">
+                    <h3 data-translate-key="visionTitle">ራዕይ</h3>
+                    <p data-translate-key="visionText">የደን ሀብት በዘላቂነት የሚለማበት፣ የብዝሀ ህይወት የሚጠበቅበት፣ ለአካባቢ ጥበቃና ለአየር ንብረት ለውጥ መቋቋም አስተዋጽኦ የሚያደርግና የማህበረሰቡን ተጠቃሚነት የሚያረጋግጥ የደን ዘርፍ መፍጠር።</p>
+                </div>
+
+                <div class="policy-vision-mission">
+                    <h3 data-translate-key="missionTitle">ተልዕኮ</h3>
+                    <ol>
+                        <li data-translate-key="missionItem1"><b>የደን ጥበቃንና የህግ ማስከበርን ማጠናከር:</b> ያሉትን ደኖች ከህገ-ወጥ የደን ምንጣሮ፣ ከሰደድ እሳትና ከሌሎች ጉዳቶች በመጠበቅ የደን ሽፋንን ማስፋትና የህግ ጥሰቶችን መከላከልና መቆጣጠር።</li>
+                        <li data-translate-key="missionItem2"><b>የደን ልማትንና የደን መልሶ ማልማትን ማበረታታት:</b> የተራቆቱ መሬቶችን በደን መልሶ በማልማት (Reforestation) እና አዳዲስ የደን ተክሎችን (Afforestation) በማካሄድ የደን ሽፋንን መጨመር።</li>
+                        <li data-translate-key="missionItem3"><b>ዘላቂ የደን አጠቃቀምን ማረጋገጥ:</b> የደን ሀብትን (እንጨትና እንጨት ነክ ያልሆኑ የደን ውጤቶችን) በዘላቂነትና በአግባቡ በመጠቀም የኢኮኖሚ ጠቀሜታቸውን ከፍ ማድረግና ለትውልድ ማስተላለፍ።</li>
+                        <li data-translate-key="missionItem4"><b>የማህበረሰብ ተሳትፎንና ተጠቃሚነትን ማሳደግ:</b> የአካባቢው ማህበረሰብ በደን ጥበቃ፣ ልማትና አጠቃቀም ላይ በንቃት እንዲሳተፍና ከደን ሀብት ተጠቃሚ እንዲሆን ምቹ ሁኔታዎችን መፍጠር።</li>
+                        <li data-translate-key="missionItem5"><b>የደን ምርምርን፣ ክትትልንና የግንዛቤ ማስጨበጫ ስራዎችን ማጠናከር:</b> ስለ ደን ሀብት ሳይንሳዊ መረጃዎችን መሰብሰብ፣ የደን ለውጦችን መከታተልና የህብረተሰቡን ግንዛቤ ማሳደግ።</li>
+                        <li data-translate-key="missionItem6"><b>ህገ-ወጥ የደን ምንጣሮንና የደን መራቆትን መዋጋት:</b> ህገ-ወጥ የደን ምንጣሮንና የደን መራቆትን የሚያስከትሉ ዋና ዋና ምክንያቶችን በመለየት የተቀናጀ የመከላከያና የቁጥጥር እርምጃዎችን መውሰድ።</li>
+                        <li data-translate-key="missionItem7"><b>የደን ጥበቃን ከአየር ንብረት ለውጥ መላመድ ጋር ማቀናጀት:</b> ደኖች የአየር ንብረት ለውጥን ለመቋቋምና ለመላመድ ያላቸውን ሚና በማሳደግ የካርቦን ክምችትን መጨመርና የአየር ንብረት ለውጥ ተጽእኖዎችን መቀነስ።</li>
+                    </ol>
+                </div>
+
+                <h3 data-translate-key="mainPolicyDirectionsTitle">የፖሊሲው ዋና ዋና አቅጣጫዎች</h3>
+
+                <div class="policy-point-card">
+                    <h4 data-translate-key="protectionEnforcementTitle">1. የደን ጥበቃንና የህግ ማስከበርን ማጠናከር</h4>
+                    <ol>
+                        <li data-translate-key="protectionEnforcementItem1">የደን ጠባቂዎችን ቁጥርና አቅም ማሳደግ።</li>
+                        <li data-translate-key="protectionEnforcementItem2">በደን ላይ የሚፈጸሙ ወንጀሎችን ለመከላከልና ለመቆጣጠር የሚያስችሉ ህጎችንና ደንቦችን ማጠናከርና በአግባቡ ማስፈጸም።</li>
+                        <li data-translate-key="protectionEnforcementItem3">የደን ድንበሮችን በአግባቡ መከለልና መጠበቅ።</li>
+                        <li data-translate-key="protectionEnforcementItem4">የሰደድ እሳት መከላከያና መቆጣጠሪያ ስርዓቶችን ማዘመንና የማህበረሰቡን ተሳትፎ ማሳደግ።</li>
+                    </ol>
+                </div>
+
+                <div class="policy-point-card">
+                    <h4 data-translate-key="reforestationAfforestationTitle">2. የደን ልማትና የደን መልሶ ማልማት</h4>
+                    <ol>
+                        <li data-translate-key="reforestationAfforestationItem1">በየአመቱ የሚተከሉ ችግኞችን ቁጥርና የህልውና ምጣኔ ማሳደግ።</li>
+                        <li data-translate-key="reforestationAfforestationItem2">የአገር በቀል የዛፍ ዝርያዎችን በመጠቀም የደን መልሶ ማልማት ስራዎችን ማከናወን።</li>
+                        <li data-translate-key="reforestationAfforestationItem3">የግል ባለሀብቶችና ማህበረሰቦች በደን ልማት ስራዎች ላይ እንዲሳተፉ ማበረታታት።</li>
+                        <li data-translate-key="reforestationAfforestationItem4">የከተማ ደን ልማት (Urban Forestry) ፕሮግራሞችን ማስፋፋት።</li>
+                    </ol>
+                </div>
+
+                <div class="policy-point-card">
+                    <h4 data-translate-key="sustainableForestMgtTitle">3. ዘላቂ የደን አጠቃቀም</h4>
+                    <ol>
+                        <li data-translate-key="sustainableForestMgtItem1">የደን ሀብት አጠቃቀምን በሳይንሳዊ ጥናት ላይ የተመሰረተ እንዲሆን ማድረግ።</li>
+                        <li data-translate-key="sustainableForestMgtItem2">እንጨት ነክ ያልሆኑ የደን ውጤቶችን (Non-Timber Forest Products) በማልማትና በመጠቀም የማህበረሰቡን ገቢ ማሳደግ።</li>
+                        <li data-translate-key="sustainableForestMgtItem3">የማህበረሰብ ደን ልማት (Community Forestry) አሰራሮችን በማስፋፋት ደኖች በማህበረሰቡ እንዲጠበቁና በዘላቂነት እንዲጠቀሙ ማድረግ።</li>
+                        <li data-translate-key="sustainableForestMgtItem4">ለደን ምርቶች የጥራት ደረጃና የምስክር ወረቀት (Certification) ስርዓት መዘርጋት።</li>
+                    </ol>
+                </div>
+                 <div class="policy-point-card">
+                    <h4 data-translate-key="communityParticipationTitle">4. የማህበረሰብ ተሳትፎና ተጠቃሚነት</h4>
+                    <ol>
+                        <li data-translate-key="communityParticipationItem1">የአካባቢው ማህበረሰብ በደን ጥበቃና ልማት ውሳኔ አሰጣጥ ሂደቶች ላይ ሙሉ ተሳትፎ እንዲኖረው ማድረግ።</li>
+                        <li data-translate-key="communityParticipationItem2">ከደን ሀብት የሚገኘው ጥቅም ለአካባቢው ማህበረሰብ ፍትሃዊ በሆነ መንገድ እንዲከፋፈል ማድረግ።</li>
+                        <li data-translate-key="communityParticipationItem3">የማህበረሰብ የደን ተጠቃሚ ማህበራትን ማጠናከርና አቅማቸውን መገንባት።</li>
+                        <li data-translate-key="communityParticipationItem4">በደን ጥበቃና ልማት አማራጭ የገቢ ምንጮችን በመፍጠር የማህበረሰቡን በደን ላይ ያለውን ጥገኝነት መቀነስ።</li>
+                    </ol>
+                </div>
+                <div class="policy-point-card">
+                    <h4 data-translate-key="researchMonitoringTitle">5. ምርምር፣ ክትትልና ግንዛቤ</h4>
+                    <ol>
+                        <li data-translate-key="researchMonitoringItem1">በደን ሀብት ላይ የተመሰረቱ ምርምሮችን ማበረታታትና ውጤቶቻቸውን ለፖሊሲ ማሻሻያ መጠቀም።</li>
+                        <li data-translate-key="researchMonitoringItem2">የደን ሽፋንንና የደን መራቆትን በዘመናዊ ቴክኖሎጂ (ለምሳሌ ሳተላይት) በመታገዝ በየጊዜው መከታተል።</li>
+                        <li data-translate-key="researchMonitoringItem3">ስለ ደን ጥበቃና ዘላቂ አጠቃቀም አስፈላጊነት ለህብረተሰቡ ሰፊ የግንዛቤ ማስጨበጫ ስራዎችን መስራት።</li>
+                    </ol>
+                </div>
+
+                <h3 data-translate-key="policyImplementationTitle">የፖሊሲው ትግበራ</h3>
+                <ul id="implementation-list">
+                    <li data-translate-key="implementationItem1">ይህ ፖሊሲ ከአካባቢ ጥበቃ ባለስልጣን፣ ከግብርና ሚኒስቴር፣ ከክልል የደንና የአካባቢ ጥበቃ ተቋማት፣ ከማህበረሰብ ድርጅቶች፣ ከግሉ ዘርፍና ከምርምር ተቋማት ጋር በቅንጅት ይተገበራል።</li>
+                    <li data-translate-key="implementationItem2">ለደን ጥበቃና ልማት ስራዎች በቂ በጀትና የሰለጠነ የሰው ሃይል ይመደባል።</li>
+                    <li data-translate-key="implementationItem3">የደን ጥበቃ ህጎችና ደንቦች ጥሰቶችን ለመከላከልና ለመቆጣጠር የህግ ማስከበር አካላት አቅም ይገነባል።</li>
+                    <li data-translate-key="implementationItem4">የፖሊሲው አፈጻጸም በየጊዜው ክትትልና ግምገማ ይደረግበታል፣ የማህበረሰቡ ተሳትፎም ይረጋገጣል።</li>
+                </ul>
+                <a href="የወማአፓ ፖሊሲዎች.pdf" class="read-more-btn"><i class="fas fa-file-pdf"></i><span data-translate-key="downloadFullPolicyBtn">ሙሉውን ፖሊሲ ያውርዱ</span></a>
+            </section>
+
+            <aside class="sidebar">
+                <h2><a href="index.html"><i class="fas fa-home"></i><span data-translate-key="sidebarHome">ዋና መነሻ</span></a></h2>
+
+                <h2><i class="fas fa-landmark"></i><span data-translate-key="sidebarPartyPolicies">የፓርቲው ፖሊሲዎች</span></h2>
+                <ul>
+                    <li>
+                        <h3 data-translate-key="sidebarEconomicPolicy"><i class="fas fa-chart-line"></i>የኢኮኖሚ ፖሊሲ</h3>
+                        <ul>
+                            <li><a href="policy-job-creation.html"><i class="fas fa-briefcase"></i><span data-translate-key="sidebarJobCreation">የስራ እድል ፈጠራ</span></a></li>
+                            <li><a href="policy-industrial-dev.html"><i class="fas fa-industry"></i><span data-translate-key="sidebarIndustrialDev">የኢንዱስትሪ ልማት</span></a></li>
+                            <li><a href="policy-subsidy.html"><i class="fas fa-coins"></i><span data-translate-key="sidebarSubsidy">ድጎማ</span></a></li>
+                             <li><a href="policy-agricultural-dev.html"><i class="fas fa-tractor"></i><span data-translate-key="sidebarAgriDev">የግብርና ልማት</span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3 data-translate-key="sidebarSocialPolicies"><i class="fas fa-users"></i>ማህበራዊ ፖሊሲዎች</h3>
+                        <ul>
+                            <li><a href="policy 1.html"><i class="fas fa-hospital"></i><span data-translate-key="sidebarHealth">ጤና</span></a></li>
+                            <li><a href="policy 2.html"><i class="fas fa-graduation-cap"></i><span data-translate-key="sidebarEducation">ትምህርት</span></a></li>
+                            <li><a href="policy 3.html"><i class="fas fa-balance-scale"></i><span data-translate-key="sidebarJustice">የፍትህ ስርዓት</span></a></li>
+                             <li><a href="policy-gender-equality.html"><i class="fas fa-venus-mars"></i><span data-translate-key="sidebarGenderEq">የጾታ እኩልነት</span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3 data-translate-key="sidebarEnvProtection"><i class="fas fa-leaf"></i>የአካባቢ ጥበቃ</h3>
+                        <ul>
+                            <li><a href="policy-forest-conservation.html" class="active-policy-link"><i class="fas fa-tree"></i><span data-translate-key="sidebarForest">የደን ጥበቃ</span></a></li>
+                            <li><a href="policy-pollution-control.html"><i class="fas fa-smog"></i><span data-translate-key="sidebarPollution">የብክለት ቁጥጥር</span></a></li>
+                            <li><a href="policy-waste-management.html"><i class="fas fa-recycle"></i><span data-translate-key="sidebarWaste">ቆሻሻ አወጋገድ</span></a></li>
+                            <li><a href="policy-sustainable-agriculture.html"><i class="fas fa-seedling"></i><span data-translate-key="sidebarSustainableAgri">ዘላቂ ግብርና</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="newsletter">
+                        <h2 data-translate-key="footerNewsletterTitle">ዜና መጽሔት ይመዝገቡ</h2>
+                        <p data-translate-key="footerNewsletterPara">የቅርብ ጊዜ መረጃዎችን እና የፓርቲ ዜናዎችን በቀጥታ ወደ ኢሜልዎ ያግኙ።</p>
+                        <form class="simplenews-subscriber-form">
+                            <label for="edit-mail-0-value" class="sr-only" data-translate-key="footerEmailLabelSr">ኢሜል</label>
+                            <input type="email" id="edit-mail-0-value" name="mail" data-translate-key="footerEmailPlaceholder" placeholder="የኢሜል አድራሻዎ"
+                                class="form-email" required>
+                            <button type="submit" class="button" data-translate-key="footerSubscribeBtn">ይመዝገቡ</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="region-footer-31">
+                        <h2 data-translate-key="footerSocialTitle">ማህበራዊ ሚዲያ</h2>
+                        <p data-translate-key="footerSocialPara">በማህበራዊ ገጾቻችን ይከተሉን፤ ይሳተፉ።</p>
+                        <ul class="social-icons">
+                            <li><a href="#" target="_blank" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#" target="_blank" title="Twitter" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#" target="_blank" title="YouTube" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
+                            <li><a href="https://t.me/spw1415" target="_blank" title="Telegram" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="region-footer-41">
+                        <h2 data-translate-key="footerContactTitle">ያግኙን</h2>
+                        <div class="contact-details">
+                            <ul class="contact" style="list-style: none; padding-left: 0;">
+                                <li>
+                                    <p><i class="fas fa-phone-alt"></i> <strong data-translate-key="footerContactPhone">ስልክ:</strong> +251-704-379-452</p>
+                                </li>
+                                <li>
+                                    <p><i class="fas fa-envelope"></i> <strong data-translate-key="footerContactEmail">ኢሜይል:</strong> <a href="mailto:SPW1413@gmail.com">SPW1413@gmail.com</a>
+                                    </p>
+                                </li>
+                                 <li>
+                                    <p><i class="fas fa-map-marker-alt"></i> <strong data-translate-key="footerContactAddress">አድራሻ:</strong> <span data-translate-key="footerContactAddressDetail">ወላይታ ሶዶ</span></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-copyright">
+                <p><b data-translate-key="footerCopyright">© 2017 ዓ.ም የወላይታ ማህበረሰብ አቀፍ ፓርቲ። ሁሉም መብቶች በህግ የተጠበቁ ናቸው።</b></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            am: {
+                pageTitle: "የወላይታ ማህበረሰብ አቀፍ ፓርቲ - የደን ጥበቃ ፖሊሲ",
+                logoTitle: "የወላይታ ማህበረሰብ አቀፍ ፓርቲ",
+                langLabel: "ቋንቋ ይምረጡ",
+                langAmharic: "አማርኛ",
+                langEnglish: "English",
+                searchPlaceholder: "Search/ፈልግ",
+                searchSrOnly: "Search the site",
+                searchBtnSr: "ፈልግ",
+                headerTitle: "የደን ጥበቃ ፖሊሲ",
+                forestPolicyOverviewTitle: "የደን ጥበቃ ፖሊሲ አጠቃላይ እይታ",
+                visionTitle: "ራዕይ",
+                visionText: "የደን ሀብት በዘላቂነት የሚለማበት、 የብዝሀ ህይወት የሚጠበቅበት、 ለአካባቢ ጥበቃና ለአየር ንብረት ለውጥ መቋቋም አስተዋጽኦ የሚያደርግና የማህበረሰቡን ተጠቃሚነት የሚያረጋግጥ የደን ዘርፍ መፍጠር።",
+                missionTitle: "ተልዕኮ",
+                missionItem1: "<b>የደን ጥበቃንና የህግ ማስከበርን ማጠናከር:</b> ያሉትን ደኖች ከህገ-ወጥ የደን ምንጣሮ、 ከሰደድ እሳትና ከሌሎች ጉዳቶች በመጠበቅ የደን ሽፋንን ማስፋትና የህግ ጥሰቶችን መከላከልና መቆጣጠር።",
+                missionItem2: "<b>የደን ልማትንና የደን መልሶ ማልማትን ማበረታታት:</b> የተራቆቱ መሬቶችን በደን መልሶ በማልማት (Reforestation) እና አዳዲስ የደን ተክሎችን (Afforestation) በማካሄድ የደን ሽፋንን መጨመር።",
+                missionItem3: "<b>ዘላቂ የደን አጠቃቀምን ማረጋገጥ:</b> የደን ሀብትን (እንጨትና እንጨት ነክ ያልሆኑ የደን ውጤቶችን) በዘላቂነትና በአግባቡ በመጠቀም የኢኮኖሚ ጠቀሜታቸውን ከፍ ማድረግና ለትውልድ ማስተላለፍ።",
+                missionItem4: "<b>የማህበረሰብ ተሳትፎንና ተጠቃሚነትን ማሳደግ:</b> የአካባቢው ማህበረሰብ በደን ጥበቃ、 ልማትና አጠቃቀም ላይ በንቃት እንዲሳተፍና ከደን ሀብት ተጠቃሚ እንዲሆን ምቹ ሁኔታዎችን መፍጠር።",
+                missionItem5: "<b>የደን ምርምርን、 ክትትልንና የግንዛቤ ማስጨበጫ ስራዎችን ማጠናከር:</b> ስለ ደን ሀብት ሳይንሳዊ መረጃዎችን መሰብሰብ、 የደን ለውጦችን መከታተልና የህብረተሰቡን ግንዛቤ ማሳደግ።",
+                missionItem6: "<b>ህገ-ወጥ የደን ምንጣሮንና የደን መራቆትን መዋጋት:</b> ህገ-ወጥ የደን ምንጣሮንና የደን መራቆትን የሚያስከትሉ ዋና ዋና ምክንያቶችን በመለየት የተቀናጀ የመከላከያና የቁጥጥር እርምጃዎችን መውሰድ።",
+                missionItem7: "<b>የደን ጥበቃን ከአየር ንብረት ለውጥ መላመድ ጋር ማቀናጀት:</b> ደኖች የአየር ንብረት ለውጥን ለመቋቋምና ለመላመድ ያላቸውን ሚና በማሳደግ የካርቦን ክምችትን መጨመርና የአየር ንብረት ለውጥ ተጽእኖዎችን መቀነስ።",
+                mainPolicyDirectionsTitle: "የፖሊሲው ዋና ዋና አቅጣጫዎች",
+                protectionEnforcementTitle: "1. የደን ጥበቃንና የህግ ማስከበርን ማጠናከር",
+                protectionEnforcementItem1: "የደን ጠባቂዎችን ቁጥርና አቅም ማሳደግ።",
+                protectionEnforcementItem2: "በደን ላይ የሚፈጸሙ ወንጀሎችን ለመከላከልና ለመቆጣጠር የሚያስችሉ ህጎችንና ደንቦችን ማጠናከርና በአግባቡ ማስፈጸም።",
+                protectionEnforcementItem3: "የደን ድንበሮችን በአግባቡ መከለልና መጠበቅ።",
+                protectionEnforcementItem4: "የሰደድ እሳት መከላከያና መቆጣጠሪያ ስርዓቶችን ማዘመንና የማህበረሰቡን ተሳትፎ ማሳደግ።",
+                reforestationAfforestationTitle: "2. የደን ልማትና የደን መልሶ ማልማት",
+                reforestationAfforestationItem1: "በየአመቱ የሚተከሉ ችግኞችን ቁጥርና የህልውና ምጣኔ ማሳደግ።",
+                reforestationAfforestationItem2: "የአገር በቀል የዛፍ ዝርያዎችን በመጠቀም የደን መልሶ ማልማት ስራዎችን ማከናወን።",
+                reforestationAfforestationItem3: "የግል ባለሀብቶችና ማህበረሰቦች በደን ልማት ስራዎች ላይ እንዲሳተፉ ማበረታታት።",
+                reforestationAfforestationItem4: "የከተማ ደን ልማት (Urban Forestry) ፕሮግራሞችን ማስፋፋት።",
+                sustainableForestMgtTitle: "3. ዘላቂ የደን አጠቃቀም",
+                sustainableForestMgtItem1: "የደን ሀብት አጠቃቀምን በሳይንሳዊ ጥናት ላይ የተመሰረተ እንዲሆን ማድረግ።",
+                sustainableForestMgtItem2: "እንጨት ነክ ያልሆኑ የደን ውጤቶችን (Non-Timber Forest Products) በማልማትና በመጠቀም የማህበረሰቡን ገቢ ማሳደግ።",
+                sustainableForestMgtItem3: "የማህበረሰብ ደን ልማት (Community Forestry) አሰራሮችን በማስፋፋት ደኖች በማህበረሰቡ እንዲጠበቁና በዘላቂነት እንዲጠቀሙ ማድረግ።",
+                sustainableForestMgtItem4: "ለደን ምርቶች የጥራት ደረጃና የምስክር ወረቀት (Certification) ስርዓት መዘርጋት።",
+                communityParticipationTitle: "4. የማህበረሰብ ተሳትፎና ተጠቃሚነት",
+                communityParticipationItem1: "የአካባቢው ማህበረሰብ በደን ጥበቃና ልማት ውሳኔ አሰጣጥ ሂደቶች ላይ ሙሉ ተሳትፎ እንዲኖረው ማድረግ።",
+                communityParticipationItem2: "ከደን ሀብት የሚገኘው ጥቅም ለአካባቢው ማህበረሰብ ፍትሃዊ በሆነ መንገድ እንዲከፋፈል ማድረግ።",
+                communityParticipationItem3: "የማህበረሰብ የደን ተጠቃሚ ማህበራትን ማጠናከርና አቅማቸውን መገንባት።",
+                communityParticipationItem4: "በደን ጥበቃና ልማት አማራጭ የገቢ ምንጮችን በመፍጠር የማህበረሰቡን በደን ላይ ያለውን ጥገኝነት መቀነስ።",
+                researchMonitoringTitle: "5. ምርምር、 ክትትልና ግንዛቤ",
+                researchMonitoringItem1: "በደን ሀብት ላይ የተመሰረቱ ምርምሮችን ማበረታታትና ውጤቶቻቸውን ለፖሊሲ ማሻሻያ መጠቀም።",
+                researchMonitoringItem2: "የደን ሽፋንንና የደን መራቆትን በዘመናዊ ቴክኖሎጂ (ለምሳሌ ሳተላይት) በመታገዝ በየጊዜው መከታተል።",
+                researchMonitoringItem3: "ስለ ደን ጥበቃና ዘላቂ አጠቃቀም አስፈላጊነት ለህብረተሰቡ ሰፊ የግንዛቤ ማስጨበጫ ስራዎችን መስራት።",
+                policyImplementationTitle: "የፖሊሲው ትግበራ",
+                implementationItem1: "ይህ ፖሊሲ ከአካባቢ ጥበቃ ባለስልጣን、 ከግብርና ሚኒስቴር、 ከክልል የደንና የአካባቢ ጥበቃ ተቋማት、 ከማህበረሰብ ድርጅቶች、 ከግሉ ዘርፍና ከምርምር ተቋማት ጋር በቅንጅት ይተገበራል።",
+                implementationItem2: "ለደን ጥበቃና ልማት ስራዎች በቂ በጀትና የሰለጠነ የሰው ሃይል ይመደባል።",
+                implementationItem3: "የደን ጥበቃ ህጎችና ደንቦች ጥሰቶችን ለመከላከልና ለመቆጣጠር የህግ ማስከበር አካላት አቅም ይገነባል።",
+                implementationItem4: "የፖሊሲው አፈጻጸም በየጊዜው ክትትልና ግምገማ ይደረግበታል、 የማህበረሰቡ ተሳትፎም ይረጋገጣል።",
+                downloadFullPolicyBtn: "ሙሉውን ፖሊሲ ያውርዱ",
+                sidebarHome: "ዋና መነሻ",
+                sidebarPartyPolicies: "የፓርቲው ፖሊሲዎች",
+                sidebarEconomicPolicy: "የኢኮኖሚ ፖሊሲ",
+                sidebarJobCreation: "የስራ እድል ፈጠራ",
+                sidebarIndustrialDev: "የኢንዱስትሪ ልማት",
+                sidebarSubsidy: "ድጎማ",
+                sidebarAgriDev: "የግብርና ልማት",
+                sidebarSocialPolicies: "ማህበራዊ ፖሊሲዎች",
+                sidebarHealth: "ጤና",
+                sidebarEducation: "ትምህርት",
+                sidebarJustice: "የፍትህ ስርዓት",
+                sidebarGenderEq: "የጾታ እኩልነት",
+                sidebarEnvProtection: "የአካባቢ ጥበቃ",
+                sidebarForest: "የደን ጥበቃ",
+                sidebarPollution: "የብክለት ቁጥጥር",
+                sidebarWaste: "ቆሻሻ አወጋገድ",
+                sidebarSustainableAgri: "ዘላቂ ግብርና",
+                footerNewsletterTitle: "ዜና መጽሔት ይመዝገቡ",
+                footerNewsletterPara: "የቅርብ ጊዜ መረጃዎችን እና የፓርቲ ዜናዎችን በቀጥታ ወደ ኢሜልዎ ያግኙ።",
+                footerEmailLabelSr: "ኢሜል",
+                footerEmailPlaceholder: "የኢሜል አድራሻዎ",
+                footerSubscribeBtn: "ይመዝገቡ",
+                footerSocialTitle: "ማህበራዊ ሚዲያ",
+                footerSocialPara: "በማህበራዊ ገጾቻችን ይከተሉን፤ ይሳተፉ።",
+                footerContactTitle: "ያግኙን",
+                footerContactPhone: "ስልክ:",
+                footerContactEmail: "ኢሜይል:",
+                footerContactAddress: "አድራሻ:",
+                footerContactAddressDetail: "ወላይታ ሶዶ",
+                footerCopyright: "© 2017 ዓ.ም የወላይታ ማህበረሰብ አቀፍ ፓርቲ። ሁሉም መብቶች በህግ የተጠበቁ ናቸው።"
+            },
+            en: {
+                pageTitle: "Wolaita Community-Based Party - Forest Conservation Policy",
+                logoTitle: "Wolaita Community-Based Party",
+                langLabel: "Select Language",
+                langAmharic: "Amharic",
+                langEnglish: "English",
+                searchPlaceholder: "Search",
+                searchSrOnly: "Search the site",
+                searchBtnSr: "Search",
+                headerTitle: "Forest Conservation Policy",
+                forestPolicyOverviewTitle: "Forest Conservation Policy Overview",
+                visionTitle: "Vision",
+                visionText: "To create a forest sector where forest resources are sustainably developed, biodiversity is protected, contributes to environmental protection and climate change resilience, and ensures community benefit.",
+                missionTitle: "Mission",
+                missionItem1: "<b>Strengthen forest protection and law enforcement:</b> Expand forest cover and prevent and control legal violations by protecting existing forests from illegal deforestation, wildfires, and other damages.",
+                missionItem2: "<b>Promote reforestation and afforestation:</b> Increase forest cover by reforesting degraded lands and undertaking new afforestation activities.",
+                missionItem3: "<b>Ensure sustainable forest utilization:</b> Maximize the economic benefits of forest resources (timber and non-timber forest products) and pass them on to future generations by utilizing them sustainably and appropriately.",
+                missionItem4: "<b>Enhance community participation and benefit-sharing:</b> Create conducive conditions for local communities to actively participate in forest protection, development, and utilization, and to benefit from forest resources.",
+                missionItem5: "<b>Strengthen forest research, monitoring, and awareness:</b> Collect scientific data on forest resources, monitor forest changes, and raise public awareness.",
+                missionItem6: "<b>Combat illegal deforestation and forest degradation:</b> Identify the main causes of illegal deforestation and forest degradation and take integrated prevention and control measures.",
+                missionItem7: "<b>Integrate forest conservation with climate change adaptation:</b> Enhance the role of forests in mitigating and adapting to climate change, increasing carbon sequestration, and reducing the impacts of climate change.",
+                mainPolicyDirectionsTitle: "Main Policy Directions",
+                protectionEnforcementTitle: "1. Strengthening Forest Protection and Law Enforcement",
+                protectionEnforcementItem1: "Increase the number and capacity of forest rangers.",
+                protectionEnforcementItem2: "Strengthen and properly enforce laws and regulations to prevent and control forest crimes.",
+                protectionEnforcementItem3: "Properly demarcate and protect forest boundaries.",
+                protectionEnforcementItem4: "Modernize wildfire prevention and control systems and enhance community participation.",
+                reforestationAfforestationTitle: "2. Reforestation and Afforestation",
+                reforestationAfforestationItem1: "Increase the number of seedlings planted annually and their survival rate.",
+                reforestationAfforestationItem2: "Carry out reforestation activities using indigenous tree species.",
+                reforestationAfforestationItem3: "Encourage private investors and communities to participate in afforestation activities.",
+                reforestationAfforestationItem4: "Expand urban forestry programs.",
+                sustainableForestMgtTitle: "3. Sustainable Forest Management and Utilization",
+                sustainableForestMgtItem1: "Ensure forest resource utilization is based on scientific study.",
+                sustainableForestMgtItem2: "Increase community income by developing and utilizing non-timber forest products.",
+                sustainableForestMgtItem3: "Expand community forestry practices to ensure forests are protected and sustainably used by communities.",
+                sustainableForestMgtItem4: "Establish quality standards and certification systems for forest products.",
+                communityParticipationTitle: "4. Community Participation and Benefit Sharing",
+                communityParticipationItem1: "Ensure full participation of local communities in decision-making processes related to forest protection and development.",
+                communityParticipationItem2: "Ensure equitable distribution of benefits derived from forest resources to local communities.",
+                communityParticipationItem3: "Strengthen and build the capacity of community forest user groups.",
+                communityParticipationItem4: "Reduce community dependence on forests by creating alternative income sources through forest protection and development.",
+                researchMonitoringTitle: "5. Research, Monitoring, and Awareness",
+                researchMonitoringItem1: "Promote research based on forest resources and use its findings for policy improvement.",
+                researchMonitoringItem2: "Regularly monitor forest cover and deforestation using modern technology (e.g., satellite).",
+                researchMonitoringItem3: "Conduct extensive awareness campaigns for the public on the importance of forest conservation and sustainable use.",
+                policyImplementationTitle: "Policy Implementation",
+                implementationItem1: "This policy will be implemented in coordination with the Environmental Protection Authority, Ministry of Agriculture, regional forest and environmental protection institutions, community organizations, the private sector, and research institutions.",
+                implementationItem2: "Adequate budget and skilled human resources will be allocated for forest protection and development activities.",
+                implementationItem3: "The capacity of law enforcement agencies will be built to prevent and control violations of forest protection laws and regulations.",
+                implementationItem4: "The policy's performance will be regularly monitored and evaluated, and community participation will be ensured.",
+                downloadFullPolicyBtn: "Download Full Policy",
+                sidebarHome: "Main Home",
+                sidebarPartyPolicies: "Party Policies",
+                sidebarEconomicPolicy: "Economic Policy",
+                sidebarJobCreation: "Job Creation",
+                sidebarIndustrialDev: "Industrial Development",
+                sidebarSubsidy: "Subsidy",
+                sidebarAgriDev: "Agricultural Development",
+                sidebarSocialPolicies: "Social Policies",
+                sidebarHealth: "Health",
+                sidebarEducation: "Education",
+                sidebarJustice: "Justice System",
+                sidebarGenderEq: "Gender Equality",
+                sidebarEnvProtection: "Environmental Protection",
+                sidebarForest: "Forest Conservation",
+                sidebarPollution: "Pollution Control",
+                sidebarWaste: "Waste Management",
+                sidebarSustainableAgri: "Sustainable Agriculture",
+                footerNewsletterTitle: "Subscribe to Newsletter",
+                footerNewsletterPara: "Get the latest updates and party news directly to your email.",
+                footerEmailLabelSr: "Email",
+                footerEmailPlaceholder: "Your Email Address",
+                footerSubscribeBtn: "Subscribe",
+                footerSocialTitle: "Social Media",
+                footerSocialPara: "Follow us and engage on our social media pages.",
+                footerContactTitle: "Contact Us",
+                footerContactPhone: "Phone:",
+                footerContactEmail: "Email:",
+                footerContactAddress: "Address:",
+                footerContactAddressDetail: "Wolaita Sodo",
+                footerCopyright: "© 2024 Wolaita Community-Based Party. All rights reserved."
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const languageSelector = document.getElementById('language-select');
+
+            function applyTranslations(lang) {
+                document.documentElement.lang = lang;
+                document.querySelector('title').textContent = translations[lang].pageTitle;
+
+                document.querySelectorAll('[data-translate-key]').forEach(el => {
+                    const key = el.dataset.translateKey;
+                    const translation = translations[lang][key];
+                    if (translation !== undefined) {
+                        if (el.tagName === 'INPUT' && (el.type === 'search' || el.type === 'email')) {
+                             el.placeholder = translation;
+                        } else if (el.tagName === 'INPUT' && (el.type === 'submit' || el.type === 'button')) {
+                             el.value = translation;
+                        } else if (el.dataset.translateAttribute) {
+                            el.setAttribute(el.dataset.translateAttribute, translation);
+                        } else {
+                            if (typeof translation === 'string' && (translation.includes('<') || translation.includes('&'))) {
+                                el.innerHTML = translation;
+                            } else {
+                                el.textContent = translation;
+                            }
+                        }
+                    }
+                });
+            }
+
+            if (languageSelector) {
+                languageSelector.addEventListener('change', (e) => {
+                    const selectedLang = e.target.value;
+                    applyTranslations(selectedLang);
+                    localStorage.setItem('preferredLanguage', selectedLang);
+                });
+
+                const preferredLang = localStorage.getItem('preferredLanguage') || 'am';
+                languageSelector.value = preferredLang;
+                applyTranslations(preferredLang);
+            } else {
+                applyTranslations('am'); // Fallback
+            }
+
+            // Mega-menu touch handling (from original template)
+            const navMenuItems = document.querySelectorAll('.nav-menu > li');
+            navMenuItems.forEach(item => {
+                const megaMenu = item.querySelector('.mega-menu');
+                if (megaMenu) {
+                    item.addEventListener('touchstart', (e) => {
+                        if (e.target.closest('.mega-menu')) {
+                            return;
+                        }
+                        const isTouched = item.classList.contains('touched');
+                        navMenuItems.forEach(otherItem => {
+                            if (otherItem !== item) {
+                                otherItem.classList.remove('touched');
+                                const otherMegaMenu = otherItem.querySelector('.mega-menu');
+                                if (otherMegaMenu) otherMegaMenu.style.display = 'none';
+                            }
+                        });
+
+                        if (!isTouched) {
+                            e.preventDefault();
+                            item.classList.add('touched');
+                            megaMenu.style.display = 'block';
+                        }
+                    });
+                }
+            });
+
+            document.addEventListener('click', (e) => {
+                let isClickInsideNav = false;
+                navMenuItems.forEach(item => {
+                    if (item.contains(e.target)) {
+                        isClickInsideNav = true;
+                    }
+                });
+
+                if (!isClickInsideNav) {
+                    navMenuItems.forEach(item => {
+                        item.classList.remove('touched');
+                        const megaMenu = item.querySelector('.mega-menu');
+                        if (megaMenu) {
+                            megaMenu.style.display = 'none';
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
